@@ -18,7 +18,7 @@ export const projects = [
       id: 3,
       title: "5By5Winner",
       description: "A gamified application for tracking personal achievements and goals.",
-      image: "/web/5By5.png",
+      image: "/web/w5.png",
     },
     {
       id: 4,

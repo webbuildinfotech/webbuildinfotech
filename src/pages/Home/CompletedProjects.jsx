@@ -46,7 +46,7 @@ const ProjectCard = ({ project, index }) => {
     >
     
       {/* Image */}
-      <div className="w-full h-4/6 overflow-hidden rounded-lg">
+      <div className="w-full overflow-hidden rounded-lg">
       <img
         src={project.image}
         alt={project.title}

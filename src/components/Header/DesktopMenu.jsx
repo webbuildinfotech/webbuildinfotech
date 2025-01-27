@@ -15,6 +15,7 @@ const DesktopMenu = ({ menuItems, activeMenu }) => {
           {item.name}
         </NavLink>
       ))}
+      
       <style jsx>{`
         .menu-item {
           position: relative;
@@ -38,7 +39,7 @@ const DesktopMenu = ({ menuItems, activeMenu }) => {
           width: 100%;
           height: 100%;
           background: #453F86;
-          transform: skew(-20deg) translateX(1px);
+          transform: skew(-40deg) translateX(1px);
           z-index: -1;
         }
 
@@ -54,7 +55,7 @@ const DesktopMenu = ({ menuItems, activeMenu }) => {
           width: 100%;
           height: 100%;
           background: #453F86;
-          transform: skew(-20deg) translateX(1px);
+          transform: skew(-40deg) translateX(1px);
           z-index: -1;
         }
       `}</style>

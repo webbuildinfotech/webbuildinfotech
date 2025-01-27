@@ -8,6 +8,7 @@ import Contact from './pages/contact/Contact';
 import Technology from './pages/technologies/Technology';
 import Layout from './components/Layout';
 import HomeLayout from './pages/Home/HomeLayout';
+import Projects from './pages/projects/Projects';
 
 
 const App = () => {
@@ -19,7 +20,7 @@ const App = () => {
         <Route path="/services" element={<Services/>} />
         <Route path="/industries" element={<Industries/>} />
         <Route path="/technologies" element={<Technology/>} />
-        <Route path="/career" element={<Career/>} />
+        <Route path="/project" element={<Projects/>} />
         <Route path="/company" element={<Company />} />
         <Route path="/contact" element={<Contact />} />
         </Route>

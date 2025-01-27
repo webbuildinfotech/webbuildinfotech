@@ -28,16 +28,7 @@ const Header = () => {
         { name: "Design", path: "/services/design" },
       ],
     },
-    {
-      name: "Industries",
-      path: "/industries",
-      icon: null,
-      subMenu: [
-        { name: "Healthcare", path: "/industries/healthcare" },
-        { name: "Finance", path: "/industries/finance" },
-        { name: "Retail", path: "/industries/retail" },
-      ],
-    },
+    
     {
       name: "Technologies",
       path: "/technologies",
@@ -48,8 +39,10 @@ const Header = () => {
         { name: "Cloud", path: "/technologies/cloud" },
       ],
     },
-    { name: "Career", path: "/career", icon: null, subMenu: [] },
-    { name: "Company", path: "/company", icon: null, subMenu: [] },
+    { name: "Projects", path: "/project", icon: null, subMenu: [] },
+    // { name: "Company", path: "/company", icon: null, subMenu: [] },
+    { name: "Contact", path: "/contact", icon: null, subMenu: [] },
+
   ];
 
   return (

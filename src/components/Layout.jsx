@@ -58,8 +58,11 @@ const Layout = () => {
 
       {/* Main Content */}
       <main
-        className={`flex-grow ${location.pathname === '/' ? '' : 'container mx-auto px-6 py-4'}`}
-      >
+      className={`flex-grow ${
+        ["/", "/", "/contact"].includes(location.pathname) ? "" : "container mx-auto px-6 py-4"
+      }`}
+    >
+    
         {/* Outlet will render content for routes */}
         <Outlet />
       </main>

@@ -1,10 +1,9 @@
 import React from "react";
 import { useInView } from "react-intersection-observer";
-import { FaCode, FaServer, FaCloud, FaPlug, FaMobileAlt, FaTools } from "react-icons/fa";
 import { services } from "../../data/jsonData";
 
 
-const ExpertiseGrid = () => {
+const Services = () => {
   return (
     <div className="w-full py-12 bg-gradient-to-b from-gray-100 to-gray-200">
       <div className="container mx-auto px-6">
@@ -74,4 +73,4 @@ const Card = ({ service, index }) => {
   );
 };
 
-export default ExpertiseGrid;
+export default Services;
