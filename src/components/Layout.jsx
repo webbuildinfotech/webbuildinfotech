@@ -5,6 +5,7 @@ import Footer from './Footer/Footer';
 import SocialButtons from './SocialButtons/SocialButtons';
 import { CgChevronDoubleDownR } from "react-icons/cg";
 import { CgChevronDoubleUpR  } from "react-icons/cg";
+import Chatbot from './Chat/Chat';
 
 const Layout = () => {
   const location = useLocation();
@@ -62,7 +63,7 @@ const Layout = () => {
         {/* Outlet will render content for routes */}
         <Outlet />
       </main>
-
+      <Chatbot/> {/* Include the Chat component */}
       {/* Footer */}
       <Footer />
 

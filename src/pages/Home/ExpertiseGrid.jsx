@@ -1,69 +1,8 @@
 import React from "react";
 import { useInView } from "react-intersection-observer";
 import { FaCode, FaServer, FaCloud, FaPlug, FaMobileAlt, FaTools } from "react-icons/fa";
+import { services } from "../../data/jsonData";
 
-const services = [
-  {
-    id: "01",
-    title: "Frontend Development",
-    description:
-      "We specialize in crafting responsive, dynamic, and visually stunning web interfaces using cutting-edge frontend technologies.",
-    icon: <FaCode />,
-    colors: "text-purple-500 bg-purple-100",
-    hoverFrom: "from-purple-500",
-    hoverTo: "to-purple-700",
-  },
-  {
-    id: "02",
-    title: "Backend Development",
-    description:
-      "Our backend services ensure robust, scalable, and efficient server-side solutions tailored to your business needs.",
-    icon: <FaServer />,
-    colors: "text-teal-500 bg-teal-100",
-    hoverFrom: "from-teal-500",
-    hoverTo: "to-teal-700",
-  },
-  {
-    id: "03",
-    title: "JavaScript Technologies",
-    description:
-      "Expertise in modern JavaScript frameworks like React, Angular, and Vue for building fast and interactive applications.",
-    icon: <FaTools />,
-    colors: "text-blue-500 bg-blue-100",
-    hoverFrom: "from-blue-500",
-    hoverTo: "to-blue-700",
-  },
-  {
-    id: "04",
-    title: "API Development",
-    description:
-      "We design and implement secure, high-performance APIs to ensure seamless integration across platforms.",
-    icon: <FaPlug />,
-    colors: "text-green-500 bg-green-100",
-    hoverFrom: "from-green-500",
-    hoverTo: "to-green-700",
-  },
-  {
-    id: "05",
-    title: "Mobile App Development",
-    description:
-      "Building cross-platform mobile apps with React Native, Flutter, and more to extend your business to mobile platforms.",
-    icon: <FaMobileAlt />,
-    colors: "text-orange-500 bg-orange-100",
-    hoverFrom: "from-orange-500",
-    hoverTo: "to-orange-700",
-  },
-  {
-    id: "06",
-    title: "Cloud Solutions",
-    description:
-      "Providing scalable cloud services with AWS, Azure, and Google Cloud to power your web applications.",
-    icon: <FaCloud />,
-    colors: "text-blue-400 bg-blue-200",
-    hoverFrom: "from-blue-400",
-    hoverTo: "to-blue-600",
-  },
-];
 
 const ExpertiseGrid = () => {
   return (

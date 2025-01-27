@@ -1,40 +1,7 @@
 import React, { useState, useEffect } from "react";
 import CountUp from "react-countup";
-import { FaAward, FaMobileAlt, FaSmile, FaGlobe, FaMoneyBillWave } from "react-icons/fa";
+import { stats } from "../../data/jsonData";
 
-const stats = [
-  {
-    icon: <FaAward className="rotate-icon text-blue-500" />,
-    value: 15,
-    label: "Years of Legacy",
-    bgColor: "bg-blue-100",
-  },
-  {
-    icon: <FaMobileAlt className="rotate-icon text-green-500" />,
-    value: 800,
-    label: "Projects Delivered",
-    bgColor: "bg-green-100",
-  },
-  {
-    icon: <FaSmile className="rotate-icon text-orange-500" />,
-    value: 1000,
-    label: "Happy Clients",
-    bgColor: "bg-orange-100",
-  },
-  {
-    icon: <FaGlobe className="rotate-icon text-purple-500" />,
-    value: 10,
-    label: "Geographies Served",
-    bgColor: "bg-purple-100",
-  },
-  {
-    icon: <FaMoneyBillWave className="rotate-icon text-teal-500" />,
-    value: 1,
-    suffix: "B+",
-    label: "Revenue Generated",
-    bgColor: "bg-teal-100",
-  },
-];
 
 const StatsComponent = () => {
   const [resetKey, setResetKey] = useState(0);

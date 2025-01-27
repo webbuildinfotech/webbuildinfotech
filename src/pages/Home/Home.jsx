@@ -6,8 +6,8 @@ import AnimationBanner from '../../components/Home/AnimationBanner';
 
 const Home = () => {
   return (
-    <div className="w-full min-h-auto mb-16 bg-gradient-to-b from-[#c0ccd6] to-[#fff] flex items-center">
-      <div className="container mx-auto px-6 py-12 relative mt-20 max-lg:mt-6">
+    <div className="w-full min-h-auto  bg-gradient-to-b from-[#c0ccd6] to-[#fff] flex items-center">
+      <div className="container mx-auto px-6 py-6 relative mt-20 max-lg:mt-6">
         <div className="flex flex-col lg:flex-row justify-between items-center gap-12">
           {/* Left-Side Text */}
           <div className="flex-1 text-center lg:text-left mb-20 max-lg:mb-6">

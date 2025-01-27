@@ -1,73 +1,7 @@
 import React from "react";
-import { FaCode, FaMobileAlt, FaCloud, FaBuilding, FaRocket } from "react-icons/fa";
-import { MdDesignServices } from "react-icons/md";
 import { useInView } from "react-intersection-observer";
+import { projects } from "../../data/jsonData";
 
-const projects = [
-  {
-    id: 1,
-    title: "Studkz Pro",
-    description: "An advanced educational platform for online learning and assessments.",
-    icon: <FaCode />,
-    color: "text-blue-500 bg-blue-100",
-  },
-  {
-    id: 2,
-    title: "RG Techno",
-    description: "A technology consulting website with a strong focus on innovation.",
-    icon: <MdDesignServices />,
-    color: "text-green-500 bg-green-100",
-  },
-  {
-    id: 3,
-    title: "5By5Winner",
-    description: "A gamified application for tracking personal achievements and goals.",
-    icon: <FaRocket />,
-    color: "text-purple-500 bg-purple-100",
-  },
-  {
-    id: 4,
-    title: "Real Estate App",
-    description: "A modern real estate platform for property listings and management.",
-    icon: <FaBuilding />,
-    color: "text-teal-500 bg-teal-100",
-  },
-  {
-    id: 5,
-    title: "Ecommerce Platform",
-    description: "A seamless online shopping experience for users.",
-    icon: <FaCode />,
-    color: "text-orange-500 bg-orange-100",
-  },
-  {
-    id: 6,
-    title: "Cloud Migration Tool",
-    description: "Migrated legacy systems to modern, scalable cloud platforms.",
-    icon: <FaCloud />,
-    color: "text-pink-500 bg-pink-100",
-  },
-  {
-    id: 7,
-    title: "Task Manager Pro",
-    description: "A productivity app for managing daily tasks efficiently.",
-    icon: <FaMobileAlt />,
-    color: "text-red-500 bg-red-100",
-  },
-  {
-    id: 8,
-    title: "Creative Design Agency",
-    description: "A portfolio site showcasing design projects and creative work.",
-    icon: <MdDesignServices />,
-    color: "text-blue-400 bg-blue-200",
-  },
-  {
-    id: 9,
-    title: "Finance Tracker App",
-    description: "A mobile app for tracking expenses and managing budgets.",
-    icon: <FaMobileAlt />,
-    color: "text-yellow-500 bg-yellow-100",
-  },
-];
 
 const CompletedProjects = () => {
   return (
@@ -96,8 +30,8 @@ const CompletedProjects = () => {
 
 const ProjectCard = ({ project, index }) => {
   const { ref, inView } = useInView({
-    triggerOnce: false, // Allow animation every time the card enters the viewport
-    threshold: 0.2, // Trigger when 20% of the card is visible
+    triggerOnce: false,
+    threshold: 0.2,
   });
 
   return (
@@ -107,27 +41,30 @@ const ProjectCard = ({ project, index }) => {
         inView
           ? "opacity-100 translate-y-0"
           : "opacity-0 translate-y-10"
-      } hover:scale-105 hover:shadow-lg hover:bg-gradient-to-r hover:from-blue-500 hover:to-blue-700`}
-      style={{ transitionDelay: `${index * 150}ms` }} // Stagger animation
+      } hover:scale-105 hover:shadow-lg`}
+      style={{ transitionDelay: `${index * 150}ms` }}
     >
-      {/* Icon */}
-      <div
-        className={`w-16 h-16 flex items-center justify-center rounded-full ${project.color} mb-4 text-4xl`}
-      >
-        {project.icon}
-      </div>
+    
+      {/* Image */}
+      <div className="w-full h-4/6 overflow-hidden rounded-lg">
+      <img
+        src={project.image}
+        alt={project.title}
+        className="w-full h-full object-cover"
+      />
+    </div>
       {/* Title */}
-      <h4 className="text-xl font-semibold text-gray-800 transition-colors duration-300 hover:text-white">
+      <h4 className="mt-2 text-xl font-semibold text-gray-800 transition-colors duration-300 hover:text-blue-600">
         {project.title}
       </h4>
       {/* Description */}
-      <p className="mt-2 text-gray-600 transition-colors duration-300 hover:text-white">
+      <p className="mt-2 text-gray-600 transition-colors duration-300">
         {project.description}
       </p>
       {/* Know More */}
       <a
         href="#"
-        className="text-blue-600 font-semibold hover:underline mt-4 block transition-all duration-300 hover:text-white"
+        className="text-blue-600 font-semibold hover:underline mt-4 block transition-all duration-300"
       >
         Know more →
       </a>
