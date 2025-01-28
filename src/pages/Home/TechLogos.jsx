@@ -44,7 +44,7 @@ const TechLogos = () => {
           </span>
           </h3>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
+            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {rotatingLogos[category].map((logo, logoIndex) => (
                 <div
                   key={logoIndex}

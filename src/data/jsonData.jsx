@@ -160,17 +160,17 @@ export const stats = [
 export const techLogos = [
   { name: "React", src: "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg", category: "Frontend" },
   { name: "Angular", src: "https://upload.wikimedia.org/wikipedia/commons/c/cf/Angular_full_color_logo.svg", category: "Frontend" },
-  { name: "CSS", src: "https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg", category: "Frontend" },
   { name: "HTML", src: "https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg", category: "Frontend" },
   { name: "Vue.js", src: "https://upload.wikimedia.org/wikipedia/commons/9/95/Vue.js_Logo_2.svg", category: "Frontend" },
+
   { name: "Node.js", src: "https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg", category: "Backend" },
-  { name: "Express.js", src: "https://upload.wikimedia.org/wikipedia/commons/6/64/Expressjs.png", category: "Backend" },
   { name: "GraphQL", src: "https://upload.wikimedia.org/wikipedia/commons/1/17/GraphQL_Logo.svg", category: "Backend" },
   { name: "NestJS", src: "https://nestjs.com/img/logo-small.svg", category: "Backend" },
   { name: "Socket.io", src: "https://upload.wikimedia.org/wikipedia/commons/9/96/Socket-io.svg", category: "Backend" },
+
   { name: "MongoDB", src: "https://upload.wikimedia.org/wikipedia/commons/9/93/MongoDB_Logo.svg", category: "Database" },
   { name: "MySQL", src: "https://www.vectorlogo.zone/logos/mysql/mysql-official.svg", category: "Database" },
   { name: "PostgreSQL", src: "https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg", category: "Database" },
   { name: "Firebase", src: "https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg", category: "Database" },
-  { name: "Redis", src: "https://www.vectorlogo.zone/logos/redis/redis-icon.svg", category: "Database" },
+
 ];

@@ -138,7 +138,7 @@ const Footer = () => {
       </div>
       <FooterSection index={4}>
         <div className="footer-container">
-          <p className="footer-text">
+          <p className="footer-text font-bold">
             © 2025 Web Build InfoTech. All rights reserved.
           </p>
         </div>

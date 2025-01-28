@@ -109,7 +109,7 @@ const services = [
 const ServicePage = () => {
   return (
     <section className="py-16 bg-gray-100">
-      <div className="container mx-auto px-6 lg:px-12">
+      <div className="container mx-auto px-6 lg:px-6">
         {/* Page Header */}
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold text-blue-700">Our Services</h1>
