@@ -24,85 +24,87 @@ const ContactUs = () => {
             </p>
 
             <ul className="space-y-5">
-              {/* Address */}
-              <li className="flex items-start group">
-                <span className="text-blue-500 text-2xl mr-4 mt-1 group-hover:text-blue-600 transition-transform duration-500">
-                  <FaMapMarkerAlt />
-                </span>
-                <div>
-                  <h6 className="text-xl font-semibold text-gray-800 group-hover:text-blue-600 transition-colors duration-500">
-                    Address
-                  </h6>
-                  <p className="text-gray-600 group-hover:text-gray-800 transition-colors duration-500">
-                    2nd Floor, Mox Mall, Mandvi, near Bus Station, Gujarat 394160
-                  </p>
-                </div>
-              </li>
-
-              {/* Phone */}
-              <li className="flex items-start group">
-                <span className="text-green-500 text-2xl mr-4 mt-1 group-hover:text-green-600 transition-transform duration-500">
-                  <FaPhoneAlt />
-                </span>
-                <div>
-                  <h6 className="text-xl font-semibold text-gray-800 group-hover:text-green-600 transition-colors duration-500">
-                    Phone
-                  </h6>
-                  <p className="text-gray-600 group-hover:text-gray-800 transition-colors duration-500">
-                    +91 75672 19894
-                  </p>
-                </div>
-              </li>
-
-              {/* Email */}
-              <li className="flex items-start group">
-                <span className="text-purple-500 text-2xl mr-4 mt-1 group-hover:text-purple-600 transition-transform duration-500">
-                  <FaEnvelope />
-                </span>
-                <div>
-                  <h6 className="text-xl font-semibold text-gray-800 group-hover:text-purple-600 transition-colors duration-500">
-                    Email
-                  </h6>
-                  <p className="text-gray-600 group-hover:text-gray-800 transition-colors duration-500">
-                    <a
-                      href="mailto:info@webbuildinfotech.com"
-                      className="text-blue-600 hover:underline"
-                    >
-                      info@webbuildinfotech.com
-                    </a>
-                  </p>
-                </div>
-              </li>
-
-              {/* WhatsApp */}
-              <li className="flex items-start group">
-                <span className="text-green-500 text-2xl mr-4 mt-1 group-hover:text-green-600 transition-transform duration-500">
-                  <FaWhatsapp />
-                </span>
-                <div>
-                  <h6 className="text-xl font-semibold text-gray-800 group-hover:text-green-600 transition-colors duration-500">
-                    WhatsApp
-                  </h6>
-                  <p className="text-gray-600 group-hover:text-gray-800 transition-colors duration-500">
-                    +91 75672 19894
-                  </p>
-                </div>
-              </li>
-
-              <li className="flex items-start group">
-                <span className="text-blue-500 text-2xl mr-4 mt-1 group-hover:text-blue-600 transition-transform duration-500">
-                  <GiSpiderWeb />
-                </span>
-                <div>
-                  <h6 className="text-xl font-semibold text-gray-800 group-hover:text-blue-600 transition-colors duration-500">
-                    Website
-                  </h6>
-                  <p className="text-gray-600 group-hover:text-gray-800 transition-colors duration-500">
-                    www.webbuildinfotech.com
-                  </p>
-                </div>
-              </li>
-            </ul>
+            {/* Address */}
+            <li className="flex items-start group">
+              <span className="text-blue-500 text-2xl mr-4 mt-1 group-hover:text-blue-600 group-hover:rotate-45 transition-transform duration-500">
+                <FaMapMarkerAlt />
+              </span>
+              <div>
+                <h6 className="text-xl font-semibold text-gray-800 group-hover:text-blue-600 transition-colors duration-500">
+                  Address
+                </h6>
+                <p className="text-gray-600 group-hover:text-gray-800 transition-colors duration-500">
+                  2nd Floor, Mox Mall, Mandvi, near Bus Station, Gujarat 394160
+                </p>
+              </div>
+            </li>
+          
+            {/* Phone */}
+            <li className="flex items-start group">
+              <span className="text-green-500 text-2xl mr-4 mt-1 group-hover:text-green-600 group-hover:rotate-45 transition-transform duration-500">
+                <FaPhoneAlt />
+              </span>
+              <div>
+                <h6 className="text-xl font-semibold text-gray-800 group-hover:text-green-600 transition-colors duration-500">
+                  Phone
+                </h6>
+                <p className="text-gray-600 group-hover:text-gray-800 transition-colors duration-500">
+                  +91 75672 19894
+                </p>
+              </div>
+            </li>
+          
+            {/* Email */}
+            <li className="flex items-start group">
+              <span className="text-purple-500 text-2xl mr-4 mt-1 group-hover:text-purple-600 group-hover:rotate-45 transition-transform duration-500">
+                <FaEnvelope />
+              </span>
+              <div>
+                <h6 className="text-xl font-semibold text-gray-800 group-hover:text-purple-600 transition-colors duration-500">
+                  Email
+                </h6>
+                <p className="text-gray-600 group-hover:text-gray-800 transition-colors duration-500">
+                  <a
+                    href="mailto:info@webbuildinfotech.com"
+                    className="text-blue-600 hover:underline"
+                  >
+                    info@webbuildinfotech.com
+                  </a>
+                </p>
+              </div>
+            </li>
+          
+            {/* WhatsApp */}
+            <li className="flex items-start group">
+              <span className="text-green-500 text-2xl mr-4 mt-1 group-hover:text-green-600 group-hover:rotate-45 transition-transform duration-500">
+                <FaWhatsapp />
+              </span>
+              <div>
+                <h6 className="text-xl font-semibold text-gray-800 group-hover:text-green-600 transition-colors duration-500">
+                  WhatsApp
+                </h6>
+                <p className="text-gray-600 group-hover:text-gray-800 transition-colors duration-500">
+                  +91 75672 19894
+                </p>
+              </div>
+            </li>
+          
+            {/* Website */}
+            <li className="flex items-start group">
+              <span className="text-blue-500 text-2xl mr-4 mt-1 group-hover:text-blue-600 group-hover:rotate-45 transition-transform duration-500">
+                <GiSpiderWeb />
+              </span>
+              <div>
+                <h6 className="text-xl font-semibold text-gray-800 group-hover:text-blue-600 transition-colors duration-500">
+                  Website
+                </h6>
+                <p className="text-gray-600 group-hover:text-gray-800 transition-colors duration-500">
+                  www.webbuildinfotech.com
+                </p>
+              </div>
+            </li>
+          </ul>
+          
           </div>
 
           {/* Contact Form */}

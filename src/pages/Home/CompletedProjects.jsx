@@ -63,7 +63,7 @@ const ProjectCard = ({ project, index }) => {
       </p>
       {/* Know More */}
       <a
-        href="#"
+        href="/project"
         className="text-blue-600 font-semibold hover:underline mt-4 block transition-all duration-300"
       >
         Know more →

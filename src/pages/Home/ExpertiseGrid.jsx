@@ -64,7 +64,7 @@ const Card = ({ service, index }) => {
       </p>
       {/* Link */}
       <a
-        href="#"
+        href="/services"
         className="text-blue-600 font-semibold hover:underline mt-4 block transition-all duration-300 hover:text-white"
       >
         Know more →
