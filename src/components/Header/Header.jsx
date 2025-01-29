@@ -8,6 +8,12 @@ import MobileMenu from "./MobileMenu";
 import DesktopMenu from "./DesktopMenu";
 import { FaHome, FaCode, FaEnvelope } from "react-icons/fa"; // Example icons
 import { GiFilmProjector } from "react-icons/gi";
+
+import { FaReact, FaAngular, FaVuejs, FaHtml5, FaNodeJs, FaDatabase } from "react-icons/fa";
+import { SiGraphql, SiExpress, SiNextdotjs, SiMongodb, SiMysql, SiPostgresql, SiFirebase } from "react-icons/si";
+import { RoutePaths } from "../../routes/constant/path";
+
+
 const Header = () => {
   const location = useLocation();
   const [activeMenu, setActiveMenu] = useState("");
@@ -34,32 +40,32 @@ const Header = () => {
         {
           title: "Frontend",
           items: [
-            { name: "React.js", path: "/technologies/react", icon: <FaCode /> },
-            { name: "Angular", path: "/technologies/angular", icon: <FaCode /> },
-            { name: "Vue.js", path: "/technologies/vue", icon: <FaCode /> },
-            { name: "HTML5", path: "/technologies/html5", icon: <FaCode /> },
+            { name: "React.js", path: RoutePaths.TECHNOLOGY.FRONTEND.REACT, icon: <FaReact />, color: "#61DBFB" }, // React Blue
+            { name: "Angular", path: RoutePaths.TECHNOLOGY.FRONTEND.ANGULAR, icon: <FaAngular />, color: "#DD0031" }, // Angular Red
+            { name: "Vue.js", path: RoutePaths.TECHNOLOGY.FRONTEND.VUE, icon: <FaVuejs />, color: "#42b883" }, // Vue Green
+            { name: "HTML5", path: RoutePaths.TECHNOLOGY.FRONTEND.HTML5, icon: <FaHtml5 />, color: "#E34F26" }, // HTML Orange
           ],
         },
         {
           title: "Backend",
           items: [
-            { name: "Node.js", path: "/technologies/nodejs", icon: <FaCode /> },
-            { name: "GraphQL", path: "/technologies/graphql", icon: <FaCode /> },
-            { name: "Express.js", path: "/technologies/express", icon: <FaCode /> },
-            { name: "Next.js", path: "/technologies/nextjs", icon: <FaCode /> },
+            { name: "Node.js", path: RoutePaths.TECHNOLOGY.BACKEND.NODE, icon: <FaNodeJs />, color: "#3C873A" }, // Node Green
+            { name: "GraphQL", path: RoutePaths.TECHNOLOGY.BACKEND.GRAPHQL, icon: <SiGraphql />, color: "#E10098" }, // GraphQL Pink
+            { name: "Express.js", path: RoutePaths.TECHNOLOGY.BACKEND.EXPRESS, icon: <SiExpress />, color: "#444444" }, // Express Grey
+            { name: "Next.js", path: RoutePaths.TECHNOLOGY.BACKEND.NEST, icon: <SiNextdotjs />, color: "#000000" }, // Next.js Black
           ],
         },
         {
           title: "Database",
           items: [
-            { name: "Redis", path: "/technologies/redis", icon: <FaCode /> },
-            { name: "MongoDB", path: "/technologies/mongodb", icon: <FaCode /> },
-            { name: "MySQL", path: "/technologies/mysql", icon: <FaCode /> },
-            { name: "PostgreSQL", path: "/technologies/postgresql", icon: <FaCode /> },
-            { name: "Firebase", path: "/technologies/firebase", icon: <FaCode /> },
+            { name: "MongoDB", path:  RoutePaths.TECHNOLOGY.DATABASE.MONGO, icon: <SiMongodb />, color: "#4DB33D" }, // MongoDB Green
+            { name: "MySQL", path: RoutePaths.TECHNOLOGY.DATABASE.MYSQL, icon: <SiMysql />, color: "#00758F" }, // MySQL Blue
+            { name: "PostgreSQL", path: RoutePaths.TECHNOLOGY.DATABASE.POSTGRES, icon: <SiPostgresql />, color: "#336791" }, // PostgreSQL Blue
+            { name: "Firebase", path:  RoutePaths.TECHNOLOGY.DATABASE.FIREBASE, icon: <SiFirebase />, color: "#FFCA28" }, // Firebase Yellow
           ],
         },
       ],
+   
     },
     { name: "Projects", path: "/project", icon: <GiFilmProjector />, subMenu: [] },
     { name: "Contact", path: "/contact", icon: <FaEnvelope />, subMenu: [] },

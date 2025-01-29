@@ -8,51 +8,31 @@ import Technology from './pages/technologies/Technology';
 import Layout from './components/Layout';
 import HomeLayout from './pages/Home/HomeLayout';
 import Projects from './pages/projects/Projects';
-import ReactJsLayout from './components/Technology/Frontend/ReactJs/ReactLayout';
-import VueJsLayout from './components/Technology/Frontend/VueJs/VueJsLayout';
-import AngularLayout from './components/Technology/Frontend/Angular/AngularLayout';
-import HTML5Layout from './components/Technology/Frontend/HTML5/HTML5Layout';
-import NodeJsLayout from './components/Technology/Backend/NodeJs/NodeJsLayout';
-import ExpressJsLayout from './components/Technology/Backend/ExpressJs/ExpressJsLayout';
-import GraphQLLayout from './components/Technology/Backend/GraphQL/GraphQLLayout';
-import NestJsLayout from './components/Technology/Backend/NestJs/NestJsLayout';
-import PostgreSQLLayout from './components/Technology/Database/PostGresQl/PostgreSQLLayout';
-import MongoDBLayout from './components/Technology/Database/MongoDb/MongoDBLayout';
-import FirebaseLayout from './components/Technology/Database/Firebase/FirebaseLayout';
-import MySQLLayout from './components/Technology/Database/MySQL/MySQLLayout';
-
+import TechnologyLayout from './pages/technologies/TechnologyLayout';
+import { TechnologyRoutes } from './routes/TechnologyRoutes';
+import { RoutePaths } from './routes/constant/path';
 
 const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route path="/" element={<HomeLayout />} />
-          <Route path="/services" element={<Services />} />
-         
-          {/* FrontEnd Technology */}
-          <Route path="/technologies" element={<Technology />} />
-          <Route path="/technologies/react-info" element={<ReactJsLayout />} />
-          <Route path="/technologies/vue-info" element={<VueJsLayout />} />
-          <Route path="/technologies/angular-info" element={<AngularLayout />} />
-          <Route path="/technologies/html5-info" element={<HTML5Layout />} />
+        <Route path={RoutePaths.HOME} element={<Layout />}>
+          <Route path={RoutePaths.HOME} element={<HomeLayout />} />
+          <Route path={RoutePaths.SERVICES} element={<Services />} />
+          <Route path={RoutePaths.TECHNOLOGIES} element={<Technology />} />
+          <Route path={RoutePaths.INDUSTRIES} element={<Industries />} />
+          <Route path={RoutePaths.PROJECTS} element={<Projects />} />
+          <Route path={RoutePaths.COMPANY} element={<Company />} />
+          <Route path={RoutePaths.CONTACT} element={<Contact />} />
 
-          {/* BackEnd Technology */}
-          <Route path="/technologies/node-info" element={<NodeJsLayout />} />
-          <Route path="/technologies/express-info" element={<ExpressJsLayout />} />
-          <Route path="/technologies/graphql-info" element={<GraphQLLayout />} />
-          <Route path="/technologies/nest-info" element={<NestJsLayout />} />
-
-          {/* Database Technology */}
-          <Route path="/technologies/mongo-info" element={<MongoDBLayout />} />
-          <Route path="/technologies/firebase-info" element={<FirebaseLayout/>} />
-          <Route path="/technologies/postgres-info" element={<PostgreSQLLayout />} />
-          <Route path="/technologies/mysql-info" element={<MySQLLayout />} />
-
-          <Route path="/industries" element={<Industries />} />
-          <Route path="/project" element={<Projects />} />
-          <Route path="/company" element={<Company />} />
-          <Route path="/contact" element={<Contact />} />
+          {/* Technology Routes */}
+          <Route path={RoutePaths.TECHNOLOGIES} element={<TechnologyLayout />}>
+            {TechnologyRoutes.flatMap((category) =>
+              category.routes.map(({ path, component: Component }) => (
+                <Route key={path} path={path} element={<Component />} />
+              ))
+            )}
+          </Route>
 
         </Route>
       </Routes>

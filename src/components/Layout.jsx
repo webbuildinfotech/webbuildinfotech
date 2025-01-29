@@ -18,24 +18,33 @@ const Layout = () => {
       const scrollY = window.scrollY;
       const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
       const scrollPercent = (scrollY / totalHeight) * 100;
-      
+
       setScrollProgress(scrollPercent);
 
-      if (scrollY > lastScrollY) {
-        setScrollDirection('down');
-        setShowScrollButton(true);
-      } else if (scrollY < lastScrollY) {
-        setScrollDirection('up');
+      if (scrollY > 100) {
         setShowScrollButton(true);
       } else {
         setShowScrollButton(false);
       }
 
+      if (scrollY > lastScrollY) {
+        setScrollDirection('down');
+      } else {
+        setScrollDirection('up');
+      }
+
       setLastScrollY(scrollY);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    // Debounce the scroll listener
+    let timeout = setTimeout(() => {
+      window.addEventListener('scroll', handleScroll);
+    }, 50);
+
+    return () => {
+      clearTimeout(timeout);
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, [lastScrollY]);
 
   const scrollToTop = () => {
@@ -58,26 +67,26 @@ const Layout = () => {
 
       {/* Scroll Button with Circular Progress */}
       {showScrollButton && (
-        <div className="fixed bottom-8 right-8 w-16 h-16 flex items-center justify-center">
+        <div className="fixed bottom-60 right-6 w-20 h-20 flex items-center justify-center z-50">
           <svg className="absolute top-0 left-0 w-full h-full transform -rotate-90" viewBox="0 0 100 100">
-            <circle className="stroke-gray-300" cx="50" cy="50" r="45" strokeWidth="5" fill="none" />
+            <circle className="stroke-gray-300" cx="50" cy="50" r="40" strokeWidth="4" fill="none" />
             <circle
               className="stroke-red-500 transition-all duration-300"
               cx="50"
               cy="50"
-              r="45"
-              strokeWidth="5"
+              r="40"
+              strokeWidth="4"
               fill="none"
-              strokeDasharray="283"
-              strokeDashoffset={283 - (scrollProgress * 2.83)}
+              strokeDasharray="251"
+              strokeDashoffset={251 - (scrollProgress * 2.51)}
               strokeLinecap="round"
             />
           </svg>
           <button
-            onClick={scrollDirection === 'down' ? scrollToBottom : scrollToTop}
-            className= "bg-white text-red-500 rounded-full shadow-lg"
+            onClick={scrollDirection === "down" ? scrollToBottom : scrollToTop}
+            className="bg-white text-red-500 rounded-full shadow-lg p-2 flex items-center justify-center z-50"
           >
-            {scrollDirection === 'down' ? <CgChevronDoubleDownR size={24} /> : <CgChevronDoubleUpR size={24} />}
+            {scrollDirection === "down" ? <CgChevronDoubleDownR size={18} /> : <CgChevronDoubleUpR size={18} />}
           </button>
         </div>
       )}
