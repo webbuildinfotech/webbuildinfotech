@@ -204,7 +204,7 @@ const ProjectsWithPagination = () => {
 
     return (
         <div className="container mx-auto px-6 py-12">
-            <h2 className="text-4xl font-bold text-center mb-10">Our Projects</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold text-center text-blue-700 mb-10">Our Projects</h2>
             <div className="grid gap-16">
                 {currentProjects.map((project, index) => (
                     <div
@@ -225,7 +225,7 @@ const ProjectsWithPagination = () => {
                             <span className="text-sm font-semibold text-blue-600 bg-blue-100 px-4 py-1 rounded-full inline-block mb-4">
                                 {project.category}
                             </span>
-                            <h3 className="text-3xl font-bold text-gray-800">
+                            <h3 className="text:2xl lg:text-3xl font-bold text-gray-800">
                                 {project.title}
                             </h3>
                             <p className="text-gray-600 mt-4">{project.description}</p>

@@ -31,7 +31,7 @@ const TechLogos = () => {
   return (
     <div className="w-full py-12 bg-gradient-to-b from-blue-100 to-purple-100">
       <div className="container mx-auto px-6">
-        <h2 className="text-3xl font-bold text-blue-800 mb-6 uppercase text-start">
+        <h2 className="text-xl lg:text-3xl font-bold text-blue-800 mb-6 uppercase text-start">
           Technologies We Work With
         </h2>
 
@@ -39,7 +39,7 @@ const TechLogos = () => {
         
           <div key={index} className="mb-12">
           <h3 className="text-2xl font-semibold mb-4 text-start relative group">
-          <span className="bg-gradient-to-r from-blue-400">
+          <span className="text-lg lg:text-xl bg-gradient-to-r from-blue-400">
             {category} Technologies
           </span>
           </h3>

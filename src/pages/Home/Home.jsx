@@ -11,7 +11,7 @@ const Home = () => {
         <div className="flex flex-col lg:flex-row justify-between items-center gap-12">
           {/* Left-Side Text */}
           <div className="flex-1 text-center lg:text-left mb-20 max-lg:mb-6">
-            <h1 className="text-2xl sm:text-4xl lg:text-4xl font-bold uppercase mb-4 leading-snug">
+            <h1 className="text-lg lg:text-4xl font-bold uppercase mb-4 leading-snug">
               <span
                 className="block"
                 style={{
@@ -20,7 +20,7 @@ const Home = () => {
                   display: "inline-block",
                 }}
               >
-              Revolutionizing Technology,
+                Revolutionizing Technology,
               </span>
               <br />
               <span
@@ -31,7 +31,7 @@ const Home = () => {
                   display: "inline-block",
                 }}
               >
-              Empowering Businesses
+                Empowering Businesses
               </span>
             </h1>
             <p

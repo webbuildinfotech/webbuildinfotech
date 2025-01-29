@@ -111,14 +111,14 @@ const TechnologiesPage = () => {
   return (
     <section className="py-16 bg-gradient-to-b from-blue-50 to-blue-100">
       <div className="container mx-auto px-6 lg:px-12">
-        <h1 className="text-4xl font-bold text-start mb-12">
+        <h1 className="text-2xl lg:text-3xl font-bold text-start mb-5">
           TECHNOLOGIES WE WORK WITH
         </h1>
 
         {technologies.map((techCategory, index) => (
-          <div key={index} className="mb-16">
+          <div key={index} className="mb-5">
             {/* Category Header */}
-            <h2 className="text-2xl font-semibold text-blue-800 mb-8">
+            <h2 className="text-xl lg:text-2xl font-semibold text-blue-800 mb-8">
               {techCategory.category}
             </h2>
 

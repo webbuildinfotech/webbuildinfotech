@@ -9,8 +9,7 @@ const AnimationBanner = () => {
                 // src='/banner/t.png'
                 src={banner}
                 alt="Innovative Teamwork"
-                className="max-w-full h-full"
-                style={{ maxHeight: '550px' }} // Slightly increased image size
+                className="object-cover w-full h-64 lg:h-96 transition-transform duration-500 hover:scale-105"                 
             />
         </div>
     )

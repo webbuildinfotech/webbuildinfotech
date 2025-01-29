@@ -10,7 +10,7 @@ const ContactBanner = () => {
             />
             {/* Overlay for Banner Text */}
             <div className="absolute inset-0 flex flex-col justify-center items-center bg-blue-900 bg-opacity-40 text-center text-white px-4">
-                <h1 className="text-4xl font-extrabold text-white tracking-tight">
+                <h1 className="text-2xl lg:text-4xl font-extrabold text-white tracking-tight">
                     Contact <span className="text-blue-600">With Us</span>
                 </h1>
             </div>

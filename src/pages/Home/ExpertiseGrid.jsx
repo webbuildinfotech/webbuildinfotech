@@ -8,10 +8,10 @@ const Services = () => {
     <div className="w-full py-12 bg-gradient-to-b from-gray-100 to-gray-200">
       <div className="container mx-auto px-6">
         <div className="text-start mb-10">
-          <h2 className="text-3xl font-bold text-blue-800 mt-2 uppercase">
+          <h2 className="text-xl lg:text-3xl font-bold text-blue-800 mt-2 uppercase">
             Services
           </h2>
-          <h6 className="text-lg font-semibold text-gray-400">
+          <h6 className="text-lg lg:text-lg font-semibold text-gray-400">
             Result Driven Solutions! What We Provide to Our Valued Customers
           </h6>
         </div>

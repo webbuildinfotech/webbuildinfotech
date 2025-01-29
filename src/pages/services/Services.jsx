@@ -112,7 +112,7 @@ const ServicePage = () => {
       <div className="container mx-auto px-6 lg:px-6">
         {/* Page Header */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl font-bold text-blue-700">Our Services</h1>
+          <h1 className="text-3xl lg:text-4xl font-bold text-blue-700">Our Services</h1>
           <p className="text-gray-600 mt-4">
             Discover the wide range of professional services we offer to power your business.
           </p>

@@ -24,7 +24,7 @@ const IndustryCards = () => {
     <div className="w-full py-12 bg-gradient-to-b from-[#c0ccd6] to-[#918d8d] flex items-center">
       <div className="container mx-auto px-6">
         <div className="text-start mb-10">
-          <h2 className="text-3xl font-bold text-blue-800 mt-2 uppercase">
+          <h2 className="text-xl lg:text-3xl font-bold text-blue-800 mt-2 uppercase">
             Work for Any Industry
           </h2>
           <h6 className="text-lg font-semibold text-gray-400">

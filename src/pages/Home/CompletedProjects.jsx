@@ -9,7 +9,7 @@ const CompletedProjects = () => {
       <div className="container mx-auto px-6">
         {/* Section Title */}
         <div className="text-start mb-10">
-          <h2 className="text-3xl font-bold text-blue-800 uppercase">
+          <h2 className="text-lg lg:text-3xl font-bold text-blue-800 uppercase">
             Completed Projects
           </h2>
           <p className="text-gray-600 mt-4 text-lg">

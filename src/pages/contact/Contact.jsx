@@ -10,15 +10,15 @@ const ContactUs = () => {
         {/* Header Section */}
         <div className="text-start mb-10">
 
-          <p className="text-gray-600 mt-3 text-2xl font-bold">How can we assist you today?</p>
+          <p className="text-gray-600 mt-3 text-xl lg:text-2xl font-bold">How can we assist you today?</p>
         </div>
 
         <div className="flex flex-col lg:flex-row justify-between items-start gap-8">
           {/* Contact Details */}
           <div className="w-full lg:w-1/2 bg-white p-8 rounded-xl shadow-lg transform transition duration-500 hover:scale-105 hover:rotate-1 flex flex-col justify-between min-h-[450px]">
-            <h2 className="text-3xl font-bold text-gray-800 mb-6">
+            <h1 className="text-xl lg:text-3xl font-bold text-gray-800 mb-6">
               How can we <span className="text-blue-500">help you?</span>
-            </h2>
+            </h1>
             <p className="text-gray-600 mb-4">
               Fill up the form and our Team will get back to you within 24 hours.
             </p>
@@ -26,11 +26,11 @@ const ContactUs = () => {
             <ul className="space-y-5">
             {/* Address */}
             <li className="flex items-start group">
-              <span className="text-blue-500 text-2xl mr-4 mt-1 group-hover:text-blue-600 group-hover:rotate-45 transition-transform duration-500">
+              <span className="text-blue-500 text-xl lg:text-2xl mr-4 mt-1 group-hover:text-blue-600 group-hover:rotate-45 transition-transform duration-500">
                 <FaMapMarkerAlt />
               </span>
               <div>
-                <h6 className="text-xl font-semibold text-gray-800 group-hover:text-blue-600 transition-colors duration-500">
+                <h6 className="text-lg lg:text-xl font-semibold text-gray-800 group-hover:text-blue-600 transition-colors duration-500">
                   Address
                 </h6>
                 <p className="text-gray-600 group-hover:text-gray-800 transition-colors duration-500">
@@ -41,11 +41,11 @@ const ContactUs = () => {
           
             {/* Phone */}
             <li className="flex items-start group">
-              <span className="text-green-500 text-2xl mr-4 mt-1 group-hover:text-green-600 group-hover:rotate-45 transition-transform duration-500">
+              <span className="text-green-500 text-xl lg:text-2xl mr-4 mt-1 group-hover:text-green-600 group-hover:rotate-45 transition-transform duration-500">
                 <FaPhoneAlt />
               </span>
               <div>
-                <h6 className="text-xl font-semibold text-gray-800 group-hover:text-green-600 transition-colors duration-500">
+                <h6 className="text-lg lg:text-xl font-semibold text-gray-800 group-hover:text-green-600 transition-colors duration-500">
                   Phone
                 </h6>
                 <p className="text-gray-600 group-hover:text-gray-800 transition-colors duration-500">
@@ -56,11 +56,11 @@ const ContactUs = () => {
           
             {/* Email */}
             <li className="flex items-start group">
-              <span className="text-purple-500 text-2xl mr-4 mt-1 group-hover:text-purple-600 group-hover:rotate-45 transition-transform duration-500">
+              <span className="text-purple-500 text-xl lg:text-2xl mr-4 mt-1 group-hover:text-purple-600 group-hover:rotate-45 transition-transform duration-500">
                 <FaEnvelope />
               </span>
               <div>
-                <h6 className="text-xl font-semibold text-gray-800 group-hover:text-purple-600 transition-colors duration-500">
+                <h6 className="text-lg lg:text-xl font-semibold text-gray-800 group-hover:text-purple-600 transition-colors duration-500">
                   Email
                 </h6>
                 <p className="text-gray-600 group-hover:text-gray-800 transition-colors duration-500">
@@ -76,11 +76,11 @@ const ContactUs = () => {
           
             {/* WhatsApp */}
             <li className="flex items-start group">
-              <span className="text-green-500 text-2xl mr-4 mt-1 group-hover:text-green-600 group-hover:rotate-45 transition-transform duration-500">
+              <span className="text-green-500 text-xl lg:text-2xl mr-4 mt-1 group-hover:text-green-600 group-hover:rotate-45 transition-transform duration-500">
                 <FaWhatsapp />
               </span>
               <div>
-                <h6 className="text-xl font-semibold text-gray-800 group-hover:text-green-600 transition-colors duration-500">
+                <h6 className="text-lg lg:text-xl font-semibold text-gray-800 group-hover:text-green-600 transition-colors duration-500">
                   WhatsApp
                 </h6>
                 <p className="text-gray-600 group-hover:text-gray-800 transition-colors duration-500">
@@ -91,11 +91,11 @@ const ContactUs = () => {
           
             {/* Website */}
             <li className="flex items-start group">
-              <span className="text-blue-500 text-2xl mr-4 mt-1 group-hover:text-blue-600 group-hover:rotate-45 transition-transform duration-500">
+              <span className="text-blue-500 text-xl lg:text-2xl mr-4 mt-1 group-hover:text-blue-600 group-hover:rotate-45 transition-transform duration-500">
                 <GiSpiderWeb />
               </span>
               <div>
-                <h6 className="text-xl font-semibold text-gray-800 group-hover:text-blue-600 transition-colors duration-500">
+                <h6 className="text-lg lg:text-xl font-semibold text-gray-800 group-hover:text-blue-600 transition-colors duration-500">
                   Website
                 </h6>
                 <p className="text-gray-600 group-hover:text-gray-800 transition-colors duration-500">
@@ -109,7 +109,7 @@ const ContactUs = () => {
 
           {/* Contact Form */}
           <div className="w-full lg:w-1/2 bg-white p-8 rounded-xl shadow-lg transform transition duration-500 hover:scale-105 hover:rotate-1 flex flex-col justify-between min-h-[450px]">
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">
+            <h2 className="text-xl lg:text-3xl font-bold text-gray-800 mb-4">
               Send us a <span className="text-blue-500">Message</span>
             </h2>
             <p className="text-gray-600 mb-6">
