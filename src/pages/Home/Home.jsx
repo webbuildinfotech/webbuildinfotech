@@ -7,47 +7,48 @@ import AnimationBanner from '../../components/Home/AnimationBanner';
 const Home = () => {
   return (
     <div className="w-full min-h-auto  bg-gradient-to-b from-[#c0ccd6] to-[#fff] flex items-center">
-      <div className="container mx-auto px-6 py-6 relative mt-20 max-lg:mt-6">
+      <div className="container mx-auto px-6 py-6 relative">
         <div className="flex flex-col lg:flex-row justify-between items-center gap-12">
           {/* Left-Side Text */}
           <div className="flex-1 text-center lg:text-left mb-20 max-lg:mb-6">
-          <h1 className="text-2xl sm:text-4xl lg:text-4xl font-bold uppercase mb-4 leading-snug">
-            <span
-              className="block"
+            <h1 className="text-2xl sm:text-4xl lg:text-4xl font-bold uppercase mb-4 leading-snug">
+              <span
+                className="block"
+                style={{
+                  animation: "slideInLeft 6s ease-in-out infinite",
+                  animationDelay: "1s",
+                  display: "inline-block",
+                }}
+              >
+              Revolutionizing Technology,
+              </span>
+              <br />
+              <span
+                className="block"
+                style={{
+                  animation: "slideInRight 6s ease-in-out infinite",
+                  animationDelay: "1s",
+                  display: "inline-block",
+                }}
+              >
+              Empowering Businesses
+              </span>
+            </h1>
+            <p
+              className="text-md sm:text-lg lg:text-xl text-gray-600 leading-relaxed"
               style={{
-                animation: "slideInLeft 6s ease-in-out infinite",
+                animation: "fadeInText 6s ease-in-out infinite",
                 animationDelay: "1s",
-                display: "inline-block",
               }}
             >
-              Innovating the Future Of
-            </span>
-            <br />
-            <span
-              className="block"
-              style={{
-                animation: "slideInRight 6s ease-in-out infinite",
-                animationDelay: "1s",
-                display: "inline-block",
-              }}
-            >
-              Technology
-            </span>
-          </h1>
-          <p
-            className="text-md sm:text-lg lg:text-xl text-gray-600 leading-relaxed"
-            style={{
-              animation: "fadeInText 6s ease-in-out infinite",
-              animationDelay: "1s",
-            }}
-          >
-            Empowering businesses with AI-driven solutions, scalable cloud
-            infrastructure, and innovative software.
-          </p>
-    
-          {/* Keyframes for Animation */}
-          <style>
-            {`
+              Unleashing the power of AI, cloud computing,
+              and next-gen software to drive innovation, efficiency, and growth.
+              Future-proof your business with cutting-edge technology.
+            </p>
+
+            {/* Keyframes for Animation */}
+            <style>
+              {`
               @keyframes slideInLeft {
                 0% {
                   transform: translateX(-100%);
@@ -79,10 +80,10 @@ const Home = () => {
                 }
               }
             `}
-          </style>
-        </div>
+            </style>
+          </div>
           {/* Right-Side Animated Image */}
-         <AnimationBanner/>
+          <AnimationBanner />
         </div>
       </div>
 
