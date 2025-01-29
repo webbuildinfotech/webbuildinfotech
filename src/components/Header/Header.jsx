@@ -73,7 +73,7 @@ const Header = () => {
 
   return (
     <header className="bg-white shadow-md sticky top-0 z-50">
-      <div className="container mx-auto px-6 flex items-center justify-between">
+      <div className="container mx-auto px-6 flex items-center justify-between max-lg:p-2">
         <LogoHeader />
         <button
           className="lg:hidden text-2xl focus:outline-none"

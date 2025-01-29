@@ -67,7 +67,7 @@ const Layout = () => {
 
       {/* Scroll Button with Circular Progress */}
       {showScrollButton && (
-        <div className="fixed bottom-60 right-6 w-20 h-20 flex items-center justify-center z-50">
+        <div className="fixed bottom-30 right-9 w-16 h-16 flex items-center justify-center z-50">
           <svg className="absolute top-0 left-0 w-full h-full transform -rotate-90" viewBox="0 0 100 100">
             <circle className="stroke-gray-300" cx="50" cy="50" r="40" strokeWidth="4" fill="none" />
             <circle

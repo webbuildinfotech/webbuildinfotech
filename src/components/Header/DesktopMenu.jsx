@@ -112,7 +112,7 @@ const DesktopMenu = ({ menuItems, activeMenu }) => {
       <style jsx>{`
         .menu-item {
           position: relative;
-          padding: 15px 20px;
+          padding: 20px 20px;
           font-size: 18px;
           font-weight: bold;
           text-transform: capitalize;

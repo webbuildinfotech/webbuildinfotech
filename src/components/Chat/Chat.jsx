@@ -36,7 +36,7 @@ const Chatbot = () => {
       {!isChatOpen && (
         <div
           onClick={() => setIsChatOpen(true)} // Open chat UI on click
-          className="fixed bottom-20 right-8 bg-blue-500 rounded-full w-16 h-16 z-1 flex items-center justify-center cursor-pointer shadow-lg hover:bg-blue-600 transition-all"
+          className="fixed bottom-2 right-8 bg-blue-500 rounded-full w-16 h-16 z-1 flex items-center justify-center cursor-pointer shadow-lg hover:bg-blue-600 transition-all"
         >
           <img
             src="https://www.shutterstock.com/image-vector/chat-bot-logo-design-concept-600nw-2478937557.jpg"
