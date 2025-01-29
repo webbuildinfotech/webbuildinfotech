@@ -7,7 +7,7 @@ const technologies = [
     items: [
       {
         name: "React",
-        image: "https://reactjs.org/logo-og.png",
+        image: "https://cdn4.iconfinder.com/data/icons/logos-3/600/React.js_logo-512.png",
         description: "React is a JavaScript library for building fast and interactive user interfaces. Developed by Facebook, it's widely used for modern web applications.",
         link: "/technologies/react-info"
 
@@ -97,7 +97,7 @@ const technologies = [
       },
       {
         name: "Firebase",
-        image: "https://firebase.google.com/images/brand-guidelines/logo-logomark.png",
+        image: "https://firebase.google.com/static/images/brand-guidelines/logo-vertical.png",
         description: "Firebase is a platform developed by Google for creating mobile and web applications, offering real-time database and backend services.",
         link: "/technologies/firebase-info"
    
@@ -127,7 +127,10 @@ const TechnologiesPage = () => {
               {techCategory.items.map((tech, i) => (
                 <div
                   key={i}
-                  onClick={() => navigate(tech.link)} // Navigate on click
+                  onClick={() => {
+                    window.scrollTo(0, 0); // Scroll to top
+                    navigate(tech.link); // Navigate to new page
+                  }}
                   className="bg-white shadow-md rounded-lg p-6 flex flex-col items-center justify-start transition-transform duration-300 hover:scale-105 hover:shadow-lg"
                 >
                   {/* Technology Logo */}
