@@ -131,7 +131,10 @@ const MobileMenu = ({ menuItems, setIsMenuOpen }) => {
                                   <li key={subItemIndex}>
                                     <Link
                                       to={subItem.path}
-                                      onClick={() => setIsMenuOpen(false)}
+                                      onClick={() => {
+                                        setIsMenuOpen(false);
+                                        window.scrollTo(0, 0); // Scroll to top when navigating
+                                      }}
                                       className={`flex items-center gap-3 py-2 text-md 
                                         transition-all transform hover:scale-105 rounded-md
                                         ${isSubActive ? "text-blue-700 font-bold" : "text-gray-700"}

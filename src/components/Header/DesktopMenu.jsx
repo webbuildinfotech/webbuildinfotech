@@ -76,38 +76,40 @@ const DesktopMenu = ({ menuItems, activeMenu }) => {
 
 
             {/* Submenu */}
-            {item.subMenu.length > 0 && (
-              <div className="absolute left-1/2 top-full max-w-4xl w-2xl bg-white shadow-lg border-t border-gray-200 rounded-b-md opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 transform -translate-x-1/2 translate-y-4 z-50">
-                <div className="container mx-auto py-6 px-12 grid grid-cols-3 gap-8">
-                  {item.subMenu.map((subItem, subIndex) => (
-                    <div key={subIndex} className="flex flex-col">
-                      <h4 className="font-bold text-black mb-3">{subItem.title}</h4>
-                      <ul className="space-y-2">
-                        {subItem.items.map((menuItem, itemIndex) => (
-                          <li key={itemIndex}>
-                            <NavLink
-                              to={menuItem.path}
-                              className="flex items-center gap-x-2 py-2 px-4 text-black hover:bg-gray-800 hover:text-white rounded-md transition"
-                            >
-                              <span className="text-xl" style={{ color: menuItem.color }}>
-                                {menuItem.icon}
-                              </span>
-                              <span>{menuItem.name}</span>
-                            </NavLink>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  ))}
+               {/* Submenu (Appears only on hover) */}
+               {item.subMenu.length > 0 && (
+                <div className="absolute left-1/2 top-full max-w-4xl w-2xl bg-white shadow-lg border-t border-gray-200 rounded-b-md opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300 transform -translate-x-1/2 translate-y-4 z-50">
+                  <div className="container mx-auto py-6 px-12 grid grid-cols-3 gap-8">
+                    {item.subMenu.map((subItem, subIndex) => (
+                      <div key={subIndex} className="flex flex-col">
+                        <h4 className="font-bold text-black mb-3">{subItem.title}</h4>
+                        <ul className="space-y-2">
+                          {subItem.items.map((menuItem, itemIndex) => (
+                            <li key={itemIndex}>
+                              <NavLink
+                                to={menuItem.path}
+                                onClick={() => {
+                                  setIsMenuOpen(false);
+                                  window.scrollTo(0, 0); // Scroll to top when navigating
+                                }}
+                                
+                                className="flex items-center gap-x-2 py-2 px-4 text-black hover:bg-gray-800 hover:text-white rounded-md transition"
+                              >
+                                <span className="text-xl" style={{ color: menuItem.color }}>
+                                  {menuItem.icon}
+                                </span>
+                                <span>{menuItem.name}</span>
+                              </NavLink>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            )}
-            
-            
-            
-      
-          </li>
-        ))}
+              )}
+            </li>
+          ))}
       </ul>
       <style jsx>{`
         .menu-item {
