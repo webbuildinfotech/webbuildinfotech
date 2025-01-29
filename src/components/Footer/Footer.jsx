@@ -3,6 +3,7 @@ import { useInView } from 'react-intersection-observer';
 import './Footer.css';
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaWhatsapp } from 'react-icons/fa';
 import LogoHeader from '../LogoHeader/LogoHeader';
+import PostgreSQLInfo from './../Technology/Database/PostGresQl/PostgreSQLInfo';
 
 const FooterSection = ({ children, index }) => {
   const { ref, inView } = useInView({
@@ -48,11 +49,12 @@ const Footer = () => {
                 Services
               </h2>
               <ul className="mt-4 space-y-3 text-gray-700 text-lg">
-                <li>Custom Software Development</li>
-                <li>Web Application Development</li>
-                <li>Mobile Application Development</li>
-                <li>Support & Maintenance</li>
-                <li>AI & Machine Learning</li>
+                <li>Frontend Development</li>
+                <li>Backend Development</li>
+                <li>JavaScript Technologies</li>
+                <li>API Development</li>
+                <li>Mobile App Development</li>
+                <li>Cloud Solutions</li>
               </ul>
             </div>
           </FooterSection>
@@ -66,9 +68,18 @@ const Footer = () => {
               <ul className="mt-4 grid grid-cols-2 sm:grid-cols-3 gap-4 text-gray-700 text-lg">
                 <li>ReactJS</li>
                 <li>AngularJS</li>
+                <li>VueJS</li>
+                <li>HTML5</li>
+
                 <li>NodeJS</li>
-                <li>PHP</li>
-                <li>Laravel</li>
+                <li>GraphQL</li>
+                <li>ExpressJs</li>
+                <li>NextJs</li>
+
+                <li>MongoDb</li>
+                <li>MySQL</li>
+                <li>PostgreSQL</li>
+                <li>Firebase</li>
               </ul>
             </div>
           </FooterSection>

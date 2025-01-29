@@ -20,19 +20,10 @@ const Home = () => {
                   display: "inline-block",
                 }}
               >
-                Revolutionizing Technology,
-              </span>
-              <br />
-              <span
-                className="block"
-                style={{
-                  animation: "slideInRight 6s ease-in-out infinite",
-                  animationDelay: "1s",
-                  display: "inline-block",
-                }}
-              >
+                Revolutionizing Technology
+                <br />
                 Empowering Businesses
-              </span>
+              </span>    
             </h1>
             <p
               className="text-md sm:text-lg lg:text-xl text-gray-600 leading-relaxed"
