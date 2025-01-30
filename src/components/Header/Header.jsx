@@ -10,7 +10,7 @@ import { FaHome, FaCode, FaEnvelope } from "react-icons/fa"; // Example icons
 import { GiFilmProjector } from "react-icons/gi";
 
 import { FaReact, FaAngular, FaVuejs, FaHtml5, FaNodeJs, FaDatabase } from "react-icons/fa";
-import { SiGraphql, SiExpress, SiNextdotjs, SiMongodb, SiMysql, SiPostgresql, SiFirebase } from "react-icons/si";
+import { SiGraphql, SiExpress, SiNestjs, SiMongodb, SiMysql, SiPostgresql, SiFirebase } from "react-icons/si";
 import { RoutePaths } from "../../routes/constant/path";
 
 
@@ -52,7 +52,7 @@ const Header = () => {
             { name: "Node.js", path: RoutePaths.TECHNOLOGY.BACKEND.NODE, icon: <FaNodeJs />, color: "#3C873A" }, // Node Green
             { name: "GraphQL", path: RoutePaths.TECHNOLOGY.BACKEND.GRAPHQL, icon: <SiGraphql />, color: "#E10098" }, // GraphQL Pink
             { name: "Express.js", path: RoutePaths.TECHNOLOGY.BACKEND.EXPRESS, icon: <SiExpress />, color: "#444444" }, // Express Grey
-            { name: "Next.js", path: RoutePaths.TECHNOLOGY.BACKEND.NEST, icon: <SiNextdotjs />, color: "#000000" }, // Next.js Black
+            { name: "Nest.js", path: RoutePaths.TECHNOLOGY.BACKEND.NEST, icon: <SiNestjs />, color: "#E0234E" }, // Next.js Black
           ],
         },
         {

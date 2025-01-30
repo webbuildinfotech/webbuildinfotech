@@ -59,7 +59,7 @@ const Layout = () => {
     <div className="flex flex-col min-h-screen">
       <Header />
       <SocialButtons />
-      <main className={`flex-grow ${["/", "/contact"].includes(location.pathname) ? "" : "container mx-auto"}`}>
+      <main>
         <Outlet />
       </main>
       <Chatbot />

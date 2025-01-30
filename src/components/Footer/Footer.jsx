@@ -3,7 +3,8 @@ import { useInView } from 'react-intersection-observer';
 import './Footer.css';
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaWhatsapp } from 'react-icons/fa';
 import LogoHeader from '../LogoHeader/LogoHeader';
-import PostgreSQLInfo from './../Technology/Database/PostGresQl/PostgreSQLInfo';
+import { Link, useNavigate } from 'react-router-dom';
+import { RoutePaths } from '../../routes/constant/path';
 
 const FooterSection = ({ children, index }) => {
   const { ref, inView } = useInView({
@@ -14,9 +15,8 @@ const FooterSection = ({ children, index }) => {
   return (
     <div
       ref={ref}
-      className={`transition-all duration-700 ease-in-out ${
-        inView ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0'
-      }`}
+      className={`transition-all duration-700 ease-in-out ${inView ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0'
+        }`}
       style={{ transitionDelay: `${index * 200}ms` }} // Stagger effect
     >
       {children}
@@ -25,6 +25,17 @@ const FooterSection = ({ children, index }) => {
 };
 
 const Footer = () => {
+  const navigate = useNavigate()
+
+  const handleClick = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const handleNavigate = () =>{
+    navigate(RoutePaths.CONTACT)
+    handleClick()
+  }
+
   return (
     <React.Fragment>
       <div className="w-full bg-gradient-to-b from-gray-50 to-gray-100 py-12">
@@ -32,11 +43,11 @@ const Footer = () => {
           {/* Company Logo and About */}
           <FooterSection index={0}>
             <div className="flex flex-col items-start">
-              <LogoHeader/>
+              <LogoHeader />
               <p className="mt-4 text-gray-700 text-lg font-medium">
                 Want to talk about your project?
               </p>
-              <button className="bg-blue-600 text-white px-5 py-3 mt-6 rounded-full font-semibold shadow hover:bg-blue-700 hover:shadow-lg transition">
+              <button onClick={handleNavigate} className="bg-blue-600 cursor-pointer text-white px-5 py-3 mt-6 rounded-full font-semibold shadow hover:bg-blue-700 hover:shadow-lg transition">
                 Schedule A Call
               </button>
             </div>
@@ -48,7 +59,8 @@ const Footer = () => {
               <h2 className="text-xl font-bold text-gray-800 border-b-2 border-blue-600 pb-2 inline-block">
                 Services
               </h2>
-              <ul className="mt-4 space-y-3 text-gray-700 text-lg">
+              <Link to={RoutePaths.SERVICES} className="block" onClick={handleClick}>
+              <ul className="mt-4 space-y-3 text-gray-700 text-lg cursor-pointer">
                 <li>Frontend Development</li>
                 <li>Backend Development</li>
                 <li>JavaScript Technologies</li>
@@ -56,6 +68,7 @@ const Footer = () => {
                 <li>Mobile App Development</li>
                 <li>Cloud Solutions</li>
               </ul>
+            </Link>
             </div>
           </FooterSection>
 
@@ -65,21 +78,25 @@ const Footer = () => {
               <h2 className="text-xl font-bold text-gray-800 border-b-2 border-blue-600 pb-2 inline-block">
                 Technologies
               </h2>
-              <ul className="mt-4 grid grid-cols-2 sm:grid-cols-3 gap-4 text-gray-700 text-lg">
-                <li>ReactJS</li>
-                <li>AngularJS</li>
-                <li>VueJS</li>
-                <li>HTML5</li>
+              <ul className="mt-4 grid grid-cols-2 sm:grid-cols-3 gap-4 text-gray-700 text-lg" onClick={handleClick}>
+                {/* Frontend Technologies */}
+                <li><Link to={RoutePaths.TECHNOLOGY.FRONTEND.REACT} className="hover:text-blue-600">ReactJS</Link></li>
+                <li><Link to={RoutePaths.TECHNOLOGY.FRONTEND.ANGULAR} className="hover:text-blue-600">AngularJS</Link></li>
+                <li><Link to={RoutePaths.TECHNOLOGY.FRONTEND.VUE} className="hover:text-blue-600">VueJS</Link></li>
+                <li><Link to={RoutePaths.TECHNOLOGY.FRONTEND.HTML5} className="hover:text-blue-600">HTML5</Link></li>
 
-                <li>NodeJS</li>
-                <li>GraphQL</li>
-                <li>ExpressJs</li>
-                <li>NextJs</li>
+                {/* Backend Technologies */}
+                <li><Link to={RoutePaths.TECHNOLOGY.BACKEND.NODE} className="hover:text-blue-600">NodeJS</Link></li>
+                <li><Link to={RoutePaths.TECHNOLOGY.BACKEND.GRAPHQL} className="hover:text-blue-600">GraphQL</Link></li>
+                <li><Link to={RoutePaths.TECHNOLOGY.BACKEND.EXPRESS} className="hover:text-blue-600">ExpressJS</Link></li>
+                <li><Link to={RoutePaths.TECHNOLOGY.BACKEND.NEST} className="hover:text-blue-600">NestJS</Link></li>
 
-                <li>MongoDb</li>
-                <li>MySQL</li>
-                <li>PostgreSQL</li>
-                <li>Firebase</li>
+            
+                {/* Database Technologies */}
+                <li><Link to={RoutePaths.TECHNOLOGY.DATABASE.MONGO} className="hover:text-blue-600">MongoDB</Link></li>
+                <li><Link to={RoutePaths.TECHNOLOGY.DATABASE.MYSQL} className="hover:text-blue-600">MySQL</Link></li>
+                <li><Link to={RoutePaths.TECHNOLOGY.DATABASE.POSTGRES} className="hover:text-blue-600">PostgreSQL</Link></li>
+                <li><Link to={RoutePaths.TECHNOLOGY.DATABASE.FIREBASE} className="hover:text-blue-600">Firebase</Link></li>
               </ul>
             </div>
           </FooterSection>
