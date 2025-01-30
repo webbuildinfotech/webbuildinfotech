@@ -108,7 +108,7 @@ const services = [
 
 const ServicePage = () => {
   return (
-    <section className="py-16 bg-gray-300">
+    <section className="py-8 bg-gradient-to-b from-gray-300 to-gray-100">
       <div className="container mx-auto px-6 lg:px-6 p-2">
         {/* Page Header */}
         <div className="text-center mb-16">

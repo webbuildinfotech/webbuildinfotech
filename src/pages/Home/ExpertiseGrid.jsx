@@ -5,7 +5,7 @@ import { services } from "../../data/jsonData";
 
 const Services = () => {
   return (
-    <div className="w-full py-12 bg-gradient-to-b from-gray-100 to-gray-200">
+    <div className="w-full py-12 bg-gradient-to-b from-gray-300 to-gray-100">
       <div className="container mx-auto px-6">
         <div className="text-start mb-10">
           <h2 className="text-xl lg:text-3xl font-bold text-blue-800 mt-2 uppercase">

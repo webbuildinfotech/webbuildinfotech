@@ -218,7 +218,7 @@ const ProjectsWithPagination = () => {
                             <img
                                 src={project.image}
                                 alt={project.title}
-                                className="rounded-lg shadow-lg object-cover w-full h-64 lg:h-96 transition-transform duration-500 hover:scale-105"
+                                className="rounded-lg shadow-lg lg:h-4/6 object-cover transition-transform duration-500 hover:scale-105"
                             />
                         </div>
                         <div className="w-full lg:w-1/2">
