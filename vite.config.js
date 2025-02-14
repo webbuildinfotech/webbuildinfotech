@@ -8,6 +8,9 @@ export default defineConfig({
     sitemap({
       hostname: 'https://webbuildinfotech.com',
       changefreq: 'daily',
+      priority: 0.8,
+      lastmod: new Date().toISOString(),
+      exclude: ['/404', '/private/*'],
     }),
   ],
 })
