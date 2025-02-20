@@ -1,5 +1,5 @@
 import React from "react";
-import { FaAward, FaCloud, FaCode, FaGlobe, FaMobileAlt, FaMoneyBillWave, FaPlug, FaServer, FaSmile, FaTools } from "react-icons/fa";
+import { FaAward, FaCloud, FaCode, FaGlobe, FaHandshake, FaMobileAlt, FaMoneyBillWave, FaPlug, FaServer, FaSmile, FaTools } from "react-icons/fa";
 
 export const projects = [
     {
@@ -123,37 +123,36 @@ export const services = [
     },
   ];
 
-export const stats = [
+  export const stats = [
     {
       icon: <FaAward className="rotate-icon text-blue-500" />,
-      value: 6,
-      label: "Years of Legacy",
+      value: 7,
+      label: "Years of Experience",
       bgColor: "bg-blue-100",
     },
     {
       icon: <FaMobileAlt className="rotate-icon text-green-500" />,
-      value: 800,
-      label: "Projects",
+      value: 50,
+      label: "Completed Projects",
       bgColor: "bg-green-100",
     },
     {
       icon: <FaSmile className="rotate-icon text-orange-500" />,
-      value: 1000,
+      value: 45,
       label: "Happy Clients",
       bgColor: "bg-orange-100",
     },
     {
       icon: <FaGlobe className="rotate-icon text-purple-500" />,
-      value: 5,
-      label: "Employees",
+      value: 10,
+      label: "Team Members",
       bgColor: "bg-purple-100",
     },
     {
-      icon: <FaMoneyBillWave className="rotate-icon text-teal-500" />,
-      value: 1,
-      suffix: "B+",
-      label: "Revenue Generated",
-      bgColor: "bg-teal-100",
+      icon: <FaHandshake className="rotate-icon text-emerald-500" />,
+      value: 95,
+      label: "Client Retention Rate %",
+      bgColor: "bg-emerald-100",
     },
   ];
 
