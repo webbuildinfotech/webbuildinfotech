@@ -1,5 +1,10 @@
 import React from "react";
-import { FaAward, FaCloud, FaCode, FaGlobe, FaHandshake, FaMobileAlt, FaMoneyBillWave, FaPlug, FaServer, FaSmile, FaTools } from "react-icons/fa";
+import { FaAward, FaCloud,  FaShieldAlt,
+  FaDatabase,
+  FaNetworkWired,
+  FaSearch,
+  FaChartLine,
+  FaLock,FaCode, FaGlobe, FaHandshake, FaMobileAlt, FaMoneyBillWave, FaPlug, FaServer, FaSmile, FaTools } from "react-icons/fa";
 
 export const projects = [
     {
@@ -16,51 +21,51 @@ export const projects = [
     },
     {
       id: 3,
-      title: "5By5Winner",
-      description: "A gamified application for tracking personal achievements and goals.",
-      image: "/web/w5.png",
+      title: "EmployHer",
+      description: "Empowering women in the workforce with job opportunities, mentorship programs, and resources to excel in their careers.",
+      image: "/web/empher.png",
     },
     {
       id: 4,
-      title: "Real Estate App",
-      description: "A modern real estate platform for property listings and management.",
-      image: "https://ripenapps.com/blog/wp-content/uploads/2024/07/How-A-Real-Estate-App-Can-Expand-Your-Real-Estate-Business-scaled.webp",
+      title: "Eminence IT",
+      description: "Providing innovative IT solutions, software development, and technical expertise for businesses of all sizes.",
+      image: "/web/empower.png",
     },
     {
       id:5,
-      title: "Creative Design Agency",
-      description: "A portfolio site showcasing design projects and creative work.",
-      image: "https://htmlburger.com/blog/wp-content/uploads/2023/05/10-design-agency-websites-setting-that-set-the-industry-standard.jpg",
+      title: "HIPAA Mart",
+      description: "A marketplace for HIPAA-compliant healthcare products and services, ensuring quality and security.",
+      image: "/web/hipp.png",
     },
   
     {
       id: 6,
-      title: "Cloud Migration Tool",
-      description: "Migrated legacy systems to modern, scalable cloud platforms.",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCV_3yRtAFOS0sLfWZQTPwOHNGSuccHejxFw&s",
+      title: "Render Health",
+      description: "A healthcare platform enabling seamless communication between patients and providers with advanced features.",
+      image: "/web/render.png",
     },
     {
       id: 7,
-      title: "Task Manager Pro",
-      description: "A productivity app for managing daily tasks efficiently.",
-      image: "https://camo.envatousercontent.com/3f51612a6e8f59a9e9a30eb52a79963b6dcc16a1/68747470733a2f2f7265732e636c6f7564696e6172792e636f6d2f726f62696e62642f696d6167652f75706c6f61642f76313730393633333533382f636f646563616e796f6e2f746d702f6b616e62616e5f626f6172642e706e67",
+      title: "Webbuild Infotech",
+      description: "Transform your digital presence with our expert web development services. We specialize in AI integration, cloud solutions, and custom software development to drive your business forward.",
+      image: "/web/webbuild.png",
     },
     {
       id: 8,
-      title: "Ecommerce Platform",
-      description: "A seamless online shopping experience for users.",
-      image: "https://www.tidio.com/wp-content/uploads/6-woocommerce.png"
+      title: "GREENPAD ACADEMY",
+      description: "Greenpad Academy offers accredited courses in sustainability leadership and management, empowering individuals and businesses with essential sustainability insights. Their programs are designed to foster environmental responsibility and sustainable business practices.",
+      image: "/web/greenpadacadamy.png",
     },
    
     {
       id: 9,
-      title: "Finance Tracker App",
-      description: "A mobile app for tracking expenses and managing budgets.",
-      image: "https://assets.gqindia.com/photos/608c05836e6a489a62cd2549/master/w_1600%2Cc_limit/walnut-app.jpg",
+      title: "5by5 Winner",
+      description: "5by5 Winner is a hybrid bingo game where you can win prizes easily. Buy tickets and participate in the draw. Winners are guaranteed in every round. The more you play, the more you win!",
+      image: "/web/5By5.png",
     },
   ];
 
-export const services = [
+  export const services = [
     {
       id: "01",
       title: "Frontend Development",
@@ -121,6 +126,66 @@ export const services = [
       hoverFrom: "from-blue-400",
       hoverTo: "to-blue-600",
     },
+    {
+      id: "07",
+      title: "Cybersecurity & Data Protection",
+      description:
+        "Enhancing security through encryption, firewalls, and advanced threat detection to safeguard sensitive data.",
+      icon: <FaShieldAlt />,
+      colors: "text-red-500 bg-red-100",
+      hoverFrom: "from-red-500",
+      hoverTo: "to-red-700",
+    },
+    {
+      id: "08",
+      title: "Database Management",
+      description:
+        "Expertise in designing, managing, and optimizing SQL and NoSQL databases for scalability and efficiency.",
+      icon: <FaDatabase />,
+      colors: "text-yellow-500 bg-yellow-100",
+      hoverFrom: "from-yellow-500",
+      hoverTo: "to-yellow-700",
+    },
+    {
+      id: "09",
+      title: "DevOps & Infrastructure",
+      description:
+        "Implementing CI/CD pipelines, containerization with Docker & Kubernetes, and automated cloud deployments.",
+      icon: <FaNetworkWired />,
+      colors: "text-indigo-500 bg-indigo-100",
+      hoverFrom: "from-indigo-500",
+      hoverTo: "to-indigo-700",
+    },
+    {
+      id: "10",
+      title: "SEO & Digital Marketing",
+      description:
+        "Boosting online presence through SEO optimization, content marketing, and performance analytics.",
+      icon: <FaSearch />,
+      colors: "text-pink-500 bg-pink-100",
+      hoverFrom: "from-pink-500",
+      hoverTo: "to-pink-700",
+    },
+    {
+      id: "11",
+      title: "Business Intelligence & Analytics",
+      description:
+        "Helping businesses make data-driven decisions through AI, data visualization, and predictive analytics.",
+      icon: <FaChartLine />,
+      colors: "text-gray-600 bg-gray-200",
+      hoverFrom: "from-gray-600",
+      hoverTo: "to-gray-800",
+    },
+    {
+      id: "12",
+      title: "IT Security & Compliance",
+      description:
+        "Ensuring regulatory compliance and protecting IT assets through penetration testing and security audits.",
+      icon: <FaLock />,
+      colors: "text-emerald-500 bg-emerald-100",
+      hoverFrom: "from-emerald-500",
+      hoverTo: "to-emerald-700",
+    },
   ];
 
   export const stats = [
@@ -156,20 +221,58 @@ export const services = [
     },
   ];
 
-export const techLogos = [
-  { name: "React", src: "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg", category: "Frontend" },
-  { name: "Angular", src: "https://upload.wikimedia.org/wikipedia/commons/c/cf/Angular_full_color_logo.svg", category: "Frontend" },
-  { name: "HTML", src: "https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg", category: "Frontend" },
-  { name: "Vue.js", src: "https://upload.wikimedia.org/wikipedia/commons/9/95/Vue.js_Logo_2.svg", category: "Frontend" },
+  export const techLogos = [
+    // Frontend Technologies (12)
+    { name: "React", src: "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg", category: "Frontend" },
+    { name: "Angular", src: "https://upload.wikimedia.org/wikipedia/commons/c/cf/Angular_full_color_logo.svg", category: "Frontend" },
+    { name: "Vue.js", src: "https://upload.wikimedia.org/wikipedia/commons/9/95/Vue.js_Logo_2.svg", category: "Frontend" },
+    { name: "HTML5", src: "https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg", category: "Frontend" },
+    { name: "CSS3", src: "https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg", category: "Frontend" },
+    { name: "Svelte", src: "https://upload.wikimedia.org/wikipedia/commons/1/1b/Svelte_Logo.svg", category: "Frontend" },
+    { name: "Next.js", src: "https://upload.wikimedia.org/wikipedia/commons/8/8e/Nextjs-logo.svg", category: "Frontend" },
+    { name: "Nuxt.js", src: "https://upload.wikimedia.org/wikipedia/commons/a/ae/Nuxt_logo.svg", category: "Frontend" },
+    { name: "Tailwind CSS", src: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg", category: "Frontend" },
+    { name: "Bootstrap", src: "https://upload.wikimedia.org/wikipedia/commons/b/b2/Bootstrap_logo.svg", category: "Frontend" },
+    { name: "Material UI", src: "https://cdn.worldvectorlogo.com/logos/material-ui-1.svg", category: "Frontend" },
+    { name: "Chakra UI", src: "https://logowik.com/content/uploads/images/chakra-ui2348.logowik.com.webp", category: "Frontend" },
+  
+    // Backend Technologies (15)
+    { name: "Node.js", src: "https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg", category: "Backend" },
+    { name: "Express.js", src: "https://upload.wikimedia.org/wikipedia/commons/6/64/Expressjs.png", category: "Backend" },
+    { name: "GraphQL", src: "https://upload.wikimedia.org/wikipedia/commons/1/17/GraphQL_Logo.svg", category: "Backend" },
+    { name: "NestJS", src: "https://nestjs.com/img/logo-small.svg", category: "Backend" },
+    { name: "Socket.io", src: "https://upload.wikimedia.org/wikipedia/commons/9/96/Socket-io.svg", category: "Backend" },
+    { name: "PHP", src: "https://upload.wikimedia.org/wikipedia/commons/2/27/PHP-logo.svg", category: "Backend" },
+    { name: "Laravel", src: "https://upload.wikimedia.org/wikipedia/commons/9/9a/Laravel.svg", category: "Backend" },
+    { name: "CodeIgniter", src: "https://upload.wikimedia.org/wikipedia/commons/9/9a/CodeIgniter_logo.svg", category: "Backend" },
+    { name: "REST API", src: "https://upload.wikimedia.org/wikipedia/commons/d/d9/RestAPI.png", category: "Backend" },
+    
+    // Database Technologies (12)
+    { name: "MongoDB", src: "https://upload.wikimedia.org/wikipedia/commons/9/93/MongoDB_Logo.svg", category: "Database" },
+    { name: "MySQL", src: "https://www.vectorlogo.zone/logos/mysql/mysql-official.svg", category: "Database" },
+    { name: "PostgreSQL", src: "https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg", category: "Database" },
+    { name: "Firebase", src: "https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg", category: "Database" },
+    { name: "Redis", src: "https://upload.wikimedia.org/wikipedia/commons/6/6b/Redis_Logo.svg", category: "Database" },
+    { name: "Cassandra", src: "https://upload.wikimedia.org/wikipedia/commons/5/5e/Apache_Cassandra_logo.svg", category: "Database" },
+    { name: "DynamoDB", src: "https://upload.wikimedia.org/wikipedia/commons/f/fd/DynamoDB.png", category: "Database" },
+    { name: "MariaDB", src: "https://upload.wikimedia.org/wikipedia/commons/9/9e/MariaDB_logo.svg", category: "Database" },
+    { name: "CockroachDB", src: "https://upload.wikimedia.org/wikipedia/commons/f/f3/CockroachDB_logo.svg", category: "Database" },
+    { name: "OracleDB", src: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Oracle_logo.svg", category: "Database" },
+    { name: "Elasticsearch", src: "https://upload.wikimedia.org/wikipedia/commons/4/4e/Elastic_Stack_logo.svg", category: "Database" },
+    // { name: "Neo4j", src: "https://upload.wikimedia.org/wikipedia/commons/3/3d/Neo4j-logo_color.png", category: "Database" },
 
-  { name: "Node.js", src: "https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg", category: "Backend" },
-  { name: "GraphQL", src: "https://upload.wikimedia.org/wikipedia/commons/1/17/GraphQL_Logo.svg", category: "Backend" },
-  { name: "NestJS", src: "https://nestjs.com/img/logo-small.svg", category: "Backend" },
-  { name: "Socket.io", src: "https://upload.wikimedia.org/wikipedia/commons/9/96/Socket-io.svg", category: "Backend" },
-
-  { name: "MongoDB", src: "https://upload.wikimedia.org/wikipedia/commons/9/93/MongoDB_Logo.svg", category: "Database" },
-  { name: "MySQL", src: "https://www.vectorlogo.zone/logos/mysql/mysql-official.svg", category: "Database" },
-  { name: "PostgreSQL", src: "https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg", category: "Database" },
-  { name: "Firebase", src: "https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg", category: "Database" },
-
-];
+    // DevOps & Tools (12)
+  { name: "Git", src: "https://upload.wikimedia.org/wikipedia/commons/e/e0/Git-logo.svg", category: "DevOps & Tools" },
+  { name: "GitHub", src: "https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg", category: "DevOps & Tools" },
+  { name: "Bitbucket", src: "https://upload.wikimedia.org/wikipedia/commons/c/c7/Bitbucket_Logo.svg", category: "DevOps & Tools" },
+  { name: "Docker", src: "https://upload.wikimedia.org/wikipedia/commons/4/4e/Docker_%28container_engine%29_logo.svg", category: "DevOps & Tools" },
+  { name: "CI/CD", src: "https://upload.wikimedia.org/wikipedia/commons/0/06/Continuous_Integration.svg", category: "DevOps & Tools" },
+  { name: "AWS", src: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg", category: "DevOps & Tools" },
+  { name: "S3 Bucket", src: "https://upload.wikimedia.org/wikipedia/commons/d/db/AWS_Simple_Icons_Storage_Amazon_S3.svg", category: "DevOps & Tools" },
+  { name: "cPanel", src: "https://upload.wikimedia.org/wikipedia/commons/3/3e/CPanel_logo.svg", category: "DevOps & Tools" },
+  { name: "SSH", src: "https://upload.wikimedia.org/wikipedia/commons/5/5a/OpenSSH_logo.svg", category: "DevOps & Tools" },
+  { name: "Jira", src: "https://upload.wikimedia.org/wikipedia/en/8/8a/Jira_Logo.svg", category: "DevOps & Tools" },
+  { name: "Trello", src: "https://upload.wikimedia.org/wikipedia/commons/5/5a/Trello-logo-blue.svg", category: "DevOps & Tools" },
+  { name: "Agile", src: "https://upload.wikimedia.org/wikipedia/commons/8/8c/Agile-logo.svg", category: "DevOps & Tools" },
+  ];
+  

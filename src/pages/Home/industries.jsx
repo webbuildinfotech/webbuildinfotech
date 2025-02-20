@@ -7,42 +7,57 @@ import {
   FaGraduationCap, // Education & Learning
   FaHeartbeat, // Health & Fitness
   FaRocket, // Startups
+  FaPlane, // Travel & Tourism
+  FaGamepad, // Gaming & Entertainment
+  FaCode, // IT & Software
+  FaStethoscope, // Healthcare & Medical
+  FaCar, // Automotive
 } from "react-icons/fa";
 
 const industries = [
-  { name: "Retail & Ecommerce", icon: <FaShoppingCart />, color: "text-blue-500" },
-  { name: "Finance & Marketing", icon: <FaChartLine />, color: "text-green-500" },
-  { name: "Real Estate & Construction", icon: <FaBuilding />, color: "text-teal-500" },
-  { name: "Food & Hospitality", icon: <FaUtensils />, color: "text-yellow-500" },
-  { name: "Education & Learning", icon: <FaGraduationCap />, color: "text-purple-500" },
-  { name: "Health & Fitness", icon: <FaHeartbeat />, color: "text-orange-500" },
-  { name: "Startups", icon: <FaRocket />, color: "text-pink-500" },
+  { name: "Retail & Ecommerce", icon: <FaShoppingCart />, color: "text-indigo-600", bg: "bg-indigo-100" },
+  { name: "Finance & Marketing", icon: <FaChartLine />, color: "text-green-600", bg: "bg-green-100" },
+  { name: "Real Estate & Construction", icon: <FaBuilding />, color: "text-blue-600", bg: "bg-blue-100" },
+  { name: "Food & Hospitality", icon: <FaUtensils />, color: "text-yellow-600", bg: "bg-yellow-100" },
+  { name: "Education & Learning", icon: <FaGraduationCap />, color: "text-purple-600", bg: "bg-purple-100" },
+  { name: "Health & Fitness", icon: <FaHeartbeat />, color: "text-red-600", bg: "bg-red-100" },
+  { name: "Startups", icon: <FaRocket />, color: "text-pink-600", bg: "bg-pink-100" },
+  { name: "Travel & Tourism", icon: <FaPlane />, color: "text-teal-600", bg: "bg-teal-100" },
+  { name: "Gaming & Entertainment", icon: <FaGamepad />, color: "text-orange-600", bg: "bg-orange-100" },
+  { name: "IT & Software", icon: <FaCode />, color: "text-cyan-600", bg: "bg-cyan-100" },
+  { name: "Healthcare & Medical", icon: <FaStethoscope />, color: "text-lime-600", bg: "bg-lime-100" },
+  { name: "Automotive", icon: <FaCar />, color: "text-amber-600", bg: "bg-amber-100" },
 ];
 
 const IndustryCards = () => {
   return (
-    <div className="w-full py-12 bg-gradient-to-b from-[#c0ccd6] to-[#918d8d] flex items-center">
+    <div className="w-full py-20 bg-gradient-to-b from-[#453f86] via-gray-700 to-gray-200 flex items-center">
       <div className="container mx-auto px-6">
-        <div className="text-start mb-10">
-          <h2 className="text-xl lg:text-3xl font-bold text-blue-800 mt-2 uppercase">
+        {/* Header Section */}
+        <div className="text-center mb-14">
+          <h2 className="text-4xl font-extrabold text-white uppercase tracking-wide">
             Work for Any Industry
           </h2>
-          <h6 className="text-lg font-semibold text-gray-400">
-            Experience Across Different Industries
-          </h6>
+          <p className="text-lg text-gray-300 mt-2">
+            Experience Across Multiple Sectors
+          </p>
         </div>
-        {/* Responsive Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+
+        {/* Grid Layout */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-8">
           {industries.map((industry, index) => (
             <div
               key={index}
-              className={`flex flex-col items-center justify-center p-6 bg-white rounded-lg shadow hover:shadow-lg transform hover:scale-105 transition duration-300 ease-in-out`}
+              className={`flex flex-col items-center justify-center p-8 rounded-xl shadow-xl transform transition-all duration-500 ease-in-out hover:scale-110 hover:shadow-2xl ${industry.bg}`}
+              style={{ animation: `fadeInUp 0.6s ease-out ${index * 0.1}s both` }}
             >
-              {/* Icon with Rotate and Reveal Animation */}
-              <div className={`text-4xl sm:text-5xl lg:text-6xl ${industry.color} animate-rotate-reveal`}>
+              {/* Animated Icon */}
+              <div className={`text-5xl lg:text-6xl ${industry.color} animate-bounce`}>
                 {industry.icon}
               </div>
-              <h4 className="mt-4 text-md sm:text-lg lg:text-xl font-semibold text-gray-800 text-center">
+
+              {/* Industry Name */}
+              <h4 className="mt-5 text-lg lg:text-xl font-semibold text-gray-800 text-center">
                 {industry.name}
               </h4>
             </div>
@@ -50,25 +65,31 @@ const IndustryCards = () => {
         </div>
       </div>
 
-      {/* Custom Keyframes for Rotate and Reveal Animation */}
+      {/* Animations */}
       <style>
         {`
-          @keyframes rotate-reveal {
+          @keyframes fadeInUp {
             0% {
-              transform: scale(0.5) rotate(0deg);
               opacity: 0;
-            }
-            50% {
-              transform: scale(1.2) rotate(180deg);
-              opacity: 0.5;
+              transform: translateY(30px);
             }
             100% {
-              transform: scale(1) rotate(360deg);
               opacity: 1;
+              transform: translateY(0);
             }
           }
-          .animate-rotate-reveal {
-            animation: rotate-reveal 4s infinite;
+
+          .animate-bounce {
+            animation: bounce 3s infinite ease-in-out;
+          }
+
+          @keyframes bounce {
+            0%, 100% {
+              transform: translateY(0);
+            }
+            50% {
+              transform: translateY(-30px);
+            }
           }
         `}
       </style>

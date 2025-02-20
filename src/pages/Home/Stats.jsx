@@ -14,7 +14,8 @@ const StatsComponent = () => {
   }, []);
 
   return (
-    <div className="w-full py-12 bg-gradient-to-b from-gray-100 to-gray-50">
+    
+    <div className="w-full py-12 bg-gradient-to-b from-[#f9fafb] via-[#eee] to-[#bcb8ea6b]">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 lg:gap-8">
           {stats.map((stat, index) => (

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { techLogos } from "../../data/jsonData";
 
-
 const TechLogos = () => {
   const [rotatingLogos, setRotatingLogos] = useState(() => {
     return techLogos.reduce((acc, tech) => {
@@ -23,40 +22,42 @@ const TechLogos = () => {
         });
         return updatedLogos;
       });
-    }, 4000);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className="w-full py-12 bg-gradient-to-b from-blue-100 to-purple-100">
+    <div className="w-full py-20 bg-gradient-to-b from-gray-200 via-gray-300 to-gray-100 flex items-center">
+
+    {/* //  <div className="w-full py-16 bg-gradient-to-b from-gray-400 to-gray-200">  */}
       <div className="container mx-auto px-6">
-        <h2 className="text-xl lg:text-3xl font-bold text-blue-800 mb-6 uppercase text-start">
+        {/* Header Title */}
+        <h2 className="text-4xl font-extrabold text-white-900 text-center uppercase mb-10">
           Technologies We Work With
         </h2>
 
         {Object.keys(rotatingLogos).map((category, index) => (
-        
           <div key={index} className="mb-12">
-          <h3 className="text-2xl font-semibold mb-4 text-start relative group">
-          <span className="text-lg lg:text-xl bg-gradient-to-r from-blue-400">
-            {category} Technologies
-          </span>
-          </h3>
+            {/* Category Title */}
+            <h3 className="text-2xl font-semibold mb-6 text-gray-700 text-left">
+              <span className="text-blue-600 font-bold">{category}</span> Technologies
+            </h3>
 
-            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* Tech Logos Grid */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6">
               {rotatingLogos[category].map((logo, logoIndex) => (
                 <div
                   key={logoIndex}
-                  className="flex justify-center items-center p-6 bg-white shadow-md rounded-lg transition-all duration-1000 ease-in-out transform hover:scale-110 hover:rotate-3"
+                  className="flex justify-center items-center p-6 bg-white shadow-lg rounded-xl transition-all duration-500 transform hover:scale-110 hover:shadow-2xl hover:rotate-2"
                   style={{
-                    animation: `fadeInOut 4s ${logoIndex * 0.2}s infinite`,
+                    animation: `fadeInOut 5s ${logoIndex * 0.2}s infinite ease-in-out`,
                   }}
                 >
                   <img
                     src={logo.src}
                     alt={logo.name}
-                    className="w-20 h-20 object-contain transform rotate-animation"
+                    className="w-16 h-16 lg:w-20 lg:h-20 object-contain transition-transform duration-700 ease-in-out hover:rotate-6"
                   />
                 </div>
               ))}
@@ -64,16 +65,18 @@ const TechLogos = () => {
           </div>
         ))}
       </div>
+
+      {/* Keyframe Animations */}
       <style>
         {`
           @keyframes fadeInOut {
             0%, 100% {
-              opacity: 999;
-         
+              opacity: 1;
+              transform: scale(1);
             }
             50% {
-              opacity: 999;
-              transform: scale(1);
+              opacity: 0.9;
+              transform: scale(1.05);
             }
           }
 

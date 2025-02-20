@@ -253,7 +253,7 @@ const ProjectsWithPagination = () => {
                             <img
                                 src={project.image}
                                 alt={project.title}
-                                className="w-full h-[400px] object-cover hover:scale-105 transition-transform duration-500"
+                                className="object-cover hover:scale-105 transition-transform duration-500"
                             />
                         </div>
                         <div className="w-full lg:w-1/2 space-y-6">
