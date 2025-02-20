@@ -5,12 +5,6 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   plugins: [
     tailwindcss(),
-<<<<<<< HEAD
-    // sitemap({
-      // hostname: 'https://webbuildinfotech.com',
-      // changefreq: 'daily',
-    // }),
-=======
     sitemap({
       hostname: 'https://webbuildinfotech.com',
       changefreq: 'daily',
@@ -18,6 +12,5 @@ export default defineConfig({
       lastmod: new Date().toISOString(),
       exclude: ['/404', '/private/*'],
     }),
->>>>>>> a9caa68f60cf53e895a3464df9e26a6deaa6d835
   ],
 })
