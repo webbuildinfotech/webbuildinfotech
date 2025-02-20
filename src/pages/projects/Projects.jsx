@@ -7,20 +7,6 @@ AOS.init();
 
 const projectsData = [
     {
-        title: "RG Techno",
-        category: "Technology Solutions",
-        description:
-            "RG Techno provides end-to-end technology solutions for businesses, including hardware integration, software development, and IT consulting.",
-        features: [
-            "Custom Software Solutions",
-            "Hardware Integration Services",
-            "Technical Support",
-            "Business IT Consulting",
-        ],
-        image: "WebSites/rg.png",
-        link: "http://rg-techno.com/",
-    },
-    {
         title: "Autopilot",
         category: "Marketing Automation",
         description:
@@ -35,20 +21,6 @@ const projectsData = [
         link: "https://autopilot.io/",
     },
     {
-        title: "Empact",
-        category: "Community Engagement",
-        description:
-            "A platform for building strong communities with tools for collaboration, event management, and social engagement.",
-        features: [
-            "Event Management Tools",
-            "Social Media Integration",
-            "Real-Time Communication",
-            "Customizable Dashboards",
-        ],
-        image: "WebSites/Impact.png",
-        link: "https://empact.online/",
-    },
-    {
         title: "EmployHer",
         category: "Job Platform",
         description:
@@ -61,6 +33,49 @@ const projectsData = [
         ],
         image: "WebSites/empher.png",
         link: "https://www.employher.com/",
+    },
+    {
+        title: "HIPAA Mart",
+        category: "Healthcare Marketplace",
+        description:
+            "A marketplace for HIPAA-compliant healthcare products and services, ensuring quality and security.",
+        features: [
+            "HIPAA-Compliant Products",
+            "Verified Suppliers",
+            "Secure Transactions",
+            "Customizable Order Options",
+        ],
+        image: "WebSites/hipp.png",
+        link: "https://www.hipaamart.com/",
+    },
+    {
+        title: "RG Techno",
+        category: "Technology Solutions",
+        description:
+            "RG Techno provides end-to-end technology solutions for businesses, including hardware integration, software development, and IT consulting.",
+        features: [
+            "Custom Software Solutions",
+            "Hardware Integration Services",
+            "Technical Support",
+            "Business IT Consulting",
+        ],
+        image: "WebSites/rg.png",
+        link: "http://rg-techno.com/",
+    },
+    
+    {
+        title: "Empact",
+        category: "Community Engagement",
+        description:
+            "A platform for building strong communities with tools for collaboration, event management, and social engagement.",
+        features: [
+            "Event Management Tools",
+            "Social Media Integration",
+            "Real-Time Communication",
+            "Customizable Dashboards",
+        ],
+        image: "WebSites/Impact.png",
+        link: "https://empact.online/",
     },
     {
         title: "Eminence IT",
@@ -147,20 +162,6 @@ const projectsData = [
         link: "https://studkz.pro/",
     },
     {
-        title: "HIPAA Mart",
-        category: "Healthcare Marketplace",
-        description:
-            "A marketplace for HIPAA-compliant healthcare products and services, ensuring quality and security.",
-        features: [
-            "HIPAA-Compliant Products",
-            "Verified Suppliers",
-            "Secure Transactions",
-            "Customizable Order Options",
-        ],
-        image: "WebSites/hipp.png",
-        link: "https://www.hipaamart.com/",
-    },
-    {
         title: "Velomärkte",
         category: "Marketplace",
         description:
@@ -178,17 +179,22 @@ const projectsData = [
 
 const ProjectsWithPagination = () => {
     const [currentPage, setCurrentPage] = useState(1);
-    const projectsPerPage = 8;
+    const [selectedCategory, setSelectedCategory] = useState('All');
+    const projectsPerPage = 6; // Reduced for better presentation
+
+    // Get unique categories
+    const categories = ['All', ...new Set(projectsData.map(project => project.category))];
+
+    // Filter projects based on category
+    const filteredProjects = selectedCategory === 'All'
+        ? projectsData
+        : projectsData.filter(project => project.category === selectedCategory);
 
     // Pagination Logic
     const indexOfLastProject = currentPage * projectsPerPage;
     const indexOfFirstProject = indexOfLastProject - projectsPerPage;
-    const currentProjects = projectsData.slice(
-        indexOfFirstProject,
-        indexOfLastProject
-    );
-
-    const totalPages = Math.ceil(projectsData.length / projectsPerPage);
+    const currentProjects = filteredProjects.slice(indexOfFirstProject, indexOfLastProject);
+    const totalPages = Math.ceil(filteredProjects.length / projectsPerPage);
 
     const handleNext = () => {
         if (currentPage < totalPages) {
@@ -203,74 +209,124 @@ const ProjectsWithPagination = () => {
     };
 
     return (
-        <div className="container mx-auto px-6 py-12">
-            <h2 className="text-3xl lg:text-4xl font-bold text-center text-blue-700 mb-10">Our Projects</h2>
-            <div className="grid gap-16">
+        <div className="container mx-auto px-4 py-16 max-w-7xl">
+            <div className="text-center mb-16">
+                <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+                    Our Featured Projects
+                </h2>
+                <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+                    Discover our portfolio of innovative solutions across various industries
+                </p>
+            </div>
+
+            {/* Category Filter */}
+            <div className="flex flex-wrap justify-center gap-4 mb-12">
+                {categories.map((category) => (
+                    <button
+                        key={category}
+                        onClick={() => {
+                            setSelectedCategory(category);
+                            setCurrentPage(1);
+                        }}
+                        className={`px-6 py-2 rounded-full transition-all duration-300 ${
+                            selectedCategory === category
+                                ? 'bg-blue-600 text-white shadow-lg'
+                                : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                        }`}
+                    >
+                        {category}
+                    </button>
+                ))}
+            </div>
+
+            <div className="grid gap-12">
                 {currentProjects.map((project, index) => (
                     <div
                         key={index}
-                        className={`flex flex-col lg:flex-row items-center gap-8 ${index % 2 === 1 ? "lg:flex-row-reverse" : ""
-                            }`}
+                        className={`flex flex-col lg:flex-row items-center gap-12 bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 ${
+                            index % 2 === 1 ? "lg:flex-row-reverse" : ""
+                        }`}
                         data-aos="fade-up"
-                        data-aos-duration="1000"
+                        data-aos-duration="800"
                     >
-                        <div className="w-full lg:w-1/2">
+                        <div className="w-full lg:w-1/2 overflow-hidden rounded-xl">
                             <img
                                 src={project.image}
                                 alt={project.title}
-                                className="rounded-lg shadow-lg lg:h-4/6 object-cover transition-transform duration-500 hover:scale-105"
+                                className="w-full h-[400px] object-cover hover:scale-105 transition-transform duration-500"
                             />
                         </div>
-                        <div className="w-full lg:w-1/2">
-                            <span className="text-sm font-semibold text-blue-600 bg-blue-100 px-4 py-1 rounded-full inline-block mb-4">
+                        <div className="w-full lg:w-1/2 space-y-6">
+                            <span className="text-sm font-semibold text-blue-600 bg-blue-50 px-4 py-2 rounded-full">
                                 {project.category}
                             </span>
-                            <h3 className="text:2xl lg:text-3xl font-bold text-gray-800">
+                            <h3 className="text-3xl font-bold text-gray-900">
                                 {project.title}
                             </h3>
-                            <p className="text-gray-600 mt-4">{project.description}</p>
-                            <ul className="list-disc pl-5 space-y-2 mt-4 text-gray-600">
-                                {project.features.map((feature, i) => (
-                                    <li key={i}>{feature}</li>
-                                ))}
-                            </ul>
+                            <p className="text-gray-600 text-lg leading-relaxed">
+                                {project.description}
+                            </p>
+                            <div className="space-y-4">
+                                <h4 className="font-semibold text-gray-900">Key Features:</h4>
+                                <ul className="grid grid-cols-2 gap-3">
+                                    {project.features.map((feature, i) => (
+                                        <li key={i} className="flex items-center text-gray-600">
+                                            <svg className="w-5 h-5 text-blue-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+                                            </svg>
+                                            {feature}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
                             <a
                                 href={project.link}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="mt-6 inline-block text-blue-600 hover:text-blue-800 font-semibold"
+                                className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-300"
                             >
-                                View Project →
+                                View Project
+                                <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                                </svg>
                             </a>
                         </div>
                     </div>
                 ))}
             </div>
 
-            {/* Pagination */}
-            <div className="flex justify-center items-center gap-4 mt-8">
+            {/* Enhanced Pagination */}
+            <div className="flex justify-center items-center gap-6 mt-16">
                 <button
                     onClick={handlePrevious}
                     disabled={currentPage === 1}
-                    className={`px-4 py-2 rounded-lg font-semibold ${currentPage === 1
-                            ? "bg-gray-300 text-gray-500 cursor-not-allowed"
-                            : "bg-blue-600 text-white hover:bg-blue-700"
-                        }`}
+                    className={`flex items-center px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
+                        currentPage === 1
+                            ? "bg-gray-100 text-gray-400 cursor-not-allowed"
+                            : "bg-blue-600 text-white hover:bg-blue-700 shadow-md hover:shadow-lg"
+                    }`}
                 >
+                    <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7"/>
+                    </svg>
                     Previous
                 </button>
-                <span className="text-gray-600">
+                <span className="text-gray-600 font-medium">
                     Page {currentPage} of {totalPages}
                 </span>
                 <button
                     onClick={handleNext}
                     disabled={currentPage === totalPages}
-                    className={`px-4 py-2 rounded-lg font-semibold ${currentPage === totalPages
-                            ? "bg-gray-300 text-gray-500 cursor-not-allowed"
-                            : "bg-blue-600 text-white hover:bg-blue-700"
-                        }`}
+                    className={`flex items-center px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
+                        currentPage === totalPages
+                            ? "bg-gray-100 text-gray-400 cursor-not-allowed"
+                            : "bg-blue-600 text-white hover:bg-blue-700 shadow-md hover:shadow-lg"
+                    }`}
                 >
                     Next
+                    <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/>
+                    </svg>
                 </button>
             </div>
         </div>
