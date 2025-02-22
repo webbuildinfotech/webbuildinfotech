@@ -4,7 +4,7 @@ import Header from './Header/Header';
 import Footer from './Footer/Footer';
 import SocialButtons from './SocialButtons/SocialButtons';
 import { CgChevronDoubleDownR, CgChevronDoubleUpR } from "react-icons/cg";
-import Chatbot from './Chat/Chat';
+// import Chatbot from './Chat/Chat';
 
 const Layout = () => {
   const location = useLocation();
@@ -58,11 +58,13 @@ const Layout = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <SocialButtons />
+      <div className="hidden md:block">
+        <SocialButtons />
+      </div>
       <main>
         <Outlet />
       </main>
-      <Chatbot />
+      {/* <Chatbot /> */}
       <Footer />
 
       {/* Scroll Button with Circular Progress */}
