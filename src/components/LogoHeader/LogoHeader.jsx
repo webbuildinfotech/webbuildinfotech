@@ -12,7 +12,7 @@ const LogoHeader = () => {
   }, []);
 
   return (
-    <div className="flex items-center justify-center space-x-4">
+    <div className="flex space-x-4">
       {/* Logo Icon */}
       <img
         src="/logo/logo2.png" // Replace with your logo path in the public folder
