@@ -27,7 +27,7 @@ const Home = () => {
                     display: "inline-block",
                   }}
                 >
-                  <span className="text-blue-600">WEB DEVELOPMENT</span> SERVICES
+                  <span className="text-white">WEB DEVELOPMENT</span> SERVICES
                   <br />
                   Custom Software Solutions
                 </span>    

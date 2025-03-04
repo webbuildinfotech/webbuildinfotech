@@ -71,3 +71,18 @@ header {
 }
 
 
+.stroke-gradient {
+  stroke: url(#gradient);
+}
+
+@keyframes gradient {
+  0% {
+    stroke: #3B82F6; /* blue-500 */
+  }
+  50% {
+    stroke: #8B5CF6; /* purple-500 */
+  }
+  100% {
+    stroke: #3B82F6; /* blue-500 */
+  }
+}

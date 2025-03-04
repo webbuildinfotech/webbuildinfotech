@@ -6,6 +6,7 @@ import LogoHeader from '../LogoHeader/LogoHeader';
 import { Link, useNavigate } from 'react-router-dom';
 import { RoutePaths } from '../../routes/constant/path';
 import { FaMapMarkerAlt, FaPhone, FaGlobe } from 'react-icons/fa';
+import { FaFacebook, FaMobileButton } from 'react-icons/fa6';
 
 const FooterSection = ({ children, index }) => {
   const { ref, inView } = useInView({
@@ -59,8 +60,8 @@ const Footer = () => {
           </FooterSection>
 
           {/* Services Section */}
-          <FooterSection index={1}>
-            <div className="space-y-6">
+          <FooterSection index={1} >
+            <div className="space-y-6 ml:0 lg:ml-15">
               <h3 className="text-lg font-semibold text-gray-900 border-b-2 border-blue-600 pb-2 w-fit">
                 Our Services
               </h3>
@@ -103,33 +104,36 @@ const Footer = () => {
               </h3>
               <ul className="space-y-4 text-gray-600">
                 <li className="flex items-start space-x-3">
-                  <FaMapMarkerAlt className="mt-1 text-blue-600" />
+                  <FaMapMarkerAlt className="mt-1 text-[#FF4B4B] hover:scale-110 transition-all duration-200" />
                   <span>2nd Floor, Mox Mall, Mandvi, near Bus Station, Gujarat 394160</span>
                 </li>
                 <li className="flex items-center space-x-3">
-                  <FaPhone className="text-blue-600" />
+                  <FaMobileButton className="text-[#4CAF50] hover:scale-110 transition-all duration-200" />
                   <span>+91 9265128409</span>
                 </li>
                 <li className="flex items-center space-x-3">
-                  <FaGlobe className="text-blue-600" />
+                  <FaGlobe className="text-[#2196F3] hover:scale-110 transition-all duration-200" />
                   <a href="https://webbuildinfotech.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 transition-colors duration-200">
-                    webbuildinfotech.com
+                    <span className="font-semibold typing-text">webbuildinfotech.com</span>
                   </a>
                 </li>
               </ul>
-              <div className="flex space-x-4 pt-2">
-                <a href="https://facebook.com/webbuildinfotech/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-600 transition-colors duration-200">
-                  <FaFacebookF size={20} />
+              <div className="flex space-x-10 pt-2">
+                <a href="https://facebook.com/webbuildinfotech/" target="_blank" rel="noopener noreferrer" className="text-[#1877F2] hover:scale-110 transition-all duration-200">
+                  <FaFacebook size={26} />
                 </a>
-                <a href="https://twitter.com/ChaudhariSimal" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-600 transition-colors duration-200">
-                  <FaTwitter size={20} />
+             
+                <a href="https://wa.me/919265128409" target="_blank" rel="noopener noreferrer" className="text-[#25D366] hover:scale-110 transition-all duration-200">
+                  <FaWhatsapp size={26} />
                 </a>
-                <a href="https://linkedin.com/company/webbuildinfotech/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-600 transition-colors duration-200">
-                  <FaLinkedinIn size={20} />
+                <a href="https://linkedin.com/company/webbuildinfotech/" target="_blank" rel="noopener noreferrer" className="text-[#0A66C2] hover:scale-110 transition-all duration-200">
+                  <FaLinkedinIn size={26} />
                 </a>
-                <a href="https://wa.me/919265128409" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-600 transition-colors duration-200">
-                  <FaWhatsapp size={20} />
+
+                <a href="https://twitter.com/ChaudhariSimal" target="_blank" rel="noopener noreferrer" className="text-[#1DA1F2] twitter-fly">
+                  <FaTwitter size={26} />
                 </a>
+                
               </div>
             </div>
           </FooterSection>

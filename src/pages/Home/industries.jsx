@@ -32,7 +32,7 @@ const industries = [
 const IndustryCards = () => {
   return (
     <div className="w-full py-20 bg-gradient-to-b from-[#453f86] via-gray-700 to-gray-200 flex items-center">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-6 max-sm:px-4">
         {/* Header Section */}
         <div className="text-center mb-14">
           <h2 className="text-4xl font-extrabold text-white uppercase tracking-wide">
@@ -44,7 +44,7 @@ const IndustryCards = () => {
         </div>
 
         {/* Grid Layout */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4 gap-8">
           {industries.map((industry, index) => (
             <div
               key={index}
@@ -88,7 +88,7 @@ const IndustryCards = () => {
               transform: translateY(0);
             }
             50% {
-              transform: translateY(-30px);
+              transform: translateY(-20px);
             }
           }
         `}
