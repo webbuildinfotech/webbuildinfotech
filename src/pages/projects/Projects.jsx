@@ -209,7 +209,7 @@ const ProjectsWithPagination = () => {
     };
 
     return (
-        <div className="container mx-auto px-4 py-16 max-w-7xl">
+        <div className="container mx-auto px-4 py-12 max-w-7xl">
             <div className="text-center mb-2">
                 <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
                     Our Featured Projects
@@ -220,7 +220,7 @@ const ProjectsWithPagination = () => {
             </div>
 
             {/* Category Filter */}
-            <div className="flex flex-wrap justify-center gap-4 mb-12 bg-[#d9e4ee] rounded-md pt-4 pb-4">
+            <div className="flex flex-wrap justify-center mt-5 gap-4 mb-12 bg-[#d9e4ee] rounded-md pt-4 pb-4">
                 {categories.map((category) => (
                     <button
                         key={category}
@@ -231,7 +231,7 @@ const ProjectsWithPagination = () => {
                         className={`px-6 py-2 rounded-full transition-all duration-300 ${
                             selectedCategory === category
                                 ? 'bg-blue-600 text-white shadow-lg'
-                                : 'bg-gray-100 text-black hover:bg-gray-200'
+                                : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
                         }`}
                     >
                         {category}
