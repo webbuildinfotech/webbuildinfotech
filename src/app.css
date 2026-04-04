@@ -1,8 +1,28 @@
-header {
+@import url('https://fonts.googleapis.com/css2?family=Monda:wght@400..700&family=Mooli&family=Ovo&display=swap');
 
-    background: #d9e4ee;
-    box-shadow: 0 0 0 ;
+* {
+  box-sizing: border-box;
+}
+@layer base {
+  html,
+  body {
+    background-color: #F4F6F8;
+    color: #4B5563; /* Tailwind slate-600 equivalent */
   }
+
+  html.dark,
+  html.dark body {
+    background-color: #28313C;
+    color: #6B7280; /* Tailwind slate-500 equivalent */
+  }
+
+  /* Set base font with normal CSS so Tailwind doesn't error on @apply */
+  body {
+    font-family: "Monda", sans-serif;
+  }
+}
+
+
   
 /* Logo header Rotations */
   @keyframes spin-slow {

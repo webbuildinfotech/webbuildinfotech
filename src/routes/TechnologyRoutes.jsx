@@ -1,17 +1,17 @@
 // src/data/technologyRoutes.js
 import { RoutePaths } from "./constant/path";
-import ReactJsLayout from "../components/Technology/Frontend/ReactJs/ReactLayout";
-import VueJsLayout from "../components/Technology/Frontend/VueJs/VueJsLayout";
-import AngularLayout from "../components/Technology/Frontend/Angular/AngularLayout";
-import HTML5Layout from "../components/Technology/Frontend/HTML5/HTML5Layout";
-import NodeJsLayout from "../components/Technology/Backend/NodeJs/NodeJsLayout";
-import ExpressJsLayout from "../components/Technology/Backend/ExpressJs/ExpressJsLayout";
-import GraphQLLayout from "../components/Technology/Backend/GraphQL/GraphQLLayout";
-import NestJsLayout from "../components/Technology/Backend/NestJs/NestJsLayout";
-import MongoDBLayout from "../components/Technology/Database/MongoDb/MongoDBLayout";
-import FirebaseLayout from "../components/Technology/Database/Firebase/FirebaseLayout";
-import PostgreSQLLayout from "../components/Technology/Database/PostGresQl/PostgreSQLLayout";
-import MySQLLayout from "../components/Technology/Database/MySQL/MySQLLayout";
+import ReactJsLayout from "../sections/Technology/Frontend/ReactJs/ReactLayout";
+import VueJsLayout from "../sections/Technology/Frontend/VueJs/VueJsLayout";
+import AngularLayout from "../sections/Technology/Frontend/Angular/AngularLayout";
+import HTML5Layout from "../sections/Technology/Frontend/HTML5/HTML5Layout";
+import NodeJsLayout from "../sections/Technology/Backend/NodeJs/NodeJsLayout";
+import ExpressJsLayout from "../sections/Technology/Backend/ExpressJs/ExpressJsLayout";
+import GraphQLLayout from "../sections/Technology/Backend/GraphQL/GraphQLLayout";
+import NestJsLayout from "../sections/Technology/Backend/NestJs/NestJsLayout";
+import MongoDBLayout from "../sections/Technology/Database/MongoDb/MongoDBLayout";
+import FirebaseLayout from "../sections/Technology/Database/Firebase/FirebaseLayout";
+import PostgreSQLLayout from "../sections/Technology/Database/PostGresQl/PostgreSQLLayout";
+import MySQLLayout from "../sections/Technology/Database/MySQL/MySQLLayout";
 
 export const TechnologyRoutes = [
   {

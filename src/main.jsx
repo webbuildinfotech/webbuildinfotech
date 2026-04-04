@@ -6,11 +6,14 @@ import React from 'react';
 import App from './App.jsx'
 import './app.css'
 import { HelmetProvider } from 'react-helmet-async';
+import { ThemeProvider } from './context/ThemeContext';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-      <HelmetProvider>
-      <App />
+    <HelmetProvider>
+      <ThemeProvider>
+        <App />
+      </ThemeProvider>
     </HelmetProvider>
   </StrictMode>,
 )
