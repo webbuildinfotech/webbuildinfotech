@@ -34,21 +34,23 @@ function HeroSection() {
                 scalable backends that grow with your business.
               </p>
 
-              <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-start">
-                <a
-                  href="#services"
-                  className="inline-flex items-center justify-center rounded-full border border-primary-main bg-transparent px-7 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-primary-main hover:text-white/80"
-                >
-                  View services
-                </a>
-                <a
-                  href="#contact"
-                  className="inline-flex items-center justify-center rounded-full border border-white/40 bg-white/5 px-7 py-3 text-sm font-semibold text-white backdrop-blur-md transition hover:bg-white/15"
-                >
-                  Let&apos;s talk
-                </a>
+              <div className="flex flex-col gap-4 justify-start">
+                <div className="flex flex-col sm:flex-row items-center gap-3">
+                  <a
+                    href="#services"
+                    className="w-full sm:w-auto inline-flex items-center justify-center rounded-full border border-primary-main bg-transparent px-7 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-primary-main hover:text-white/80"
+                  >
+                    View services
+                  </a>
+                  <a
+                    href="#contact"
+                    className="w-full sm:w-auto inline-flex items-center justify-center rounded-full border border-white/40 bg-white/5 px-7 py-3 text-sm font-semibold text-white backdrop-blur-md transition hover:bg-white/15"
+                  >
+                    Let&apos;s talk
+                  </a>
+                </div>
 
-                <div className="flex items-center gap-3">
+                <div className="flex items-center md:gap-3 gap-1">
                   <a
                     href="https://wa.me/919265128409"
                     target="_blank"
