@@ -75,5 +75,6 @@ export {
   GithubActionsIcon,
   WhatsappIcon,
   WhatsappColorIcon,
-  PhoneColorIcon
+  PhoneColorIcon,
+  MicrosoftTeamsIcon
 } from './Icon';

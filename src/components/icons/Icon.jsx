@@ -302,6 +302,10 @@ export function JavascriptIcon({ className = '' }) {
   return <Icon iconClass="icon-[skill-icons--javascript]" className={className} />;
 }
 
+export function MicrosoftTeamsIcon({ className = '' }) {
+  return <Icon iconClass="icon-[streamline-logos--microsoft-teams-logo-block]" className={className} />;
+}
+
 export function WhatsappIcon({ className = '' }) {
   return <Icon iconClass="icon-[uim--whatsapp]" className={className} />;
 }

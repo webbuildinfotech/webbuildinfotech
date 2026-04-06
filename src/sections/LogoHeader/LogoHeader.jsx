@@ -5,7 +5,7 @@ import { RoutePaths } from "../../routes/constant/path";
 
 const LogoHeader = ({ isLight }) => {
   const { isDark } = useTheme();
-  const logoSrc = isDark ? "/logo/logoLight.png" : "/logo/logoDark.png";
+  const logoSrc = isDark ? "/logo/logoLight.svg" : "/logo/logoDark.svg";
 
   const [key, setKey] = useState(0); // Key to re-trigger the animation
 

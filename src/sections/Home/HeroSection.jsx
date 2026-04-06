@@ -1,7 +1,14 @@
 import React from "react";
 import heroImage from "/images/hero.png";
 import heroImageRight from "/images/heroImage.svg";
-import { WhatsappIcon, PhoneIcon } from "../../components/icons";
+import { WhatsappIcon, PhoneIcon, EnquiriesIcon, MicrosoftTeamsIcon } from "../../components/icons";
+
+const HERO_CONTACT_EMAIL = "simalchaudhari20496@gmail.com";
+const HERO_EMAIL_HREF = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(HERO_CONTACT_EMAIL)}`;
+
+/** Team channel / conversation link from Microsoft Teams → Copy link to team/channel. */
+const HERO_TEAMS_HREF =
+  "https://teams.microsoft.com/l/team/19%3A_k3b5xB_3nI0tC8GnC7N3h_kLqYQkN92J05195GZw3Zw1%40thread.tacv2/conversations?groupId=787b23a2-435e-47b6-a024-c7d01b78072d&tenantId=72f988bf-86f1-41af-91ab-2d7cd011db47";
 
 function HeroSection() {
   return (
@@ -40,20 +47,41 @@ function HeroSection() {
                 >
                   Let&apos;s talk
                 </a>
-                <a
-                  href="https://wa.me/919265128409"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-11 h-11 flex items-center justify-center rounded-full transition-transform duration-150 hover:animate-[vibrate_0.4s_ease-in-out]"
-                >
-                  <WhatsappIcon className="w-11 h-11 text-white" />
-                </a>
-                <a
-                  href="tel:+919265128409"
-                  className="w-11 h-11 flex items-center justify-center rounded-full transition-transform duration-150 hover:animate-[vibrate_0.4s_ease-in-out]"
-                >
-                  <PhoneIcon className="w-10 h-10 text-white" />
-                </a>
+
+                <div className="flex items-center gap-3">
+                  <a
+                    href="https://wa.me/919265128409"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-11 h-11 flex items-center justify-center rounded-full transition-transform duration-150 hover:animate-[vibrate_0.4s_ease-in-out]"
+                  >
+                    <WhatsappIcon className="w-11 h-11 text-white" />
+                  </a>
+                  <a
+                    href="tel:+919265128409"
+                    className="w-11 h-11 flex items-center justify-center rounded-full transition-transform duration-150 hover:animate-[vibrate_0.4s_ease-in-out]"
+                  >
+                    <PhoneIcon className="w-10 h-10 text-white" />
+                  </a>
+                  <a
+                    href={HERO_EMAIL_HREF}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Email ${HERO_CONTACT_EMAIL}`}
+                    className="w-11 h-11 flex items-center justify-center rounded-full transition-transform duration-150 hover:animate-[vibrate_0.4s_ease-in-out]"
+                  >
+                    <EnquiriesIcon className="w-10 h-10 text-white" />
+                  </a>
+                  <a
+                    href={HERO_TEAMS_HREF}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Open in Microsoft Teams"
+                    className="w-11 h-11 flex items-center justify-center rounded-full transition-transform duration-150 hover:animate-[vibrate_0.4s_ease-in-out]"
+                  >
+                    <MicrosoftTeamsIcon className="w-10 h-10 text-white" />
+                  </a>
+                </div>
               </div>
 
               <div className="mt-4 flex flex-wrap items-center justify-center gap-4 border-t border-white/10 pt-4 lg:justify-start">
