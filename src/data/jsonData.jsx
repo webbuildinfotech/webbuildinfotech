@@ -1,10 +1,31 @@
 import React from "react";
-import { FaAward, FaCloud,  FaShieldAlt,
+import {
+  FaAward,
+  FaCloud,
+  FaShieldAlt,
   FaDatabase,
   FaNetworkWired,
   FaSearch,
   FaChartLine,
-  FaLock,FaCode, FaGlobe, FaHandshake, FaMobileAlt, FaMoneyBillWave, FaPlug, FaServer, FaSmile, FaTools } from "react-icons/fa";
+  FaLock,
+  FaGlobe,
+  FaHandshake,
+  FaMobileAlt,
+  FaSmile,
+} from "react-icons/fa";
+import {
+  CodeSquareIcon,
+  CogsIcon,
+  JavascriptIcon,
+  ExchangeIcon,
+  MobileIcon,
+  CloudIcon,
+  ShieldAltIcon,
+  DatabaseIcon,
+  CogLoopIcon,
+  SearchIcon,
+  ChartLineIcon,
+} from "../components/icons";
 
 export const projects = [
     {
@@ -71,7 +92,7 @@ export const projects = [
       title: "Frontend Development",
       description:
         "We specialize in crafting responsive, dynamic, and visually stunning web interfaces using cutting-edge frontend technologies.",
-      icon: <FaCode />,
+      icon: <CodeSquareIcon className="text-3xl" />,
       colors: "text-purple-500 bg-purple-100",
       hoverFrom: "from-purple-500",
       hoverTo: "to-purple-700",
@@ -81,7 +102,7 @@ export const projects = [
       title: "Backend Development",
       description:
         "Our backend services ensure robust, scalable, and efficient server-side solutions tailored to your business needs.",
-      icon: <FaServer />,
+      icon: <CogsIcon className="text-3xl" />,
       colors: "text-teal-500 bg-teal-100",
       hoverFrom: "from-teal-500",
       hoverTo: "to-teal-700",
@@ -91,7 +112,7 @@ export const projects = [
       title: "JavaScript Technologies",
       description:
         "Expertise in modern JavaScript frameworks like React, Angular, and Vue for building fast and interactive applications.",
-      icon: <FaTools />,
+      icon: <JavascriptIcon className="text-3xl" />,
       colors: "text-blue-500 bg-blue-100",
       hoverFrom: "from-blue-500",
       hoverTo: "to-blue-700",
@@ -101,7 +122,7 @@ export const projects = [
       title: "API Development",
       description:
         "We design and implement secure, high-performance APIs to ensure seamless integration across platforms.",
-      icon: <FaPlug />,
+      icon: <ExchangeIcon className="text-3xl" />,
       colors: "text-green-500 bg-green-100",
       hoverFrom: "from-green-500",
       hoverTo: "to-green-700",
@@ -111,7 +132,7 @@ export const projects = [
       title: "Mobile App Development",
       description:
         "Building cross-platform mobile apps with React Native, Flutter, and more to extend your business to mobile platforms.",
-      icon: <FaMobileAlt />,
+      icon: <MobileIcon className="text-3xl" />,
       colors: "text-orange-500 bg-orange-100",
       hoverFrom: "from-orange-500",
       hoverTo: "to-orange-700",
@@ -121,7 +142,7 @@ export const projects = [
       title: "Cloud Solutions",
       description:
         "Providing scalable cloud services with AWS, Azure, and Google Cloud to power your web applications.",
-      icon: <FaCloud />,
+      icon: <CloudIcon className="text-3xl" />,
       colors: "text-blue-400 bg-blue-200",
       hoverFrom: "from-blue-400",
       hoverTo: "to-blue-600",
@@ -131,7 +152,7 @@ export const projects = [
       title: "Cybersecurity & Data Protection",
       description:
         "Enhancing security through encryption, firewalls, and advanced threat detection to safeguard sensitive data.",
-      icon: <FaShieldAlt />,
+      icon: <ShieldAltIcon className="text-3xl" />,
       colors: "text-red-500 bg-red-100",
       hoverFrom: "from-red-500",
       hoverTo: "to-red-700",
@@ -141,7 +162,7 @@ export const projects = [
       title: "Database Management",
       description:
         "Expertise in designing, managing, and optimizing SQL and NoSQL databases for scalability and efficiency.",
-      icon: <FaDatabase />,
+      icon: <DatabaseIcon className="text-3xl" />,
       colors: "text-yellow-500 bg-yellow-100",
       hoverFrom: "from-yellow-500",
       hoverTo: "to-yellow-700",
@@ -151,7 +172,7 @@ export const projects = [
       title: "DevOps & Infrastructure",
       description:
         "Implementing CI/CD pipelines, containerization with Docker & Kubernetes, and automated cloud deployments.",
-      icon: <FaNetworkWired />,
+      icon: <CogLoopIcon className="text-3xl" />,
       colors: "text-indigo-500 bg-indigo-100",
       hoverFrom: "from-indigo-500",
       hoverTo: "to-indigo-700",
@@ -161,7 +182,7 @@ export const projects = [
       title: "SEO & Digital Marketing",
       description:
         "Boosting online presence through SEO optimization, content marketing, and performance analytics.",
-      icon: <FaSearch />,
+      icon: <SearchIcon className="text-3xl" />,
       colors: "text-pink-500 bg-pink-100",
       hoverFrom: "from-pink-500",
       hoverTo: "to-pink-700",
@@ -171,7 +192,7 @@ export const projects = [
       title: "Business Intelligence & Analytics",
       description:
         "Helping businesses make data-driven decisions through AI, data visualization, and predictive analytics.",
-      icon: <FaChartLine />,
+      icon: <ChartLineIcon className="text-3xl" />,
       colors: "text-gray-600 bg-gray-200",
       hoverFrom: "from-gray-600",
       hoverTo: "to-gray-800",
@@ -224,7 +245,7 @@ export const projects = [
   export const techLogos = [
     // Frontend Technologies (12)
     { name: "React", src: "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg", category: "Frontend" },
-    { name: "Angular", src: "https://upload.wikimedia.org/wikipedia/commons/c/cf/Angular_full_color_logo.svg", category: "Frontend" },
+    { name: "Angular", src: "https://www.vhv.rs/dpng/d/80-801726_angular-icon-hd-png-download.png", category: "Frontend" },
     { name: "Vue.js", src: "https://upload.wikimedia.org/wikipedia/commons/9/95/Vue.js_Logo_2.svg", category: "Frontend" },
     { name: "HTML5", src: "https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg", category: "Frontend" },
     { name: "CSS3", src: "https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg", category: "Frontend" },
@@ -263,14 +284,14 @@ export const projects = [
 
     // DevOps & Tools (12)
   { name: "Git", src: "https://upload.wikimedia.org/wikipedia/commons/e/e0/Git-logo.svg", category: "DevOps & Tools" },
-  { name: "GitHub", src: "https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg", category: "DevOps & Tools" },
+  { name: "GitHub", src: "https://images.icon-icons.com/800/PNG/512/_github_icon-icons.com_65799.png", category: "DevOps & Tools" },
   { name: "Bitbucket", src: "https://cdn.worldvectorlogo.com/logos/bitbucket-icon.svg", category: "DevOps & Tools" },
   { name: "Docker", src: "https://cdn.worldvectorlogo.com/logos/docker.svg", category: "DevOps & Tools" },
   { name: "CI/CD", src: "https://www.testaify.com/hubfs/CI-CD_Pipeline_2-01.webp", category: "DevOps & Tools" },
   { name: "AWS", src: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg", category: "DevOps & Tools" },
   { name: "S3 Bucket", src: "https://hermes.dio.me/assets/articles/7ec1587b-95f4-45fb-bd7e-ce073d03b8fe.png", category: "DevOps & Tools" },
   { name: "cPanel", src: "https://cdn.worldvectorlogo.com/logos/cpanel.svg", category: "DevOps & Tools" },
-  { name: "SSH", src: "https://cdn.worldvectorlogo.com/logos/ssh.svg", category: "DevOps & Tools" },
+  { name: "SSH", src: "https://play-lh.googleusercontent.com/aRPynprMI4wTONxQbaHngfltnf7pfgLKYdU-rKBtsn0_oIN58twFtMP56VSrJ3s575A=w240-h480-rw", category: "DevOps & Tools" },
   { name: "Jira", src: "https://cdn.worldvectorlogo.com/logos/jira-1.svg", category: "DevOps & Tools" },
   { name: "Trello", src: "https://cdn.worldvectorlogo.com/logos/trello.svg", category: "DevOps & Tools" },
   { name: "Agile", src: "https://www.aerospacewalesforum.com/wp-content/uploads/Agile-Logo-2.png", category: "DevOps & Tools" },

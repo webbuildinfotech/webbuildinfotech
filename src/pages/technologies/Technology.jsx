@@ -109,21 +109,21 @@ const technologies = [
 const TechnologiesPage = () => {
   const navigate = useNavigate(); // Hook for navigation
   return (
-    <section className="py-16 bg-gradient-to-b from-blue-50 to-blue-100">
+    <section className="pt-24 pb-16 sm:pt-28 sm:pb-20 bg-gradient-to-b from-background-light via-background-light/80 to-background-light dark:from-background-dark dark:via-background-dark/95 dark:to-background-dark">
       <div className="container mx-auto px-6 lg:px-12">
-        <h1 className="text-2xl lg:text-3xl font-bold text-start mb-5">
+        <h1 className="mb-5 text-start text-2xl lg:text-3xl font-bold text-grey-900 dark:text-grey-50">
           TECHNOLOGIES WE WORK WITH
         </h1>
 
         {technologies.map((techCategory, index) => (
           <div key={index} className="mb-5">
             {/* Category Header */}
-            <h2 className="text-xl lg:text-2xl font-semibold text-blue-800 mb-8">
+            <h2 className="mb-8 text-xl lg:text-2xl font-semibold text-grey-800 dark:text-grey-100">
               {techCategory.category}
             </h2>
 
             {/* Grid Layout */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 cursor-pointer">
+            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4 cursor-pointer">
               {techCategory.items.map((tech, i) => (
                 <div
                   key={i}
@@ -131,7 +131,7 @@ const TechnologiesPage = () => {
                     window.scrollTo(0, 0); // Scroll to top
                     navigate(tech.link); // Navigate to new page
                   }}
-                  className="bg-white shadow-md rounded-lg p-6 flex flex-col items-center justify-start transition-transform duration-300 hover:scale-105 hover:shadow-lg"
+                  className="flex flex-col items-center justify-start rounded-lg bg-white p-6 shadow-md border border-grey-400 transition-transform duration-300 hover:scale-105 hover:shadow-lg dark:bg-background-dark-light dark:border-grey-700"
                 >
                   {/* Technology Logo */}
                   <img
@@ -140,11 +140,11 @@ const TechnologiesPage = () => {
                     className="w-16 h-16 object-contain mb-4"
                   />
                   {/* Technology Name */}
-                  <h3 className="text-xl font-semibold text-gray-800 mb-4">
+                  <h3 className="mb-4 text-xl font-semibold text-grey-900 dark:text-grey-50">
                     {tech.name}
                   </h3>
                   {/* Technology Description */}
-                  <p className="text-gray-600 text-sm text-center">
+                  <p className="font-mooli text-sm text-center text-grey-600 dark:text-grey-300">
                     {tech.description}
                   </p>
                 </div>
