@@ -1,4 +1,7 @@
+@config "../tailwind.config.js";
 @import url('https://fonts.googleapis.com/css2?family=Monda:wght@400..700&family=Mooli&family=Ovo&display=swap');
+@import 'tailwindcss';
+@plugin 'lightswind/plugin';
 
 * {
   box-sizing: border-box;

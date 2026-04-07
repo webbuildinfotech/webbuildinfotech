@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import CountUp from "react-countup";
 import { stats } from "../../data/jsonData";
+import { BorderBeam } from "@/components/lightswind/border-beam";
 
 const StatsComponent = () => {
   const [resetKey, setResetKey] = useState(0);
@@ -50,6 +51,21 @@ const StatsComponent = () => {
               <p className="font-mooli mt-1 text-xs sm:text-sm text-grey-600 dark:text-grey-300 text-center">
                 {stat.label}
               </p>
+              <BorderBeam
+                size={70}
+                duration={12}
+                delay={0}
+                colorFrom="#06b6d4"
+                colorTo="#3b82f6"
+                reverse={false}
+                initialOffset={30}
+                borderThickness={2}
+                opacity={0.9}
+                glowIntensity={2}
+                beamBorderRadius={20}
+                pauseOnHover={true}
+                speedMultiplier={1.5}
+              />
             </div>
           ))}
         </div>

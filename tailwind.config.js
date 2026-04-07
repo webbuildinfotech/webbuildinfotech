@@ -2,7 +2,11 @@ const { addDynamicIconSelectors } = require("@iconify/tailwind");
 
 module.exports = {
   darkMode: "class",
-  content: ["./src/**/*.{html,js,jsx}"], // Adjust paths to your files
+  content: ["./src/**/*.{html,js,jsx,ts,tsx}"], // Scan all component/template files
+  safelist: [
+    { pattern: /(text|bg|ring)-(primary|secondary|info|success|warning|error|grey|background)(-(main|lighter|light|dark|darker|darkLight|50|100|200|300|400|500|600|700|800|900))?/ },
+    { pattern: /text-(indigo|emerald|blue|amber|purple|rose|pink|teal|orange|cyan|lime|sky)-600/ },
+  ],
   theme: {
     extend: {
       // Define CSS variables for Tailwind v4 theme tokens

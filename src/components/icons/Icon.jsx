@@ -302,6 +302,13 @@ export function JavascriptIcon({ className = '' }) {
   return <Icon iconClass="icon-[skill-icons--javascript]" className={className} />;
 }
 
+export function DarkLogoIcon({ className = '' }) {
+  return <Icon iconClass="icon-[glyphs--globe-stand-1-bold]" className={className} />;
+}
+export function LightLogoIcon({ className = '' }) {
+  return <Icon iconClass="icon-[glyphs--globe-stand-1-outline]" className={className} />;
+}
+
 export function MicrosoftTeamsIcon({ className = '' }) {
   return <Icon iconClass="icon-[streamline-logos--microsoft-teams-logo-block]" className={className} />;
 }

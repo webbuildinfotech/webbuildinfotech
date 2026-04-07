@@ -69,6 +69,8 @@ export {
   CodeSquareIcon,
   HtmlIcon,
   JavascriptIcon,
+  DarkLogoIcon,
+  LightLogoIcon,
   DataConfigurationIcon,
   AndroidStudioIcon,
   BashIcon,

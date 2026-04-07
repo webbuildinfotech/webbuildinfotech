@@ -1,43 +1,25 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import { useTheme } from "../../context/ThemeContext";
 import { RoutePaths } from "../../routes/constant/path";
+import { DarkLogoIcon, LightLogoIcon } from "../../components/icons";
 
 const LogoHeader = ({ isLight }) => {
-  const { isDark } = useTheme();
-  const logoSrc = isDark ? "/logo/logoLight.svg" : "/logo/logoDark.svg";
-
-  const [key, setKey] = useState(0); // Key to re-trigger the animation
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setKey((prevKey) => prevKey + 1); // Update the key to restart animation
-    }, 5000); // 5 seconds
-
-    return () => clearInterval(interval); // Cleanup interval on unmount
-  }, []);
-
   return (
-    <Link to={RoutePaths.HOME} className="flex cursor-pointer space-x-4">
-      {/* Logo Icon */}
-      <img
-        src={logoSrc}
-        alt="WebBuild Logo"
-        // className="w-14 lg:w-16 max-w-full h-auto animate-spin-slow"
-        className="w-14 lg:w-16 max-w-full h-auto"
-        style={{
-          transformOrigin: "center center",
-        }}
-      />
+    <Link to={RoutePaths.HOME} className="flex cursor-pointer space-x-2">
+      {isLight ? (
+        <LightLogoIcon className="w-12 h-12 text-white" />
+      ) : (
+        <LightLogoIcon className="w-12 h-12 text-grey-900" />
+      )}
 
-      <div className="flex flex-col items-start" key={key}>
+      <div className="flex flex-col items-start">
         {/* Animated WebBuild Text */}
         <h1
           // className={`text-lg max-lg:text-base font-bold tracking-wide leading-tight animate-webbuild ${
           className={`text-lg max-lg:text-base font-bold tracking-wide leading-tight ${isLight ? "text-white" : "text-black"
             }`}
           style={{
-            fontFamily: "'Poppins', sans-serif",
+            // fontFamily: "'Poppins', sans-serif",
             letterSpacing: "0.1em",
           }}
         >
@@ -50,7 +32,7 @@ const LogoHeader = ({ isLight }) => {
           className={`text-lg max-lg:text-base font-medium tracking-widest ${isLight ? "text-white/80" : "text-gray-700"
             }`}
           style={{
-            fontFamily: "'Roboto Mono', monospace",
+            // fontFamily: "'Roboto Mono', monospace",
             letterSpacing: "0.2em",
           }}
         >

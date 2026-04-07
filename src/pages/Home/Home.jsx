@@ -1,10 +1,16 @@
-import React from 'react'
-import { HeroSection, Status, Services, IndustryCards, TechLogos, CompletedProjects } from '../../sections/Home'
+import React, { useState } from 'react'
+import { HeroSection, Status, Services, IndustryCards, TechLogos, CompletedProjects, SecondHeroSection } from '../../sections/Home'
 
 const Home = () => {
+    const [activeHero, setActiveHero] = useState("grid");
+
     return (
         <div>
-            <HeroSection/>
+            {activeHero === "grid" ? (
+                <SecondHeroSection onToggleSection={() => setActiveHero("image")} />
+            ) : (
+                <HeroSection onToggleSection={() => setActiveHero("grid")} />
+            )}
             <Status/>
             <Services/>
             <IndustryCards/>

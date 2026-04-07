@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useInView } from "react-intersection-observer";
 import { projects } from "../../data/jsonData";
 import { RoutePaths } from "../../routes/constant/path";
+import { BorderBeam } from "@/components/lightswind/border-beam";
 
 const CompletedProjects = () => {
   return (
@@ -61,6 +62,21 @@ const ProjectCard = ({ project, index }) => {
         Know more
         <span aria-hidden>→</span>
       </Link>
+      <BorderBeam
+        size={70}
+        duration={12}
+        delay={0}
+        colorFrom="#06b6d4"
+        colorTo="#3b82f6"
+        reverse={false}
+        initialOffset={30}
+        borderThickness={2}
+        opacity={0.9}
+        glowIntensity={2}
+        beamBorderRadius={20}
+        pauseOnHover={true}
+        speedMultiplier={1.5}
+      />
     </article>
   );
 };

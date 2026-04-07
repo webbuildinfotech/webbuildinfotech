@@ -10,12 +10,19 @@ const HERO_EMAIL_HREF = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeU
 const HERO_TEAMS_HREF =
   "https://teams.microsoft.com/l/team/19%3A_k3b5xB_3nI0tC8GnC7N3h_kLqYQkN92J05195GZw3Zw1%40thread.tacv2/conversations?groupId=787b23a2-435e-47b6-a024-c7d01b78072d&tenantId=72f988bf-86f1-41af-91ab-2d7cd011db47";
 
-function HeroSection() {
+function HeroSection({ onToggleSection }) {
   return (
     <section
       className="h-screen w-full flex items-center justify-center bg-cover bg-center bg-no-repeat"
       style={{ backgroundImage: `url(${heroImage})` }}
     >
+      <button
+        type="button"
+        onClick={onToggleSection}
+        className="absolute bottom-6 right-6 z-40 rounded-full border border-white/40 bg-black/50 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-white backdrop-blur-md transition hover:bg-white/20"
+      >
+        Show Grid Hero
+      </button>
       <div className="h-full w-full bg-gradient-to-b from-black/70 via-black/60 to-black/40">
         <div className="container mx-auto flex h-full min-h-0 items-start justify-center px-4 pb-12 pt-28 sm:px-6 sm:pb-16 sm:pt-32 lg:items-center lg:justify-center lg:px-8 lg:pb-0 lg:pt-0">
           <div className="grid w-full gap-10 lg:grid-cols-2 items-center">
