@@ -76,8 +76,10 @@ module.exports = {
         background: {
           light: "#F4F6F8",
           DEFAULT: "#F4F6F8",
-          dark: "#141A20",
-          darkLight: "#1C252E",
+          // dark: "#141A20",
+          // darkLight: "#1C252E",
+          dark: "#030303",
+          darkLight: "#131313",
         },
       },
       fontFamily: {

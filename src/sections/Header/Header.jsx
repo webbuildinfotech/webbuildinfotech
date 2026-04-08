@@ -17,6 +17,7 @@ import { SiGraphql, SiExpress, SiNestjs, SiMongodb, SiMysql, SiPostgresql, SiFir
 import { RoutePaths } from "../../routes/constant/path";
 import { ThemeToggle } from "../../components/themeToggle";
 import { useTheme } from "../../context/ThemeContext";
+import { FaRegNewspaper } from "react-icons/fa";
 
 
 const Header = () => {
@@ -89,6 +90,7 @@ const Header = () => {
    
     },
     { name: "Projects", path: "/project", icon: <ProjectsIcon />, subMenu: [] },
+    { name: "Blog", path: RoutePaths.BLOG, icon: <FaRegNewspaper />, subMenu: [] },
     { name: "Contact", path: "/contact", icon: <EnquiriesIcon />, subMenu: [] },
   ];
 // backdrop-blur-[3px]

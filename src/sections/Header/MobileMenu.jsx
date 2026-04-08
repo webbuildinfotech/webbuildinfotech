@@ -112,7 +112,7 @@ const MobileMenu = ({ menuItems, setIsMenuOpen }) => {
                       type="button"
                       className={`group flex w-full items-center justify-between gap-2 rounded-xl px-3 py-3 text-left text-[0.9375rem] font-medium transition duration-200 active:scale-[0.99] ${
                         openSubMenu === index
-                          ? "bg-secondary-main/12 text-secondary-dark ring-1 ring-secondary-main/25 dark:bg-secondary-main/20 dark:text-secondary-lighter dark:ring-secondary-main/30"
+                          ? "bg-secondary-main/12 text-grey-900 ring-1 ring-secondary-main/25 dark:bg-secondary-main/20 dark:text-secondary-lighter dark:ring-secondary-main/30"
                           : "text-grey-800 hover:bg-grey-100 hover:text-grey-900 dark:text-grey-100 dark:hover:!bg-grey-800 dark:hover:!text-grey-50"
                       }`}
                       onClick={(e) => toggleSubMenu(index, e)}
@@ -121,7 +121,7 @@ const MobileMenu = ({ menuItems, setIsMenuOpen }) => {
                         <span
                           className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl text-lg transition-colors ${
                             openSubMenu === index
-                              ? "bg-secondary-main/20 text-secondary-dark dark:bg-secondary-main/30 dark:text-secondary-lighter"
+                              ? "bg-secondary-main/20 text-grey-900 dark:bg-secondary-main/30 dark:text-secondary-lighter"
                               : "bg-grey-100 text-secondary-main group-hover:bg-grey-200 dark:bg-grey-800 dark:text-secondary-light dark:group-hover:bg-grey-700 dark:group-hover:text-secondary-lighter"
                           }`}
                         >
@@ -139,7 +139,7 @@ const MobileMenu = ({ menuItems, setIsMenuOpen }) => {
                       onClick={() => setIsMenuOpen(false)}
                       className={`group flex items-center justify-between gap-2 rounded-xl px-3 py-3 text-[0.9375rem] font-medium transition duration-200 active:scale-[0.99] ${
                         isActive
-                          ? "bg-primary-main/10 text-primary-dark ring-1 ring-primary-main/20 dark:bg-primary-main/15 dark:text-primary-light dark:ring-primary-main/25"
+                          ? "bg-primary-main/10 text-grey-900 ring-1 ring-primary-main/20 dark:bg-primary-main/15 dark:text-primary-light dark:ring-primary-main/25"
                           : "text-grey-800 hover:bg-grey-100 hover:text-grey-900 dark:text-grey-100 dark:hover:!bg-grey-800 dark:hover:!text-grey-50"
                       }`}
                     >
@@ -147,7 +147,7 @@ const MobileMenu = ({ menuItems, setIsMenuOpen }) => {
                         <span
                           className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl text-lg transition-colors ${
                             isActive
-                              ? "bg-primary-main/20 text-primary-dark dark:bg-primary-main/25 dark:text-primary-light"
+                              ? "bg-primary-main/20 text-grey-900 dark:bg-primary-main/25 dark:text-primary-light"
                               : "bg-grey-100 text-primary-main group-hover:bg-grey-200 dark:bg-grey-800 dark:text-primary-light dark:group-hover:bg-grey-700 dark:group-hover:text-primary-light"
                           }`}
                         >
@@ -169,7 +169,7 @@ const MobileMenu = ({ menuItems, setIsMenuOpen }) => {
                               type="button"
                               className={`flex w-full items-center justify-between rounded-lg px-3 py-2.5 text-left text-xs font-semibold uppercase tracking-wide transition duration-200 ${
                                 isCategoryActive
-                                  ? "bg-secondary-main text-white shadow-sm"
+                                  ? "bg-secondary-main/15 text-grey-900 ring-1 ring-secondary-main/30 shadow-sm dark:bg-secondary-main dark:text-white dark:ring-secondary-main/40"
                                   : "bg-grey-100 text-grey-800 hover:bg-grey-200 hover:text-grey-900 dark:bg-grey-800/90 dark:text-grey-100 dark:hover:bg-grey-700 dark:hover:text-white"
                               }`}
                               onClick={() => toggleSubCategory(subIndex)}
@@ -197,14 +197,14 @@ const MobileMenu = ({ menuItems, setIsMenuOpen }) => {
                                         }}
                                         className={`group flex items-center gap-2.5 rounded-lg px-2.5 py-2 text-[0.8125rem] font-medium transition duration-200 ${
                                           isSubActive
-                                            ? "bg-primary-main/12 text-primary-dark dark:bg-primary-main/20 dark:text-primary-light"
+                                            ? "bg-primary-main/12 text-grey-900 dark:bg-primary-main/20 dark:text-primary-light"
                                             : "text-grey-700 hover:bg-grey-100 hover:text-grey-900 dark:text-grey-300 dark:hover:!bg-grey-800 dark:hover:!text-grey-50"
                                         }`}
                                       >
                                         <span
                                           className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg text-sm transition-colors ${
                                             isSubActive
-                                              ? "bg-primary-main/20 text-primary-dark dark:text-primary-light"
+                                              ? "bg-primary-main/20 text-grey-900 dark:text-primary-light"
                                               : "bg-grey-100 text-primary-main group-hover:bg-grey-200 dark:bg-grey-800 dark:text-primary-light dark:group-hover:bg-grey-700"
                                           }`}
                                         >

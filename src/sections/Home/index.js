@@ -5,3 +5,4 @@ export { default as IndustryCards } from './industries';
 export { default as TechLogos } from './TechLogos';
 export { default as CompletedProjects } from './CompletedProjects';
 export { default as SecondHeroSection } from './SecondHeroSection';
+export { default as WhyChooseUs } from './WhyChooseUs';

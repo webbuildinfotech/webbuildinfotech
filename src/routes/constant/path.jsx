@@ -6,6 +6,7 @@ export const RoutePaths = {
     TECHNOLOGIES: "/technologies",
     INDUSTRIES: "/industries",
     PROJECTS: "/project",
+    BLOG: "/blog",
     COMPANY: "/company",
     CONTACT: "/contact",
 

@@ -40,7 +40,7 @@ const SecondHeroSection = ({ onToggleSection }) => {
         />
       </div>
 
-      <div className="relative z-10 h-full w-full bg-gradient-to-b from-black/70 via-black/60 to-black/40">
+      <div className="relative z-10 h-full w-full bg-gradient-to-b from-black/20 via-black/10 to-transparent">
         <div className="container mx-auto flex h-full min-h-0 items-start justify-center px-4 pb-12 pt-28 sm:px-6 sm:pb-16 sm:pt-32 lg:items-center lg:justify-center lg:px-8 lg:pb-0 lg:pt-0">
           <div className="grid w-full gap-10 items-center lg:grid-cols-2">
             <div className="max-w-xl space-y-6 rounded-3xl border border-white/15 bg-white/12 p-8 text-center shadow-[0_20px_60px_rgba(0,0,0,0.55)] backdrop-blur-xl sm:p-10 lg:text-left">

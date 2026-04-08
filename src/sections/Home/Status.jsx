@@ -14,43 +14,51 @@ const StatsComponent = () => {
   }, []);
 
   return (
-    <section className="w-full bg-background-light dark:bg-background-dark py-12 sm:py-16">
+    <section className="w-full bg-background-light py-12 sm:py-16 dark:bg-background-dark">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-8 text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-primary-main">
+        <div className="mx-auto mb-10 max-w-3xl text-center">
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary-main">
             By the numbers
           </p>
-          <h2 className="mt-2 text-2xl sm:text-3xl font-bold text-grey-900 dark:text-white">
+          <h2 className="mt-2 text-2xl font-bold text-grey-900 sm:text-3xl dark:text-white">
             A track record you can trust
           </h2>
+          <p className="font-mooli mt-3 text-sm text-grey-600 sm:text-base dark:text-grey-300">
+            Measurable outcomes, consistent delivery, and long-term partnerships.
+          </p>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-5 lg:gap-6">
           {stats.map((stat, index) => (
             <div
               key={index}
-              className="flex flex-col items-center justify-center rounded-2xl bg-white/90 dark:bg-background-dark-light px-4 py-5 sm:px-5 sm:py-6 shadow-[0_10px_30px_rgba(15,23,42,0.12)] ring-1 ring-grey-400 dark:ring-grey-700/80 transition-transform duration-300 hover:-translate-y-1"
+              className="group relative overflow-hidden rounded-2xl bg-white/90 px-4 py-5 shadow-[0_10px_30px_rgba(15,23,42,0.12)] ring-1 ring-grey-300/90 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(15,23,42,0.18)] hover:ring-primary-main/40 sm:px-5 sm:py-6 dark:bg-background-dark-light dark:ring-grey-700/80"
               style={{
                 animation: `fadeInUp 0.7s ease-out ${index * 0.12}s forwards`,
                 opacity: 0,
               }}
             >
-              <div className="mb-3 text-3xl sm:text-4xl text-primary-main">{stat.icon}</div>
+              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(34,211,238,0.14),transparent_55%)] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+              <div className="relative z-10 flex flex-col items-center text-center">
+                <div className="mb-3 rounded-xl bg-primary-main/10 p-2.5 text-3xl text-primary-main transition-transform duration-300 group-hover:scale-110 sm:text-4xl">
+                  {stat.icon}
+                </div>
 
-              <h3 className="text-xl sm:text-2xl font-semibold text-grey-900 dark:text-white">
-                <CountUp
-                  key={resetKey + index}
-                  start={0}
-                  end={stat.value}
-                  duration={2.5}
-                  suffix={stat.suffix || "+"}
-                  separator=","
-                />
-              </h3>
+                <h3 className="text-2xl font-semibold text-grey-900 sm:text-3xl dark:text-white">
+                  <CountUp
+                    key={resetKey + index}
+                    start={0}
+                    end={stat.value}
+                    duration={2.5}
+                    suffix={stat.suffix || "+"}
+                    separator=","
+                  />
+                </h3>
 
-              <p className="font-mooli mt-1 text-xs sm:text-sm text-grey-600 dark:text-grey-300 text-center">
-                {stat.label}
-              </p>
+                <p className="font-mooli mt-1 text-xs text-grey-600 sm:text-sm dark:text-grey-300">
+                  {stat.label}
+                </p>
+              </div>
               <BorderBeam
                 size={70}
                 duration={12}

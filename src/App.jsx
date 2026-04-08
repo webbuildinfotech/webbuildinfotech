@@ -8,6 +8,8 @@ import Technology from './pages/technologies/Technology';
 import Layout from './sections/Layout';
 import Home from './pages/Home/Home';
 import Projects from './pages/projects/Projects';
+import Blog from './pages/blog/Blog';
+import BlogDetail from './pages/blog/BlogDetail';
 import TechnologyLayout from './sections/Technology/TechnologyLayout';
 import { TechnologyRoutes } from './routes/TechnologyRoutes';
 import { RoutePaths } from './routes/constant/path';
@@ -28,6 +30,8 @@ const App = () => {
           <Route path={RoutePaths.SERVICES} element={<Services />} />
           <Route path={RoutePaths.INDUSTRIES} element={<Industries />} />
           <Route path={RoutePaths.PROJECTS} element={<Projects />} />
+          <Route path={RoutePaths.BLOG} element={<Blog />} />
+          <Route path={`${RoutePaths.BLOG}/:slug`} element={<BlogDetail />} />
           <Route path={RoutePaths.COMPANY} element={<Company />} />
           <Route path={RoutePaths.CONTACT} element={<Contact />} />
 

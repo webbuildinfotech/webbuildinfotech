@@ -1,21 +1,26 @@
 import React, { useState } from 'react'
-import { HeroSection, Status, Services, IndustryCards, TechLogos, CompletedProjects, SecondHeroSection } from '../../sections/Home'
+import { HeroSection, Status, Services, IndustryCards, TechLogos, CompletedProjects, SecondHeroSection, WhyChooseUs } from '../../sections/Home'
+import { DemoHeroGeometric } from '../../components/homeSection'
+import Testimonials from '../../components/ui/testimonials'
 
 const Home = () => {
     const [activeHero, setActiveHero] = useState("grid");
 
     return (
         <div>
-            {activeHero === "grid" ? (
+            <DemoHeroGeometric />
+            {/* {activeHero === "grid" ? (
                 <SecondHeroSection onToggleSection={() => setActiveHero("image")} />
             ) : (
                 <HeroSection onToggleSection={() => setActiveHero("grid")} />
-            )}
-            <Status/>
-            <Services/>
-            <IndustryCards/>
-            <TechLogos/>
-            <CompletedProjects/>
+            )} */}
+            <Status />
+            <WhyChooseUs />
+            <Services />
+            <IndustryCards />
+            <TechLogos />
+            <CompletedProjects />
+            {/* <Testimonials /> */}
         </div>
     )
 }

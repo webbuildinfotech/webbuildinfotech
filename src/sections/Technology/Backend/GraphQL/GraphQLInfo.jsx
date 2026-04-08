@@ -1,7 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-const serviceImage = "https://images.cdn-files-a.com/uploads/4430217/800_627958487663f.png"; // Replace with an actual GraphQL-related image
+const serviceImage = "https://upload.wikimedia.org/wikipedia/commons/1/17/GraphQL_Logo.svg";
+const serviceImageFallback = "https://graphql.org/img/logo.svg";
 
 const GraphQLInfo = () => {
   return (
@@ -17,7 +18,12 @@ const GraphQLInfo = () => {
           <img
             src={serviceImage}
             alt="GraphQL Service"
-            className="w-96 max-w-lg object-cover"
+            onError={(e) => {
+              if (e.currentTarget.src !== serviceImageFallback) {
+                e.currentTarget.src = serviceImageFallback;
+              }
+            }}
+            className="w-96 max-w-lg object-contain"
           />
         </motion.div>
 

@@ -58,7 +58,7 @@ export const MagicCard = ({
     >
       <div className="absolute inset-0 grid place-items-center gap-2 overflow-hidden rounded-xl [clip-path:inset(0_round_12px)]">
         <div
-          className="img-container absolute inset-0 grid place-items-center opacity-25 group-hover:opacity-100 transition-opacity duration-300"
+          className="p-2 img-container absolute inset-0 grid place-items-center opacity-25 group-hover:opacity-100 transition-opacity duration-300"
           style={{
             transform: "translateZ(0)",
             filter: `url(#${filterId}) saturate(5) brightness(1.3) contrast(1.4)`,
@@ -97,7 +97,7 @@ export const MagicCard = ({
 
         <h2
           className={cn(
-            "relative z-[4] m-0 text-base font-medium select-none",
+            "relative z-[4] m-0 lg:text-base text-[14px] font-medium select-none text-center",
             isDark ? "text-neutral-100" : "text-neutral-900"
           )}
         >
