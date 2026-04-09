@@ -4,14 +4,11 @@ const ThemeContext = createContext(null);
 
 function getInitialTheme() {
   if (typeof window === 'undefined') return 'dark';
-
-  const stored = window.localStorage.getItem('theme');
-  if (stored === 'dark' || stored === 'light') {
-    return stored;
-  }
-
-  // Default fallback: dark mode first
-  return document.documentElement.classList.contains('dark') ? 'dark' : 'dark';
+  // Revert option:
+  // const stored = window.localStorage.getItem('theme');
+  // if (stored === 'dark' || stored === 'light') return stored;
+  // return document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+  return 'dark';
 }
 
 export function ThemeProvider({ children }) {
@@ -19,17 +16,31 @@ export function ThemeProvider({ children }) {
 
   useEffect(() => {
     const root = document.documentElement;
-    if (theme === 'dark') root.classList.add('dark');
-    else root.classList.remove('dark');
-    localStorage.setItem('theme', theme);
+    // Revert option:
+    // if (theme === 'dark') root.classList.add('dark');
+    // else root.classList.remove('dark');
+    // localStorage.setItem('theme', theme);
+    root.classList.add('dark');
+    if (theme !== 'dark') {
+      setThemeState('dark');
+      return;
+    }
+    localStorage.setItem('theme', 'dark');
   }, [theme]);
 
   const setTheme = useCallback((next) => {
-    setThemeState((prev) => (typeof next === 'function' ? next(prev) : next));
+    // Revert option:
+    // setThemeState((prev) => (typeof next === 'function' ? next(prev) : next));
+    setThemeState(() => {
+      const requested = typeof next === 'function' ? next('dark') : next;
+      return requested === 'dark' ? 'dark' : 'dark';
+    });
   }, []);
 
   const toggleTheme = useCallback(() => {
-    setThemeState((t) => (t === 'dark' ? 'light' : 'dark'));
+    // Revert option:
+    // setThemeState((t) => (t === 'dark' ? 'light' : 'dark'));
+    setThemeState('dark');
   }, []);
 
   const value = {
