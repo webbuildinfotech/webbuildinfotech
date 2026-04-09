@@ -15,7 +15,7 @@ import {
 import { FaReact, FaAngular, FaVuejs, FaHtml5, FaNodeJs, FaDatabase } from "react-icons/fa";
 import { SiGraphql, SiExpress, SiNestjs, SiMongodb, SiMysql, SiPostgresql, SiFirebase } from "react-icons/si";
 import { RoutePaths } from "../../routes/constant/path";
-import { ThemeToggle } from "../../components/themeToggle";
+// import { ThemeToggle } from "../../components/themeToggle";
 import { useTheme } from "../../context/ThemeContext";
 import { FaRegNewspaper } from "react-icons/fa";
 
@@ -119,11 +119,11 @@ const Header = () => {
           </nav>
 
           {/* Theme toggle: visible on all breakpoints (between nav and menu on mobile) */}
-          <ThemeToggle className="lg:rounded-full" />
+          {/* <ThemeToggle className="lg:rounded-full" /> */}
 
           {/* Mobile menu button */}
           <button
-            className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-grey-200/80 bg-white/90 text-grey-700 shadow-sm transition hover:bg-white hover:text-secondary-main focus:outline-none focus:ring-2 focus:ring-secondary/30 dark:border-grey-600 dark:bg-grey-800/90 dark:text-grey-100 dark:hover:bg-grey-800 dark:hover:text-secondary-light lg:hidden"
+            className="inline-flex h-10 w-10 cursor-pointer items-center justify-center rounded-xl border border-grey-200/80 bg-white/90 text-grey-700 shadow-sm transition hover:bg-white hover:text-secondary-main focus:outline-none focus:ring-2 focus:ring-secondary/30 dark:border-grey-600 dark:bg-grey-800/90 dark:text-grey-100 dark:hover:bg-grey-800 dark:hover:text-secondary-light lg:hidden"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           >

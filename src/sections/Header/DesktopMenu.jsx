@@ -24,7 +24,7 @@ const DesktopMenu = ({ menuItems, activeMenu, setIsMenuOpen, isHomeRoute, hasScr
             activeMenu === item.path ? "active" : ""
           } ${useLightText ? "!text-white" : "!text-black"} relative flex items-center justify-center gap-2`}
         >
-          <span
+          {/* <span
             className={`icon-wrapper typing-effect-icon transition-transform duration-300 ease-in-out text-xl ${
               activeMenu === item.path
                 ? "text-blue-500"
@@ -34,8 +34,8 @@ const DesktopMenu = ({ menuItems, activeMenu, setIsMenuOpen, isHomeRoute, hasScr
             }`}
           >
             {item.icon}
-          </span>
-          <span className={`typing-effect mb-2 ${useLightText ? "text-white" : "text-black"}`}>
+          </span> */}
+          <span className={`font-mooli mb-2 ${useLightText ? "text-white" : "text-black"}`}>
             {item.name}
           </span>
         </NavLink>

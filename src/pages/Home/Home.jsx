@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { HeroSection, Status, Services, IndustryCards, TechLogos, CompletedProjects, SecondHeroSection, WhyChooseUs } from '../../sections/Home'
-import { DemoHeroGeometric } from '../../components/homeSection'
+import { CosmicParallaxDemo, DemoHeroGeometric } from '../../components/homeSection'
 import Testimonials from '../../components/ui/testimonials'
 
 const Home = () => {
@@ -8,7 +8,8 @@ const Home = () => {
 
     return (
         <div>
-            <DemoHeroGeometric />
+            <CosmicParallaxDemo />
+            {/* <DemoHeroGeometric /> */}
             {/* {activeHero === "grid" ? (
                 <SecondHeroSection onToggleSection={() => setActiveHero("image")} />
             ) : (

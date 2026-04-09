@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { FaTimes, FaChevronDown, FaChevronUp } from "react-icons/fa";
 import LogoHeader from "../LogoHeader/LogoHeader";
-import { ThemeToggle } from "../../components/themeToggle";
+// import { ThemeToggle } from "../../components/themeToggle";
 import { useTheme } from "../../context/ThemeContext";
 
 const MobileMenu = ({ menuItems, setIsMenuOpen }) => {
@@ -83,12 +83,12 @@ const MobileMenu = ({ menuItems, setIsMenuOpen }) => {
             <div className="min-w-0 flex-1">
               <LogoHeader isLight={isDark} />
             </div>
-            <ThemeToggle />
+            {/* <ThemeToggle /> */}
             <button
               type="button"
               onClick={() => setIsMenuOpen(false)}
               aria-label="Close menu"
-              className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-grey-300 bg-grey-100 text-grey-700 transition duration-200 hover:bg-grey-200 active:scale-95 dark:border-grey-600 dark:bg-grey-800 dark:text-grey-100 dark:hover:bg-grey-700"
+              className="cursor-pointer inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-grey-300 bg-grey-100 text-grey-700 transition duration-200 hover:bg-grey-200 active:scale-95 dark:border-grey-600 dark:bg-grey-800 dark:text-grey-100 dark:hover:bg-grey-700"
             >
               <FaTimes className="text-lg" />
             </button>

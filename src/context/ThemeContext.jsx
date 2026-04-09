@@ -3,15 +3,15 @@ import React, { createContext, useContext, useState, useEffect, useCallback } fr
 const ThemeContext = createContext(null);
 
 function getInitialTheme() {
-  if (typeof window === 'undefined') return 'light';
+  if (typeof window === 'undefined') return 'dark';
 
   const stored = window.localStorage.getItem('theme');
   if (stored === 'dark' || stored === 'light') {
     return stored;
   }
 
-  // Fallback: read from current DOM class (for SSR or inline script)
-  return document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+  // Default fallback: dark mode first
+  return document.documentElement.classList.contains('dark') ? 'dark' : 'dark';
 }
 
 export function ThemeProvider({ children }) {
