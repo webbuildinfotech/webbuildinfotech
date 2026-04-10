@@ -1,5 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion"; // For Animations
+import { cn } from "@/lib/utils";
+import { glassCardLG, glassCardXL } from "@/lib/glassCard";
+import { InteractiveGradientCard } from "../../../../components/card";
 import {
   FaCode,
   FaPaintBrush,
@@ -125,26 +128,33 @@ const ReactInfo = () => {
               initial={{ rotateY: 180, opacity: 0 }}
               animate={{ rotateY: 0, opacity: 1 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="bg-white dark:bg-background-dark/90 shadow-lg rounded-xl p-6 flex flex-col items-center transition-all duration-300 hover:scale-105 hover:shadow-2xl border border-grey-400 dark:border-grey-700"
             >
-              {/* Service Icon */}
-              <div className="mb-4">{service.icon}</div>
-
-              {/* Service Title */}
-              <h3 className="text-xl font-semibold text-grey-900 dark:text-grey-50 text-center">
-                {service.title}
-              </h3>
-
-              {/* Service Description */}
-              <p className="text-grey-600 dark:text-grey-300 text-sm text-center mt-3 font-mooli tracking-wide">
-                {service.description}
-              </p>
+              <InteractiveGradientCard
+                className={cn(
+                  glassCardXL,
+                  "flex h-full flex-col items-center p-6 transition-transform duration-300 hover:scale-105"
+                )}
+                color="#60a5fa"
+                glowColor="#60a5fa80"
+                borderRadius="0.75rem"
+                width="100%"
+                height="100%"
+                backgroundColor="transparent"
+              >
+                <div className="mb-4">{service.icon}</div>
+                <h3 className="text-xl font-semibold text-grey-900 dark:text-grey-50 text-center">
+                  {service.title}
+                </h3>
+                <p className="text-grey-600 dark:text-grey-300 text-sm text-center mt-3 font-mooli tracking-wide">
+                  {service.description}
+                </p>
+              </InteractiveGradientCard>
             </motion.div>
           ))}
         </div>
 
         {/* Why Choose Us Section — inside container for same width/padding as grid above */}
-        <div className="mt-16 bg-white dark:bg-background-dark-light shadow-lg rounded-lg p-8 border border-grey-400 dark:border-grey-700">
+        <div className={cn(glassCardLG, "mt-16 p-8")}>
           <h3 className="text-3xl font-semibold text-grey-900 dark:text-grey-50 text-center">
             Why Choose Our React JS Services?
           </h3>
@@ -157,7 +167,7 @@ const ReactInfo = () => {
             {whyChooseUs.map((reason, index) => (
               <div
                 key={index}
-                className="bg-grey-50 dark:bg-grey-900 p-6 rounded-lg shadow-md border border-grey-400 dark:border-grey-700 flex flex-col items-center"
+                className={cn(glassCardLG, "flex flex-col items-center p-6")}
               >
                 <div className="mb-4">{reason.icon}</div>
                 <h4 className="text-xl font-semibold text-grey-900 dark:text-grey-50 text-center">

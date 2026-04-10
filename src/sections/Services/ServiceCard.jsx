@@ -1,5 +1,7 @@
 import React from "react";
 import { useInView } from "react-intersection-observer";
+import { cn } from "@/lib/utils";
+import { glassCardXL } from "@/lib/glassCard";
 
 const ServiceCard = ({ service, index }) => {
   const { ref, inView } = useInView({
@@ -10,11 +12,13 @@ const ServiceCard = ({ service, index }) => {
   return (
     <div
       ref={ref}
-      className={`flex flex-col lg:flex-row items-center gap-12 bg-white dark:bg-background-dark-light p-7 border border-grey-400 dark:border-grey-700 rounded-xl ${
-        index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
-      } transform transition-all duration-700 ease-in-out ${
+      className={cn(
+        glassCardXL,
+        "flex flex-col items-center gap-12 p-7 lg:flex-row",
+        index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse",
+        "transform transition-all duration-700 ease-in-out",
         inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-      }`}
+      )}
     >
       <div className="w-full lg:w-1/2">
         <div className="aspect-w-16 aspect-h-9">

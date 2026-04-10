@@ -3,6 +3,8 @@ import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaWhatsapp } from "react-icons/
 import { GiSpiderWeb } from "react-icons/gi";
 import ContactBanner from "../../sections/Contact/ContactBanner";
 import { PageMeta } from "../../components/pageMeta";
+import { cn } from "@/lib/utils";
+import { glassCard } from "@/lib/glassCard";
 
 const ContactUs = () => {
   return (
@@ -28,7 +30,7 @@ const ContactUs = () => {
 
           <div className="flex flex-col lg:flex-row justify-between items-stretch gap-8 mb-16">
             {/* Contact Details */}
-            <div className="w-full lg:w-1/2 bg-white dark:bg-background-dark/90 p-8 rounded-2xl shadow-xl transform transition duration-500 hover:shadow-2xl dark:border dark:border-grey-700">
+            <div className={cn(glassCard, "w-full p-8 lg:w-1/2")}>
               <h1 className="text-xl lg:text-3xl font-bold text-grey-900 dark:text-grey-50 mb-6">
                 How can we <span className="text-primary-main">help you?</span>
               </h1>
@@ -120,7 +122,7 @@ const ContactUs = () => {
             </div>
 
             {/* Contact Form */}
-            <div className="w-full lg:w-1/2 bg-white dark:bg-background-dark/90 p-8 rounded-2xl shadow-xl transform transition duration-500 hover:shadow-2xl dark:border dark:border-grey-700">
+            <div className={cn(glassCard, "w-full p-8 lg:w-1/2")}>
               <h2 className="text-2xl lg:text-3xl font-bold text-grey-900 dark:text-grey-50 mb-4">
                 Start Your Project <span className="text-primary-main">Today</span>
               </h2>

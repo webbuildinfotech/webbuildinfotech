@@ -59,7 +59,7 @@ const Layout = () => {
   return (
     <div className="flex min-h-screen min-h-vh flex-col bg-background-light dark:bg-background-dark">
       <Header />
-      <SocialButtons />
+      {/* <SocialButtons /> */}
       <main className="flex-1">
         <Outlet />
       </main>

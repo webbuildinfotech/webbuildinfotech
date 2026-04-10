@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { cn } from "@/lib/utils";
+import { glassCard, glassCardXL } from "@/lib/glassCard";
 
 // Initialize AOS animations
 AOS.init();
@@ -221,7 +223,7 @@ const ProjectsWithPagination = () => {
                 </div>
 
                 {/* Category Filter */}
-                <div className="flex flex-wrap justify-center mt-5 gap-3 sm:gap-4 mb-12 rounded-xl border border-grey-400 bg-grey-100 px-4 py-4 dark:border-grey-700 dark:bg-grey-800/60">
+                <div className={cn(glassCardXL, "mb-12 mt-5 flex flex-wrap justify-center gap-3 px-4 py-4 sm:gap-4")}>
                 {categories.map((category) => (
                     <button
                         key={category}
@@ -245,9 +247,11 @@ const ProjectsWithPagination = () => {
                     {currentProjects.map((project, index) => (
                         <div
                             key={index}
-                            className={`flex flex-col lg:flex-row items-center gap-12 rounded-2xl bg-white p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 dark:bg-background-dark/90 dark:border dark:border-grey-700 ${
+                            className={cn(
+                                glassCard,
+                                "flex flex-col items-center gap-12 p-8 lg:flex-row",
                                 index % 2 === 1 ? "lg:flex-row-reverse" : ""
-                            }`}
+                            )}
                             data-aos="fade-up"
                             data-aos-duration="800"
                         >

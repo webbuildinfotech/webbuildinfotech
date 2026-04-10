@@ -1,5 +1,8 @@
 import React from "react";
 import { FaServer, FaCogs, FaDatabase, FaSyncAlt, FaRocket, FaShieldAlt, FaGlobe, FaUsers, FaMicrochip } from "react-icons/fa";
+import { cn } from "@/lib/utils";
+import { glassCardXL } from "@/lib/glassCard";
+import { InteractiveGradientCard } from "../../../../components/card";
 
 const services = [
   {
@@ -69,19 +72,23 @@ const ExpressJsService = () => {
         {/* Services Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
-            <div
+            <InteractiveGradientCard
               key={index}
-              className="bg-white dark:bg-background-dark/90 shadow-md rounded-xl p-6 flex flex-col items-center text-center transition-all duration-300 hover:scale-105 hover:shadow-lg border border-grey-400 dark:border-grey-700"
+              className={cn(
+                glassCardXL,
+                "flex h-full flex-col items-center p-6 text-center transition-all duration-300 hover:scale-105"
+              )}
+              color="#3b82f6"
+              glowColor="#3b82f680"
+              borderRadius="0.75rem"
+              width="100%"
+              height="100%"
+              backgroundColor="transparent"
             >
-              {/* Service Icon */}
               <div className="mb-4">{service.icon}</div>
-
-              {/* Service Title */}
               <h3 className="text-xl font-semibold text-grey-900 dark:text-grey-50">{service.title}</h3>
-
-              {/* Service Description */}
               <p className="text-sm mt-3 text-grey-600 dark:text-grey-300 font-mooli tracking-wide">{service.description}</p>
-            </div>
+            </InteractiveGradientCard>
           ))}
         </div>
       </div>

@@ -4,6 +4,8 @@ import { useInView } from "react-intersection-observer";
 import { projects } from "../../data/jsonData";
 import { RoutePaths } from "../../routes/constant/path";
 import { BorderBeam } from "@/components/lightswind/border-beam";
+import { cn } from "@/lib/utils";
+import { glassCard } from "@/lib/glassCard";
 
 const CompletedProjects = () => {
   return (
@@ -37,9 +39,12 @@ const ProjectCard = ({ project, index }) => {
   return (
     <article
       ref={ref}
-      className={`group relative flex flex-col overflow-hidden rounded-2xl border border-grey-400 bg-white p-5 shadow-md transition duration-700 ease-out dark:border-grey-700 dark:bg-background-dark-light sm:p-6 ${
-        inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-      } hover:-translate-y-1 hover:border-primary-main/40 hover:shadow-xl dark:hover:border-primary-main/35`}
+      className={cn(
+        glassCard,
+        "flex flex-col p-5 duration-700 ease-out sm:p-6",
+        inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10",
+        "hover:border-primary-main/40 dark:hover:border-primary-main/35"
+      )}
       style={{ transitionDelay: `${index * 150}ms` }}
     >
       <div className="relative w-full overflow-hidden rounded-xl ring-1 ring-grey-200 dark:ring-grey-700">

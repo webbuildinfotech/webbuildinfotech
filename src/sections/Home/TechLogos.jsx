@@ -1,6 +1,8 @@
 import React, { useMemo } from "react";
 import { techLogos } from "../../data/jsonData";
 import TextScrollMarquee from "@/components/ui/TextScrollMarquee";
+import { cn } from "@/lib/utils";
+import { glassCardXL } from "@/lib/glassCard";
 
 const TechLogos = () => {
   const groupedLogos = useMemo(() => {
@@ -37,7 +39,10 @@ const TechLogos = () => {
               {groupedLogos[category].map((logo, logoIndex) => (
                 <div
                   key={logoIndex}
-                  className="flex h-[108px] w-[108px] sm:h-[116px] sm:w-[116px] items-center justify-center bg-white dark:bg-background-dark-light border border-grey-400 dark:border-grey-700 rounded-xl"
+                  className={cn(
+                    glassCardXL,
+                    "flex h-[108px] w-[108px] shrink-0 items-center justify-center sm:h-[116px] sm:w-[116px]"
+                  )}
                 >
                   <img
                     src={logo.src}
