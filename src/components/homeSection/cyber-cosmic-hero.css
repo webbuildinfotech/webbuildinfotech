@@ -1,0 +1,276 @@
+/* Cyber / cosmic hero — cyan & emerald glows, grid, starfield */
+
+.cyber-cosmic-hero {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  color: #fff;
+  background: #030712;
+}
+
+.cyber-cosmic-hero__bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.cyber-cosmic-hero__base {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 120% 80% at 50% 100%, rgba(15, 23, 42, 0.95) 0%, transparent 55%),
+    radial-gradient(ellipse 90% 70% at 20% 20%, rgba(30, 58, 138, 0.22) 0%, transparent 50%),
+    linear-gradient(180deg, #020617 0%, #0f172a 42%, #030712 100%);
+}
+
+.cyber-cosmic-hero__glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.85;
+  animation: cyberGlowPulse 8s ease-in-out infinite;
+}
+
+.cyber-cosmic-hero__glow--cyan {
+  width: min(85vw, 640px);
+  height: min(70vh, 520px);
+  right: -8%;
+  top: 18%;
+  background: radial-gradient(
+    circle,
+    rgba(34, 211, 238, 0.35) 0%,
+    rgba(59, 130, 246, 0.12) 45%,
+    transparent 70%
+  );
+  animation-delay: 0s;
+}
+
+.cyber-cosmic-hero__glow--green {
+  width: min(55vw, 420px);
+  height: min(50vh, 380px);
+  right: 12%;
+  bottom: 22%;
+  background: radial-gradient(
+    circle,
+    rgba(52, 211, 153, 0.28) 0%,
+    rgba(16, 185, 129, 0.08) 50%,
+    transparent 68%
+  );
+  animation-delay: -2.5s;
+}
+
+.cyber-cosmic-hero__glow--blue {
+  width: 70%;
+  height: 45%;
+  left: 50%;
+  bottom: -15%;
+  transform: translateX(-50%);
+  background: radial-gradient(ellipse at center, rgba(37, 99, 235, 0.25) 0%, transparent 65%);
+  filter: blur(70px);
+  opacity: 0.55;
+  animation: cyberGlowBluePulse 10s ease-in-out infinite;
+  animation-delay: -4s;
+}
+
+@keyframes cyberGlowPulse {
+  0%,
+  100% {
+    opacity: 0.65;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.95;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes cyberGlowBluePulse {
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 0.72;
+  }
+}
+
+.cyber-cosmic-hero__grid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.22;
+  background-image:
+    linear-gradient(rgba(56, 189, 248, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56, 189, 248, 0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse 75% 65% at 70% 45%, black 15%, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse 75% 65% at 70% 45%, black 15%, transparent 70%);
+}
+
+.cyber-cosmic-hero__vignette {
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 0 120px rgba(0, 0, 0, 0.55);
+  background: radial-gradient(ellipse 85% 70% at 50% 50%, transparent 40%, rgba(2, 6, 23, 0.65) 100%);
+}
+
+.cyber-cosmic-hero__stars,
+.cyber-cosmic-hero__stars-mid,
+.cyber-cosmic-hero__stars-lg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: transparent;
+  animation-name: cyberAnimStar;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  will-change: transform;
+}
+
+.cyber-cosmic-hero__stars {
+  width: 1px;
+  height: 1px;
+  animation-duration: 55s;
+}
+
+.cyber-cosmic-hero__stars-mid {
+  width: 2px;
+  height: 2px;
+  animation-duration: 95s;
+}
+
+.cyber-cosmic-hero__stars-lg {
+  width: 3px;
+  height: 3px;
+  animation-duration: 140s;
+}
+
+.cyber-cosmic-hero__stars::after,
+.cyber-cosmic-hero__stars-mid::after,
+.cyber-cosmic-hero__stars-lg::after {
+  content: "";
+  position: absolute;
+  top: 2000px;
+  left: 0;
+  width: inherit;
+  height: inherit;
+  border-radius: 50%;
+  box-shadow: inherit;
+}
+
+@keyframes cyberAnimStar {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-2000px);
+  }
+}
+
+/* Industry word (typing) — same behavior as parallax hero */
+.cyber-industry-word {
+  display: inline-block;
+  border: none;
+  background: transparent;
+  padding: 0;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  color: #22d3ee;
+  text-shadow:
+    0 0 20px rgba(34, 211, 238, 0.45),
+    0 0 40px rgba(52, 211, 153, 0.2);
+  animation: cyberIndustryIn 0.38s ease-out;
+}
+
+.cyber-industry-word--typing {
+  overflow: hidden;
+  white-space: nowrap;
+  width: calc(var(--chars) * 1.1ch);
+  border-right: 2px solid rgba(34, 211, 238, 0.85);
+  animation:
+    cyberIndustryIn 0.28s ease-out,
+    cyberIndustryTyping 1.05s steps(var(--chars), end),
+    cyberIndustryCaret 0.7s step-end infinite;
+}
+
+@keyframes cyberIndustryIn {
+  from {
+    transform: translateY(8px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes cyberIndustryTyping {
+  from {
+    width: 0;
+  }
+  to {
+    width: calc(var(--chars) * 1ch);
+  }
+}
+
+@keyframes cyberIndustryCaret {
+  50% {
+    border-right-color: transparent;
+  }
+}
+
+.cyber-cosmic-hero__img-wrap {
+  position: relative;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .cyber-cosmic-hero__img-wrap {
+    justify-content: flex-end;
+  }
+}
+
+.cyber-cosmic-hero__img-ring {
+  position: absolute;
+  inset: -4%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(34, 211, 238, 0.12) 0%,
+    transparent 65%
+  );
+  filter: blur(24px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.cyber-cosmic-hero__img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: min(100%, 520px);
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 0 32px rgba(34, 211, 238, 0.25))
+    drop-shadow(0 24px 48px rgba(0, 0, 0, 0.5))
+    drop-shadow(0 0 60px rgba(52, 211, 153, 0.12));
+}
+
+@media (min-width: 640px) {
+  .cyber-cosmic-hero__img {
+    max-width: min(100%, 580px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .cyber-cosmic-hero__img {
+    max-width: none;
+    max-height: min(72vh, 580px);
+  }
+}

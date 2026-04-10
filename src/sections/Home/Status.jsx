@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import CountUp from "react-countup";
 import { stats } from "../../data/jsonData";
 import { BorderBeam } from "@/components/lightswind/border-beam";
+import { cn } from "@/lib/utils";
+import { glassCard } from "@/lib/glassCard";
 
 const StatsComponent = () => {
   const [resetKey, setResetKey] = useState(0);
@@ -32,7 +34,10 @@ const StatsComponent = () => {
           {stats.map((stat, index) => (
             <div
               key={index}
-              className="group relative overflow-hidden rounded-2xl bg-white/90 px-4 py-5 shadow-[0_10px_30px_rgba(15,23,42,0.12)] ring-1 ring-grey-300/90 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(15,23,42,0.18)] hover:ring-primary-main/40 sm:px-5 sm:py-6 dark:bg-background-dark-light dark:ring-grey-700/80"
+              className={cn(
+                glassCard,
+                "px-4 py-5 transition-all duration-300 hover:ring-primary-main/40 sm:px-5 sm:py-6 dark:hover:ring-primary-main/35"
+              )}
               style={{
                 animation: `fadeInUp 0.7s ease-out ${index * 0.12}s forwards`,
                 opacity: 0,

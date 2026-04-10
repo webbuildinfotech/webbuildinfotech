@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./parallax-cosmic-background.css";
 import { Check } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { glassCard, glassHeroRow } from "@/lib/glassCard";
 
 const CosmicParallaxBg = ({ head, text, loop = true, className = "" }) => {
   const [smallStars, setSmallStars] = useState("");
@@ -71,8 +73,8 @@ const CosmicParallaxBg = ({ head, text, loop = true, className = "" }) => {
       <div className="pointer-events-none absolute inset-0 z-20 bg-gradient-to-b from-black/20 via-transparent to-black/45" />
 
       <div className="relative z-30 mx-auto flex min-h-screen max-w-7xl flex-col px-4 pb-10 pt-24 sm:px-6 sm:pb-12 lg:px-8">
-        <div className="grid flex-1 items-center gap-10">
-          <div className="max-w-3xl">
+        <div className="grid flex-1 grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-12">
+          <div className="max-w-3xl lg:max-w-none">
             <span className="inline-flex rounded-full border border-violet-300/40 bg-violet-500/14 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-violet-200 shadow-[0_0_18px_rgba(124,58,237,0.32)]">
               Web Build Infotech
             </span>
@@ -123,7 +125,9 @@ const CosmicParallaxBg = ({ head, text, loop = true, className = "" }) => {
               {highlights.map((item) => (
                 <li data-aos="fade-up" 
                     data-aos-duration="1500" 
-                    key={item} className="font-mooli flex items-center gap-2 rounded-lg border border-white/12 bg-black/20 px-3 py-2 backdrop-blur-[2px]">
+                    key={item}
+                    className={cn(glassHeroRow, "font-mooli flex items-center gap-2")}
+                  >
                   <Check className="h-4 w-4 shrink-0 text-violet-300" />
                   <span>{item}</span>
                 </li>
@@ -131,6 +135,21 @@ const CosmicParallaxBg = ({ head, text, loop = true, className = "" }) => {
             </ul>
           </div>
 
+          <div
+            data-aos="fade-left"
+            data-aos-duration="1500"
+            className="relative flex w-full justify-center lg:justify-end"
+          >
+            <img
+              src="/images/rightSide.png"
+              alt="Custom software development illustration"
+              className="h-auto w-full max-w-md object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.45)] sm:max-w-lg lg:max-w-none lg:max-h-[min(72vh,560px)]"
+              width={800}
+              height={600}
+              loading="eager"
+              decoding="async"
+            />
+          </div>
         </div>
 
         <div className="mt-7 grid grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-5">
@@ -141,9 +160,11 @@ const CosmicParallaxBg = ({ head, text, loop = true, className = "" }) => {
           ].map((card) => (
             <div
               key={card.label}
-              className="group relative overflow-hidden rounded-2xl border border-white/25 bg-transparent px-5 py-5 text-white shadow-[0_10px_30px_rgba(24,30,70,0.28)] backdrop-blur-md ring-1 ring-white/10 transition hover:-translate-y-1 hover:border-white/45 hover:ring-white/20"
+              className={cn(
+                glassCard,
+                "px-5 py-5 text-white border-white/25 ring-white/10 shadow-[0_10px_30px_rgba(24,30,70,0.28)] before:via-white/65 hover:border-white/45 hover:ring-white/20"
+              )}
             >
-              <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/65 to-transparent" />
               <p className="text-4xl font-bold leading-none tracking-tight font-mooli">{card.value}</p>
               <p className="mt-1 text-xl text-white/80 sm:text-2xl font-mooli">{card.label}</p>
             </div>

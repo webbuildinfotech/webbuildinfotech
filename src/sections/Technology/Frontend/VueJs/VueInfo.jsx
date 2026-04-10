@@ -1,6 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaVuejs, FaCode, FaDatabase, FaCogs, FaCloud, FaRocket, FaSyncAlt, FaShieldAlt } from "react-icons/fa";
+import { cn } from "@/lib/utils";
+import { glassCardXL } from "@/lib/glassCard";
+import { InteractiveGradientCard } from "../../../../components/card";
 
 const services = [
   {
@@ -81,20 +84,27 @@ const VueInfo = () => {
               initial={{ rotateY: 180, opacity: 0 }}
               animate={{ rotateY: 0, opacity: 1 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="bg-white dark:bg-background-dark/90 shadow-lg rounded-xl p-6 flex flex-col items-center transition-all duration-300 hover:scale-105 hover:shadow-2xl border border-grey-400 dark:border-grey-700"
             >
-              {/* Service Icon */}
-              <div className="mb-4">{service.icon}</div>
-
-              {/* Service Title */}
-              <h3 className="text-xl font-semibold text-grey-900 dark:text-grey-50 text-center">
-                {service.title}
-              </h3>
-
-              {/* Service Description */}
-              <p className="text-grey-600 dark:text-grey-300 text-sm text-center mt-3 font-mooli tracking-wide">
-                {service.description}
-              </p>
+              <InteractiveGradientCard
+                className={cn(
+                  glassCardXL,
+                  "flex h-full flex-col items-center p-6 transition-all duration-300 hover:scale-105"
+                )}
+                color="#22c55e"
+                glowColor="#22c55e80"
+                borderRadius="0.75rem"
+                width="100%"
+                height="100%"
+                backgroundColor="transparent"
+              >
+                <div className="mb-4">{service.icon}</div>
+                <h3 className="text-xl font-semibold text-grey-900 dark:text-grey-50 text-center">
+                  {service.title}
+                </h3>
+                <p className="text-grey-600 dark:text-grey-300 text-sm text-center mt-3 font-mooli tracking-wide">
+                  {service.description}
+                </p>
+              </InteractiveGradientCard>
             </motion.div>
           ))}
         </div>

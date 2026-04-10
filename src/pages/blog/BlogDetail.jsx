@@ -2,6 +2,8 @@ import React, { useMemo, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { blogPosts, getBlogBySlug } from "../../data/blogData";
 import { RoutePaths } from "../../routes/constant/path";
+import { cn } from "@/lib/utils";
+import { glassCardXL } from "@/lib/glassCard";
 
 const BlogDetail = () => {
   const { slug } = useParams();
@@ -92,7 +94,7 @@ const BlogDetail = () => {
               <Link
                 key={item.id}
                 to={`${RoutePaths.BLOG}/${item.slug}`}
-                className="overflow-hidden rounded-xl border border-grey-300 bg-white transition hover:-translate-y-1 hover:shadow-lg dark:border-grey-700 dark:bg-background-dark-light"
+                className={cn(glassCardXL, "overflow-hidden transition hover:scale-[1.01]")}
               >
                 <img src={item.coverImage} alt={item.title} className="h-40 w-full object-cover" loading="lazy" />
                 <div className="p-4">

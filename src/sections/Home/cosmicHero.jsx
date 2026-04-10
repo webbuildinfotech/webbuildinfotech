@@ -112,7 +112,7 @@ export default function CosmicHero() {
             return (
               <div
                 key={s.label}
-                className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.08] px-5 py-5 shadow-[0_8px_32px_rgba(0,0,0,0.35)] backdrop-blur-md transition hover:border-white/18 hover:bg-white/[0.11] sm:py-6"
+                className="group relative overflow-hidden rounded-2xl border border-white/25 bg-transparent px-5 py-5 shadow-[0_10px_30px_rgba(24,30,70,0.28)] backdrop-blur-md ring-1 ring-white/10 transition hover:-translate-y-1 hover:border-white/45 hover:ring-white/20 sm:py-6"
               >
                 <div
                   className={`absolute inset-x-0 top-0 h-px bg-gradient-to-r ${s.borderAccent}`}
@@ -126,7 +126,7 @@ export default function CosmicHero() {
                 </p>
                 <div className="mt-4 flex justify-center">
                   <span
-                    className={`inline-flex rounded-xl border border-white/10 bg-black/20 p-2.5 ${s.iconClass} ring-1 ring-white/5`}
+                    className={`inline-flex rounded-xl border border-white/20 bg-transparent p-2.5 backdrop-blur-sm ${s.iconClass} ring-1 ring-white/10`}
                   >
                     <Icon className="h-5 w-5" strokeWidth={2} aria-hidden />
                   </span>

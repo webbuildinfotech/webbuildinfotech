@@ -1,5 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { cn } from "@/lib/utils";
+import { glassCardLG } from "@/lib/glassCard";
 
 const technologies = [
   {
@@ -131,7 +133,10 @@ const TechnologiesPage = () => {
                     window.scrollTo(0, 0); // Scroll to top
                     navigate(tech.link); // Navigate to new page
                   }}
-                  className="flex flex-col items-center justify-start rounded-lg bg-white p-6 shadow-md border border-grey-400 transition-transform duration-300 hover:scale-105 hover:shadow-lg dark:bg-background-dark-light dark:border-grey-700"
+                  className={cn(
+                    glassCardLG,
+                    "flex flex-col items-center justify-start p-6 transition-transform duration-300 hover:scale-105"
+                  )}
                 >
                   {/* Technology Logo */}
                   <img
