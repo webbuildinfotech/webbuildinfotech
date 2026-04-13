@@ -230,6 +230,94 @@
   align-items: center;
 }
 
+.cyber-cosmic-hero__tech-orbit {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.cyber-cosmic-hero__floating-tech {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(2, 6, 23, 0.55);
+  box-shadow:
+    0 0 25px rgba(34, 211, 238, 0.24),
+    0 0 40px rgba(59, 130, 246, 0.12);
+  backdrop-filter: blur(6px);
+  animation: cyberFloatTech 5.2s ease-in-out infinite;
+}
+
+.cyber-cosmic-hero__floating-tech-icon {
+  font-size: 1.4rem;
+}
+
+.cyber-cosmic-hero__tech--1 { top: 5%; left: 14%; animation: cyberFloatOrbitA 6s ease-in-out infinite; }
+.cyber-cosmic-hero__tech--2 { top: 14%; right: 12%; animation: cyberFloatOrbitB 6.8s ease-in-out infinite; }
+.cyber-cosmic-hero__tech--3 { top: 27%; left: 4%; animation: cyberFloatOrbitC 7.2s ease-in-out infinite; }
+.cyber-cosmic-hero__tech--4 { top: 34%; right: 2%; animation: cyberFloatOrbitD 6.3s ease-in-out infinite; }
+.cyber-cosmic-hero__tech--5 { top: 50%; left: 0%; animation: cyberFloatOrbitB 7.5s ease-in-out infinite; }
+.cyber-cosmic-hero__tech--6 { top: 59%; right: 6%; animation: cyberFloatOrbitC 6.7s ease-in-out infinite; }
+.cyber-cosmic-hero__tech--7 { bottom: 27%; left: 7%; animation: cyberFloatOrbitD 7.1s ease-in-out infinite; }
+.cyber-cosmic-hero__tech--8 { bottom: 16%; right: 0%; animation: cyberFloatOrbitA 6.6s ease-in-out infinite; }
+.cyber-cosmic-hero__tech--9 { bottom: 7%; left: 17%; animation: cyberFloatOrbitC 7.6s ease-in-out infinite; }
+.cyber-cosmic-hero__tech--10 { bottom: 4%; right: 18%; animation: cyberFloatOrbitB 6.9s ease-in-out infinite; }
+.cyber-cosmic-hero__tech--11 { top: 3%; left: 43%; animation: cyberFloatOrbitD 7.8s ease-in-out infinite; }
+.cyber-cosmic-hero__tech--12 { top: 27%; left: 48%; animation: cyberFloatOrbitA 6.4s ease-in-out infinite; }
+.cyber-cosmic-hero__tech--13 { top: 18%; left: 30%; animation: cyberFloatOrbitB 7.4s ease-in-out infinite; }
+.cyber-cosmic-hero__tech--14 { top: 23%; right: 27%; animation: cyberFloatOrbitD 6.5s ease-in-out infinite; }
+.cyber-cosmic-hero__tech--15 { top: 44%; right: 22%; animation: cyberFloatOrbitA 7.7s ease-in-out infinite; }
+.cyber-cosmic-hero__tech--16 { bottom: 33%; left: 26%; animation: cyberFloatOrbitC 6.2s ease-in-out infinite; }
+.cyber-cosmic-hero__tech--17 { bottom: 19%; left: 39%; animation: cyberFloatOrbitB 7.3s ease-in-out infinite; }
+.cyber-cosmic-hero__tech--18 { top: 9%; right: 34%; animation: cyberFloatOrbitD 6.8s ease-in-out infinite; }
+.cyber-cosmic-hero__tech--19 { top: 12%; left: 0%; animation: cyberFloatOrbitA 7.1s ease-in-out infinite; }
+.cyber-cosmic-hero__tech--20 { top: 39%; left: 18%; animation: cyberFloatOrbitC 6.6s ease-in-out infinite; }
+.cyber-cosmic-hero__tech--21 { bottom: 13%; right: 11%; animation: cyberFloatOrbitB 7.2s ease-in-out infinite; }
+.cyber-cosmic-hero__tech--22 { bottom: 30%; right: 26%; animation: cyberFloatOrbitD 6.9s ease-in-out infinite; }
+.cyber-cosmic-hero__tech--23 { top: 36%; left: 58%; animation: cyberFloatOrbitA 7.1s ease-in-out infinite; }
+
+@keyframes cyberFloatTech {
+  0%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -8px, 0);
+  }
+}
+
+@keyframes cyberFloatOrbitA {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+  25% { transform: translate3d(6px, -10px, 0) rotate(2deg); }
+  50% { transform: translate3d(-4px, -16px, 0) rotate(-2deg); }
+  75% { transform: translate3d(-8px, -6px, 0) rotate(1deg); }
+}
+
+@keyframes cyberFloatOrbitB {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+  25% { transform: translate3d(-7px, -8px, 0) rotate(-2deg); }
+  50% { transform: translate3d(5px, -15px, 0) rotate(2deg); }
+  75% { transform: translate3d(8px, -5px, 0) rotate(-1deg); }
+}
+
+@keyframes cyberFloatOrbitC {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  33% { transform: translate3d(5px, -12px, 0) scale(1.04); }
+  66% { transform: translate3d(-6px, -7px, 0) scale(0.98); }
+}
+
+@keyframes cyberFloatOrbitD {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+  20% { transform: translate3d(4px, -6px, 0) rotate(2deg); }
+  50% { transform: translate3d(-6px, -14px, 0) rotate(-3deg); }
+  80% { transform: translate3d(7px, -5px, 0) rotate(1deg); }
+}
+
 @media (min-width: 1024px) {
   .cyber-cosmic-hero__img-wrap {
     justify-content: flex-end;
@@ -276,6 +364,15 @@
 }
 
 @media (min-width: 640px) {
+  .cyber-cosmic-hero__floating-tech {
+    width: 2.9rem;
+    height: 2.9rem;
+  }
+
+  .cyber-cosmic-hero__floating-tech-icon {
+    font-size: 1.7rem;
+  }
+
   .cyber-cosmic-hero__img {
     max-width: min(100%, 580px);
   }
@@ -287,6 +384,15 @@
 }
 
 @media (min-width: 1024px) {
+  .cyber-cosmic-hero__floating-tech {
+    width: 3.25rem;
+    height: 3.25rem;
+  }
+
+  .cyber-cosmic-hero__floating-tech-icon {
+    font-size: 1.95rem;
+  }
+
   .cyber-cosmic-hero__img {
     max-width: none;
     max-height: min(72vh, 580px);

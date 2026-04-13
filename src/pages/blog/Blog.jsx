@@ -89,7 +89,7 @@ const Blog = () => {
             {filteredPosts.map((post) => (
               <article
                 key={post.id}
-                className={cn(glassCard, "overflow-hidden transition hover:scale-[1.01]")}
+                className={cn(glassCard, "overflow-hidden transition hover:scale-[1.01] !rounded-[0px] !rounded-tl-[10%] !rounded-br-[10%]")}
               >
                 <img
                   src={post.coverImage}

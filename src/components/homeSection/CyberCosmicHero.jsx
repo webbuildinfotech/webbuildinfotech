@@ -3,10 +3,35 @@ import { BriefcaseBusiness, Check, FolderKanban, Users } from "lucide-react";
 import "./cyber-cosmic-hero.css";
 import { cn } from "@/lib/utils";
 import { glassCard, glassHeroRow } from "@/lib/glassCard";
+import {
+  AngularIcon,
+  CursorIcon,
+  Css3Icon,
+  ExpoIcon,
+  ExpressJsIcon,
+  GitIcon,
+  GithubLightIcon,
+  GitlabIcon,
+  HtmlIcon,
+  JavascriptIcon,
+  MaterialUiIcon,
+  MongoDbIcon,
+  MysqlWordmarkIcon,
+  NestJsIcon,
+  NextJsIcon,
+  NodeJsIcon,
+  PostgresqlIcon,
+  PostmanIcon,
+  ReactLogoIcon,
+  SwaggerIcon,
+  TailwindCssIcon,
+  VercelIcon,
+  VueIcon,
+} from "@/components/icons/Icon";
 
 // const RIGHT_IMAGE = "/images/rightSide.webp";
-// const RIGHT_IMAGE = "/images/UIandUX.svg";
-const RIGHT_IMAGE = "/svg/ui-ux-lottie.svg";
+const RIGHT_IMAGE = "/images/heroImage.svg";
+// const RIGHT_IMAGE = "/svg/ui-ux-lottie.svg";
 // const IFRAME_IMAGE = "https://lottie.host/embed/ca4e4617-d51a-4912-87ad-550a61deea9f/F0v6wgTLL6.lottie";
 // const IFRAME_IMAGE = "https://lottie.host/embed/46e4919f-01f1-48cf-833f-a913bcdc7c2d/IqXWlR1cTc.lottie";
 const IFRAME_IMAGE = "https://lottie.host/embed/134d5909-676e-487a-9158-af43eb3bbceb/wBUyrzH5Un.lottie";
@@ -35,6 +60,32 @@ const industries = [
   "E Commerce",
   "Real Estate",
   "Insurance",
+];
+
+const floatingTechIcons = [
+  { Icon: HtmlIcon, className: "cyber-cosmic-hero__tech--1" },
+  { Icon: Css3Icon, className: "cyber-cosmic-hero__tech--2" },
+  { Icon: JavascriptIcon, className: "cyber-cosmic-hero__tech--3" },
+  { Icon: ReactLogoIcon, className: "cyber-cosmic-hero__tech--4" },
+  { Icon: TailwindCssIcon, className: "cyber-cosmic-hero__tech--5" },
+  { Icon: NodeJsIcon, className: "cyber-cosmic-hero__tech--6" },
+  { Icon: ExpressJsIcon, className: "cyber-cosmic-hero__tech--7" },
+  { Icon: MongoDbIcon, className: "cyber-cosmic-hero__tech--8" },
+  { Icon: MysqlWordmarkIcon, className: "cyber-cosmic-hero__tech--9" },
+  { Icon: PostgresqlIcon, className: "cyber-cosmic-hero__tech--10" },
+  { Icon: SwaggerIcon, className: "cyber-cosmic-hero__tech--11" },
+  { Icon: PostmanIcon, className: "cyber-cosmic-hero__tech--12" },
+  { Icon: VueIcon, className: "cyber-cosmic-hero__tech--13" },
+  { Icon: AngularIcon, className: "cyber-cosmic-hero__tech--14" },
+  { Icon: NextJsIcon, className: "cyber-cosmic-hero__tech--15" },
+  { Icon: NestJsIcon, className: "cyber-cosmic-hero__tech--16" },
+  { Icon: VercelIcon, className: "cyber-cosmic-hero__tech--17" },
+  { Icon: CursorIcon, className: "cyber-cosmic-hero__tech--18" },
+  { Icon: GitlabIcon, className: "cyber-cosmic-hero__tech--19" },
+  { Icon: GitIcon, className: "cyber-cosmic-hero__tech--20" },
+  { Icon: GithubLightIcon, className: "cyber-cosmic-hero__tech--21" },
+  { Icon: MaterialUiIcon, className: "cyber-cosmic-hero__tech--22" },
+  { Icon: ExpoIcon, className: "cyber-cosmic-hero__tech--23" },
 ];
 
 function CyberCosmicHero({ className = "" }) {
@@ -156,7 +207,7 @@ function CyberCosmicHero({ className = "" }) {
             className="cyber-cosmic-hero__img-wrap order-1 lg:order-2"
           >
             <div className="cyber-cosmic-hero__img-ring" aria-hidden="true" />
-            {/* <img
+            <img
               src={RIGHT_IMAGE}
               alt="MERN stack development — laptop, neural network visualization, and connected technology icons"
               className="cyber-cosmic-hero__img"
@@ -164,13 +215,23 @@ function CyberCosmicHero({ className = "" }) {
               height={700}
               loading="eager"
               decoding="async"
-            /> */}
-            <iframe
+            />
+            <div className="cyber-cosmic-hero__tech-orbit" aria-hidden="true">
+              {floatingTechIcons.map(({ Icon, className }, index) => (
+                <span
+                  key={index}
+                  className={cn("cyber-cosmic-hero__floating-tech", className)}
+                >
+                  <Icon className="cyber-cosmic-hero__floating-tech-icon" />
+                </span>
+              ))}
+            </div>
+            {/* <iframe
               src="/svg/ui-ux-lottie.html"
               title="MERN stack development — animated technology visualization"
               className="cyber-cosmic-hero__img-frame"
               loading="eager"
-            />
+            /> */}
             {/* <iframe src={IFRAME_IMAGE} 
               title="MERN stack development — laptop, neural network visualization, and connected technology icons"
               className="cyber-cosmic-hero__img w-full h-full object-cover"

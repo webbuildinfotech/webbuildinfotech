@@ -111,21 +111,40 @@ const technologies = [
 const TechnologiesPage = () => {
   const navigate = useNavigate(); // Hook for navigation
   return (
-    <section className="pt-24 pb-16 sm:pt-28 sm:pb-20 bg-gradient-to-b from-background-light via-background-light/80 to-background-light dark:from-background-dark dark:via-background-dark/95 dark:to-background-dark">
+    <section className="bg-gradient-to-b from-background-light via-background-light/80 to-background-light pb-16 pt-24 dark:from-background-dark dark:via-background-dark/95 dark:to-background-dark sm:pb-20 sm:pt-28">
+      <div className="relative isolate mb-10 w-full overflow-hidden rounded-b-3xl px-6 py-12 text-center shadow-[0_20px_50px_-15px_rgba(15,23,42,0.35)] dark:shadow-[0_24px_60px_-12px_rgba(0,0,0,0.55)] sm:px-8 sm:py-14">
+        <div className="absolute inset-0 bg-gradient-to-br from-grey-950 via-primary-darker to-secondary-darker" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_90%_60%_at_50%_-30%,rgba(91,228,155,0.18),transparent_55%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_100%_100%,rgba(142,51,255,0.2),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[size:48px_48px] [mask-image:linear-gradient(to_bottom,black_40%,transparent)]" />
+        <div className="relative mx-auto w-full max-w-4xl">
+          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-primary-lighter/90">
+            Tech Stack
+          </p>
+          <h1 className="mt-3 text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl">
+            Technologies{" "}
+            <span className="bg-gradient-to-r from-primary-light via-primary-lighter to-secondary-light bg-clip-text text-transparent">
+              We Work With
+            </span>
+          </h1>
+          <p className="mx-auto mt-4 max-w-2xl text-sm text-white/75 sm:text-base">
+            Explore our modern frontend, backend, and database technologies used to build scalable products.
+          </p>
+          <div className="mx-auto mt-7 h-1 w-14 rounded-full bg-gradient-to-r from-primary-main via-primary-light to-secondary-main sm:w-16" />
+        </div>
+      </div>
+
       <div className="container mx-auto px-6 lg:px-12">
-        <h1 className="mb-5 text-start text-2xl lg:text-3xl font-bold text-grey-900 dark:text-grey-50">
-          TECHNOLOGIES WE WORK WITH
-        </h1>
 
         {technologies.map((techCategory, index) => (
-          <div key={index} className="mb-5">
+          <div key={index} className="mb-10">
             {/* Category Header */}
-            <h2 className="mb-8 text-xl lg:text-2xl font-semibold text-grey-800 dark:text-grey-100">
+            <h2 className="mb-6 text-xl font-semibold text-grey-800 dark:text-grey-100 lg:text-2xl">
               {techCategory.category}
             </h2>
 
             {/* Grid Layout */}
-            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4 cursor-pointer">
+            <div className="grid cursor-pointer grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {techCategory.items.map((tech, i) => (
                 <div
                   key={i}
@@ -135,21 +154,21 @@ const TechnologiesPage = () => {
                   }}
                   className={cn(
                     glassCardLG,
-                    "flex flex-col items-center justify-start p-6 transition-transform duration-300 hover:scale-105"
+                    "group flex h-full flex-col items-center justify-start !rounded-[0px] !rounded-tl-[15%] !rounded-br-[15%] border border-grey-200/70 p-6 transition-transform duration-300 hover:-translate-y-1 hover:scale-[1.02] dark:border-grey-700/70"
                   )}
                 >
                   {/* Technology Logo */}
                   <img
                     src={tech.image}
                     alt={tech.name}
-                    className="w-16 h-16 object-contain mb-4"
+                    className="mb-4 h-16 w-16 object-contain transition-transform duration-300 group-hover:scale-110"
                   />
                   {/* Technology Name */}
-                  <h3 className="mb-4 text-xl font-semibold text-grey-900 dark:text-grey-50">
+                  <h3 className="mb-3 text-center text-xl font-semibold text-grey-900 dark:text-grey-50">
                     {tech.name}
                   </h3>
                   {/* Technology Description */}
-                  <p className="font-mooli text-sm text-center text-grey-600 dark:text-grey-300">
+                  <p className="font-mooli text-center text-sm leading-6 text-grey-600 dark:text-grey-300">
                     {tech.description}
                   </p>
                 </div>

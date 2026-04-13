@@ -53,7 +53,7 @@ const BlogDetail = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-900/35 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10">
-                <p className="mb-2 text-xs font-semibold uppercase tracking-[0.25em] text-indigo-200">
+                <p className="mb-3 inline-flex rounded-full border border-white/35 bg-slate-900/45 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-white/95 backdrop-blur-sm">
                   {post.category}
                 </p>
                 <h1 className="text-3xl font-bold text-white md:text-4xl">

@@ -302,6 +302,90 @@ export function JavascriptIcon({ className = '' }) {
   return <Icon iconClass="icon-[skill-icons--javascript]" className={className} />;
 }
 
+export function NodeJsIcon({ className = '' }) {
+  return <Icon iconClass="icon-[logos--nodejs-icon]" className={className} />;
+}
+
+export function TailwindCssIcon({ className = '' }) {
+  return <Icon iconClass="icon-[skill-icons--tailwindcss-dark]" className={className} />;
+}
+
+export function ExpressJsIcon({ className = '' }) {
+  return <Icon iconClass="icon-[skill-icons--expressjs-light]" className={className} />;
+}
+
+export function Css3Icon({ className = '' }) {
+  return <Icon iconClass="icon-[devicon--css3]" className={className} />;
+}
+
+export function ReactLogoIcon({ className = '' }) {
+  return <Icon iconClass="icon-[logos--react]" className={className} />;
+}
+
+export function MongoDbIcon({ className = '' }) {
+  return <Icon iconClass="icon-[skill-icons--mongodb]" className={className} />;
+}
+
+export function MysqlWordmarkIcon({ className = '' }) {
+  return <Icon iconClass="icon-[devicon--mysql-wordmark]" className={className} />;
+}
+
+export function PostmanIcon({ className = '' }) {
+  return <Icon iconClass="icon-[skill-icons--postman]" className={className} />;
+}
+
+export function PostgresqlIcon({ className = '' }) {
+  return <Icon iconClass="icon-[devicon--postgresql]" className={className} />;
+}
+
+export function SwaggerIcon({ className = '' }) {
+  return <Icon iconClass="icon-[devicon--swagger]" className={className} />;
+}
+
+export function VueIcon({ className = '' }) {
+  return <Icon iconClass="icon-[logos--vue]" className={className} />;
+}
+
+export function AngularIcon({ className = '' }) {
+  return <Icon iconClass="icon-[devicon--angularjs]" className={className} />;
+}
+
+export function NextJsIcon({ className = '' }) {
+  return <Icon iconClass="icon-[vscode-icons--file-type-next]" className={className} />;
+}
+
+export function NestJsIcon({ className = '' }) {
+  return <Icon iconClass="icon-[material-icon-theme--nest]" className={className} />;
+}
+
+export function VercelIcon({ className = '' }) {
+  return <Icon iconClass="icon-[skill-icons--vercel-light]" className={className} />;
+}
+
+export function CursorIcon({ className = '' }) {
+  return <Icon iconClass="icon-[material-icon-theme--cursor]" className={className} />;
+}
+
+export function GitlabIcon({ className = '' }) {
+  return <Icon iconClass="icon-[skill-icons--gitlab-dark]" className={className} />;
+}
+
+export function GitIcon({ className = '' }) {
+  return <Icon iconClass="icon-[skill-icons--git]" className={className} />;
+}
+
+export function GithubLightIcon({ className = '' }) {
+  return <Icon iconClass="icon-[skill-icons--github-light]" className={className} />;
+}
+
+export function MaterialUiIcon({ className = '' }) {
+  return <Icon iconClass="icon-[skill-icons--materialui-light]" className={className} />;
+}
+
+export function ExpoIcon({ className = '' }) {
+  return <Icon iconClass="icon-[vscode-icons--file-type-light-expo]" className={className} />;
+}
+
 export function DarkLogoIcon({ className = '' }) {
   return <Icon iconClass="icon-[glyphs--globe-stand-1-bold]" className={className} />;
 }
