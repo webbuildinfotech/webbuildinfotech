@@ -2,8 +2,7 @@ import React, { useMemo, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { blogPosts, getBlogBySlug } from "../../data/blogData";
 import { RoutePaths } from "../../routes/constant/path";
-import { cn } from "@/lib/utils";
-import { glassCardXL } from "@/lib/glassCard";
+import { ChevronLeftIcon, PlusIcon } from "@/components/icons/Icon";
 
 const BlogDetail = () => {
   const { slug } = useParams();
@@ -13,13 +12,13 @@ const BlogDetail = () => {
 
   if (!post) {
     return (
-      <section className="w-full bg-background-light py-20 dark:bg-background-dark">
+      <section className="bg-slate-50 pb-14 pt-24 dark:bg-slate-950 sm:pb-16 sm:pt-28">
         <div className="container mx-auto px-4 text-center sm:px-6 lg:px-8">
-          <h1 className="text-3xl font-bold text-grey-900 dark:text-white">Blog not found</h1>
-          <p className="mt-3 text-grey-600 dark:text-grey-300">
+          <h1 className="text-3xl font-bold text-slate-900 dark:text-slate-100">Blog not found</h1>
+          <p className="mt-3 text-slate-600 dark:text-slate-300">
             The article you are looking for does not exist.
           </p>
-          <Link to={RoutePaths.BLOG} className="mt-6 inline-block text-primary-main hover:text-primary-dark">
+          <Link to={RoutePaths.BLOG} className="mt-6 inline-block text-indigo-600 hover:text-indigo-700 dark:text-indigo-400 dark:hover:text-indigo-300">
             Back to all blogs
           </Link>
         </div>
@@ -30,82 +29,121 @@ const BlogDetail = () => {
   const relatedPosts = blogPosts.filter((item) => item.slug !== post.slug).slice(0, 3);
 
   return (
-    <section className="w-full bg-background-light py-20 dark:bg-background-dark">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-4xl">
-          <Link to={RoutePaths.BLOG} className="text-sm font-semibold text-primary-main hover:text-primary-dark">
-            ← Back to all blogs
-          </Link>
+    <section className="relative isolate overflow-hidden bg-slate-50 pb-14 pt-24 dark:bg-slate-950 sm:pb-16 sm:pt-28">
+      <div className="pointer-events-none absolute inset-0 -z-10">
+        <div className="absolute left-0 top-0 h-64 w-64 rounded-full bg-indigo-500/20 blur-3xl dark:bg-indigo-400/15" />
+        <div className="absolute bottom-0 right-0 h-80 w-80 rounded-full bg-fuchsia-500/20 blur-3xl dark:bg-fuchsia-400/10" />
+      </div>
 
-          <div className="mt-5 space-y-4">
-            <span className="inline-flex rounded-full bg-primary-main/10 px-3 py-1 text-xs font-semibold text-primary-main">
-              {post.category}
-            </span>
-            <h1 className="text-3xl font-bold text-grey-900 sm:text-4xl dark:text-white">{post.title}</h1>
-            <div className="text-sm text-grey-500 dark:text-grey-400">
-              {post.author} • {post.readTime} • {new Date(post.publishedAt).toLocaleDateString()}
+      <div className="container mx-auto px-4 sm:px-6">
+        <Link
+          to={RoutePaths.BLOG}
+          className="mb-6 inline-flex items-center gap-2 rounded-full border border-indigo-200/70 bg-white/70 px-4 py-2 text-sm font-semibold text-indigo-700 backdrop-blur transition-all hover:-translate-y-0.5 hover:border-indigo-300 hover:bg-white dark:border-indigo-400/20 dark:bg-slate-900/70 dark:text-indigo-300 dark:hover:border-indigo-400/40 dark:hover:bg-slate-900"
+        >
+          <ChevronLeftIcon className="text-lg" />
+          Back to all blogs
+        </Link>
+
+        <div className="overflow-hidden rounded-[2rem] border border-white/50 bg-white/80 shadow-[0_20px_60px_-25px_rgba(79,70,229,0.45)] backdrop-blur dark:border-slate-700 dark:bg-slate-900/80 dark:shadow-[0_24px_60px_-24px_rgba(0,0,0,0.7)]">
+            <div className="relative">
+              <img
+                src={gallery[activeImage]}
+                alt={post.title}
+                className="h-64 w-full object-cover md:h-[22rem]"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-900/35 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10">
+                <p className="mb-2 text-xs font-semibold uppercase tracking-[0.25em] text-indigo-200">
+                  {post.category}
+                </p>
+                <h1 className="text-3xl font-bold text-white md:text-4xl">
+                  {post.title}
+                </h1>
+                <p className="font-mooli mt-3 text-sm text-white/80">
+                  {post.author} • {post.readTime} • {new Date(post.publishedAt).toLocaleDateString()}
+                </p>
+              </div>
             </div>
-          </div>
 
-          <img
-            src={gallery[activeImage]}
-            alt={post.title}
-            className="mt-8 h-72 w-full rounded-2xl object-cover sm:h-96"
-          />
-          <div className="mt-3 grid grid-cols-3 gap-3 sm:grid-cols-4">
-            {gallery.map((img, idx) => (
-              <button
-                key={img}
-                type="button"
-                onClick={() => setActiveImage(idx)}
-                className={`overflow-hidden rounded-lg border transition ${
-                  activeImage === idx
-                    ? "border-primary-main ring-2 ring-primary-main/30"
-                    : "border-grey-300 hover:border-grey-400 dark:border-grey-700 dark:hover:border-grey-500"
-                }`}
-              >
-                <img src={img} alt={`${post.title} ${idx + 1}`} className="h-20 w-full object-cover" loading="lazy" />
-              </button>
-            ))}
-          </div>
+            <div className="grid gap-8 p-6 md:grid-cols-5 md:gap-10 md:p-10">
+              <div className="space-y-5 md:col-span-3">
+                {gallery.length > 1 && (
+                  <div className="rounded-2xl border border-slate-200/80 bg-white p-4 shadow-sm dark:border-slate-700/80 dark:bg-slate-900/80">
+                    <h2 className="mb-3 text-lg font-semibold text-slate-900 dark:text-slate-100">
+                      Gallery
+                    </h2>
+                    <div className="grid grid-cols-3 gap-3 sm:grid-cols-4">
+                      {gallery.map((img, idx) => (
+                        <button
+                          key={img}
+                          type="button"
+                          onClick={() => setActiveImage(idx)}
+                          className={`overflow-hidden rounded-lg border transition ${
+                            activeImage === idx
+                              ? "border-indigo-500 ring-2 ring-indigo-500/30"
+                              : "border-slate-300 hover:border-slate-400 dark:border-slate-700 dark:hover:border-slate-500"
+                          }`}
+                        >
+                          <img src={img} alt={`${post.title} ${idx + 1}`} className="h-20 w-full object-cover" loading="lazy" />
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                )}
 
-          <article className="font-mooli mt-8 space-y-5 text-[15px] leading-7 text-grey-700 dark:text-grey-300">
-            {post.content.map((paragraph, index) => (
-              <p key={index}>{paragraph}</p>
-            ))}
-          </article>
+                <article className="rounded-2xl border border-slate-200/80 bg-white p-5 shadow-sm dark:border-slate-700/80 dark:bg-slate-900/80">
+                  <h2 className="mb-4 text-lg font-semibold text-slate-900 dark:text-slate-100">
+                    Article Overview
+                  </h2>
+                  <div className="font-mooli space-y-5 text-[15px] leading-7 text-slate-600 dark:text-slate-300">
+                    {post.content.map((paragraph, index) => (
+                      <p key={index}>{paragraph}</p>
+                    ))}
+                  </div>
+                </article>
+              </div>
 
-          <div className="mt-10 flex flex-wrap gap-2">
-            {post.tags.map((tag) => (
-              <span
-                key={tag}
-                className="rounded-full border border-grey-300 bg-white px-3 py-1 text-xs text-grey-600 dark:border-grey-700 dark:bg-background-dark-light dark:text-grey-300"
-              >
-                #{tag}
-              </span>
-            ))}
-          </div>
-        </div>
-
-        <div className="mx-auto mt-16 max-w-6xl">
-          <h2 className="mb-5 text-2xl font-bold text-grey-900 dark:text-white">Related blogs</h2>
-          <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
-            {relatedPosts.map((item) => (
-              <Link
-                key={item.id}
-                to={`${RoutePaths.BLOG}/${item.slug}`}
-                className={cn(glassCardXL, "overflow-hidden transition hover:scale-[1.01]")}
-              >
-                <img src={item.coverImage} alt={item.title} className="h-40 w-full object-cover" loading="lazy" />
-                <div className="p-4">
-                  <h3 className="line-clamp-2 text-base font-semibold text-grey-900 dark:text-white">
-                    {item.title}
-                  </h3>
-                  <p className="mt-2 line-clamp-2 text-sm text-grey-600 dark:text-grey-300">{item.excerpt}</p>
+              <aside className="space-y-6 md:col-span-2">
+                <div className="rounded-2xl border border-slate-200/80 bg-white p-5 shadow-sm dark:border-slate-700/80 dark:bg-slate-900/80">
+                  <h2 className="mb-4 text-xl font-semibold text-slate-900 dark:text-slate-100">
+                    Tags
+                  </h2>
+                  <ul className="space-y-3">
+                    {post.tags.map((tag) => (
+                      <li
+                        key={tag}
+                        className="font-mooli flex items-start gap-3 text-sm leading-6 text-slate-600 dark:text-slate-300"
+                      >
+                        <PlusIcon className="mt-1 text-lg text-indigo-600 dark:text-indigo-400" />
+                        <span>#{tag}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-              </Link>
-            ))}
-          </div>
+
+                <div className="rounded-2xl border border-slate-200/80 bg-white p-5 shadow-sm dark:border-slate-700/80 dark:bg-slate-900/80">
+                  <h2 className="mb-4 text-xl font-semibold text-slate-900 dark:text-slate-100">
+                    Related blogs
+                  </h2>
+                  <div className="space-y-3">
+                    {relatedPosts.map((item) => (
+                      <Link
+                        key={item.id}
+                        to={`${RoutePaths.BLOG}/${item.slug}`}
+                        className="block rounded-xl border border-slate-200 p-3 transition hover:-translate-y-0.5 hover:border-indigo-300 dark:border-slate-700 dark:hover:border-indigo-400/50"
+                      >
+                        <h3 className="line-clamp-2 text-sm font-semibold text-slate-900 dark:text-slate-100">
+                          {item.title}
+                        </h3>
+                        <p className="mt-2 line-clamp-2 text-xs text-slate-600 dark:text-slate-300">
+                          {item.excerpt}
+                        </p>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </aside>
+            </div>
         </div>
       </div>
     </section>

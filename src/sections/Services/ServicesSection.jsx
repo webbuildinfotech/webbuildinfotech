@@ -4,9 +4,9 @@ import ServicesList from "./ServicesList";
 
 const ServicesSection = () => {
   return (
-    <section className="pt-24 pb-12 sm:pt-28 sm:pb-16 bg-gradient-to-b from-background-light via-background-light/80 to-background-light dark:from-background-dark dark:via-background-dark/95 dark:to-background-dark">
-      <div className="container mx-auto px-6 lg:px-6 p-2">
-        <ServicesIntro />
+    <section className="bg-slate-50 pb-14 pt-24 dark:bg-slate-950 sm:pt-28 sm:pb-16">
+      <ServicesIntro />
+      <div className="container mx-auto px-4 sm:px-6">
         <ServicesList />
       </div>
     </section>

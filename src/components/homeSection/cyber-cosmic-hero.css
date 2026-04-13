@@ -262,9 +262,27 @@
     drop-shadow(0 0 60px rgba(52, 211, 153, 0.12));
 }
 
+.cyber-cosmic-hero__img-frame {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: min(100%, 520px);
+  height: clamp(300px, 52vw, 620px);
+  border: 0;
+  background: transparent;
+  filter: drop-shadow(0 0 32px rgba(34, 211, 238, 0.25))
+    drop-shadow(0 24px 48px rgba(0, 0, 0, 0.5))
+    drop-shadow(0 0 60px rgba(52, 211, 153, 0.12));
+}
+
 @media (min-width: 640px) {
   .cyber-cosmic-hero__img {
     max-width: min(100%, 580px);
+  }
+
+  .cyber-cosmic-hero__img-frame {
+    max-width: min(100%, 580px);
+    height: clamp(360px, 50vw, 660px);
   }
 }
 
@@ -272,5 +290,11 @@
   .cyber-cosmic-hero__img {
     max-width: none;
     max-height: min(72vh, 580px);
+  }
+
+  .cyber-cosmic-hero__img-frame {
+    max-width: none;
+    width: min(100%, 680px);
+    height: min(72vh, 580px);
   }
 }

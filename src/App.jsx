@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Services from './pages/services/Services';
+import ServiceDetail from './pages/services/ServiceDetail';
 import Industries from './pages/industries/Industries';
 import Company from './pages/company/Company';
 import Contact from './pages/contact/Contact';
@@ -28,6 +29,7 @@ const App = () => {
         <Route path={RoutePaths.HOME} element={<Layout />}>
           <Route path={RoutePaths.HOME} element={<Home />} />
           <Route path={RoutePaths.SERVICES} element={<Services />} />
+          <Route path={`${RoutePaths.SERVICES}/:serviceSlug`} element={<ServiceDetail />} />
           <Route path={RoutePaths.INDUSTRIES} element={<Industries />} />
           <Route path={RoutePaths.PROJECTS} element={<Projects />} />
           <Route path={RoutePaths.BLOG} element={<Blog />} />

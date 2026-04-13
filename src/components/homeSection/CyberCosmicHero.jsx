@@ -4,7 +4,12 @@ import "./cyber-cosmic-hero.css";
 import { cn } from "@/lib/utils";
 import { glassCard, glassHeroRow } from "@/lib/glassCard";
 
-const RIGHT_IMAGE = "/images/rightSide.webp";
+// const RIGHT_IMAGE = "/images/rightSide.webp";
+// const RIGHT_IMAGE = "/images/UIandUX.svg";
+const RIGHT_IMAGE = "/svg/ui-ux-lottie.svg";
+// const IFRAME_IMAGE = "https://lottie.host/embed/ca4e4617-d51a-4912-87ad-550a61deea9f/F0v6wgTLL6.lottie";
+// const IFRAME_IMAGE = "https://lottie.host/embed/46e4919f-01f1-48cf-833f-a913bcdc7c2d/IqXWlR1cTc.lottie";
+const IFRAME_IMAGE = "https://lottie.host/embed/134d5909-676e-487a-9158-af43eb3bbceb/wBUyrzH5Un.lottie";
 
 const generateStarBoxShadow = (count) => {
   const shadows = [];
@@ -78,7 +83,7 @@ function CyberCosmicHero({ className = "" }) {
 
       <div className="container relative z-10 mx-auto flex min-h-screen flex-col px-4 pb-10 pt-24 sm:px-6 sm:pb-12 lg:px-8">
         <div className="grid flex-1 grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-12">
-          <div className="max-w-3xl lg:max-w-none">
+          <div className="order-2 max-w-3xl lg:order-1 lg:max-w-none">
             <span className="inline-flex rounded-full border border-cyan-400/35 bg-cyan-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-cyan-100 shadow-[0_0_20px_rgba(34,211,238,0.28)]">
               Web Build Infotech
             </span>
@@ -148,10 +153,10 @@ function CyberCosmicHero({ className = "" }) {
           <div
             data-aos="fade-left"
             data-aos-duration="1500"
-            className="cyber-cosmic-hero__img-wrap"
+            className="cyber-cosmic-hero__img-wrap order-1 lg:order-2"
           >
             <div className="cyber-cosmic-hero__img-ring" aria-hidden="true" />
-            <img
+            {/* <img
               src={RIGHT_IMAGE}
               alt="MERN stack development — laptop, neural network visualization, and connected technology icons"
               className="cyber-cosmic-hero__img"
@@ -159,7 +164,18 @@ function CyberCosmicHero({ className = "" }) {
               height={700}
               loading="eager"
               decoding="async"
+            /> */}
+            <iframe
+              src="/svg/ui-ux-lottie.html"
+              title="MERN stack development — animated technology visualization"
+              className="cyber-cosmic-hero__img-frame"
+              loading="eager"
             />
+            {/* <iframe src={IFRAME_IMAGE} 
+              title="MERN stack development — laptop, neural network visualization, and connected technology icons"
+              className="cyber-cosmic-hero__img w-full h-full object-cover"
+             ></iframe> */}
+             {/* <iframe src="/svg/ui-ux-lottie.html"></iframe> */}
           </div>
         </div>
         <div className="mt-7 grid grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-5">
