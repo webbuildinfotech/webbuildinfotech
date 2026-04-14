@@ -10,10 +10,34 @@ import {
   CodeIcon,
   ProjectsIcon,
   EnquiriesIcon,
+  ReactLogoIcon,
+  VueIcon,
+  AngularIcon,
+  HtmlIcon,
+  JavascriptIcon,
+  TailwindCssIcon,
+  NodeJsIcon,
+  ExpressJsIcon,
+  PostmanIcon,
+  NestJsIcon,
+  MongoDbIcon,
+  MysqlWordmarkIcon,
+  PostgresqlIcon,
+  DockerIcon,
+  NginxIcon,
+  OpenAiIcon,
+  GithubActionsIcon,
+  GithubLightIcon,
+  DataConfigurationIcon,
+  WorkflowSquareIcon,
+  InfinityDuotoneIcon,
+  WorkflowSquareTenIcon,
+  ApiIcon,
+  FigmaDevIcon,
+  JiraLogoIcon,
 } from "../../components/icons";
 
-import { FaReact, FaAngular, FaVuejs, FaHtml5, FaNodeJs, FaDatabase } from "react-icons/fa";
-import { SiGraphql, SiExpress, SiNestjs, SiMongodb, SiMysql, SiPostgresql, SiFirebase } from "react-icons/si";
+import { SiGraphql, SiFirebase, SiNextdotjs, SiTypescript, SiMui, SiAmazonwebservices } from "react-icons/si";
 import { RoutePaths } from "../../routes/constant/path";
 // import { ThemeToggle } from "../../components/themeToggle";
 import { useTheme } from "../../context/ThemeContext";
@@ -62,28 +86,61 @@ const Header = () => {
         {
           title: "Frontend",
           items: [
-            { name: "React.js", path: RoutePaths.TECHNOLOGY.FRONTEND.REACT, icon: <FaReact />, color: "#61DBFB" }, // React Blue
-            { name: "Angular", path: RoutePaths.TECHNOLOGY.FRONTEND.ANGULAR, icon: <FaAngular />, color: "#DD0031" }, // Angular Red
-            { name: "Vue.js", path: RoutePaths.TECHNOLOGY.FRONTEND.VUE, icon: <FaVuejs />, color: "#42b883" }, // Vue Green
-            { name: "HTML5", path: RoutePaths.TECHNOLOGY.FRONTEND.HTML5, icon: <FaHtml5 />, color: "#E34F26" }, // HTML Orange
+            { name: "React.js", path: RoutePaths.TECHNOLOGY.FRONTEND.REACT, icon: <ReactLogoIcon />, color: "#61DBFB" }, // React Blue
+            { name: "Next.js", path: RoutePaths.TECHNOLOGY.FRONTEND.NEXT, icon: <SiNextdotjs />, color: "#ffffff" }, // Next Black
+            { name: "TypeScript", path: RoutePaths.TECHNOLOGY.FRONTEND.TYPESCRIPT, icon: <SiTypescript />, color: "#3178C6" }, // TypeScript Blue
+            { name: "JavaScript", path: RoutePaths.TECHNOLOGY.FRONTEND.JAVASCRIPT, icon: <JavascriptIcon />, color: "#F7DF1E" }, // JavaScript Yellow
+            { name: "Tailwind CSS", path: RoutePaths.TECHNOLOGY.FRONTEND.TAILWIND, icon: <TailwindCssIcon />, color: "#06B6D4" }, // Tailwind Cyan
+            { name: "Material UI", path: RoutePaths.TECHNOLOGY.FRONTEND.MATERIAL_UI, icon: <SiMui />, color: "#007FFF" }, // Material UI Blue
+            { name: "Angular", path: RoutePaths.TECHNOLOGY.FRONTEND.ANGULAR, icon: <AngularIcon />, color: "#DD0031" }, // Angular Red
+            { name: "Vue.js", path: RoutePaths.TECHNOLOGY.FRONTEND.VUE, icon: <VueIcon />, color: "#42b883" }, // Vue Green
+            { name: "HTML5", path: RoutePaths.TECHNOLOGY.FRONTEND.HTML5, icon: <HtmlIcon />, color: "#E34F26" }, // HTML Orange
           ],
         },
         {
           title: "Backend",
           items: [
-            { name: "Node.js", path: RoutePaths.TECHNOLOGY.BACKEND.NODE, icon: <FaNodeJs />, color: "#3C873A" }, // Node Green
+            { name: "Node.js", path: RoutePaths.TECHNOLOGY.BACKEND.NODE, icon: <NodeJsIcon />, color: "#3C873A" }, // Node Green
             { name: "GraphQL", path: RoutePaths.TECHNOLOGY.BACKEND.GRAPHQL, icon: <SiGraphql />, color: "#E10098" }, // GraphQL Pink
-            { name: "Express.js", path: RoutePaths.TECHNOLOGY.BACKEND.EXPRESS, icon: <SiExpress />, color: "#444444" }, // Express Grey
-            { name: "Nest.js", path: RoutePaths.TECHNOLOGY.BACKEND.NEST, icon: <SiNestjs />, color: "#E0234E" }, // Next.js Black
+            { name: "Express.js", path: RoutePaths.TECHNOLOGY.BACKEND.EXPRESS, icon: <ExpressJsIcon />, color: "#444444" }, // Express Grey
+            { name: "REST API", path: RoutePaths.TECHNOLOGY.BACKEND.REST_API, icon: <PostmanIcon />, color: "#FF6C37" }, // REST API Orange
+            { name: "Nest.js", path: RoutePaths.TECHNOLOGY.BACKEND.NEST, icon: <NestJsIcon />, color: "#E0234E" }, // Nest Red
           ],
         },
         {
           title: "Database",
           items: [
-            { name: "MongoDB", path:  RoutePaths.TECHNOLOGY.DATABASE.MONGO, icon: <SiMongodb />, color: "#4DB33D" }, // MongoDB Green
-            { name: "MySQL", path: RoutePaths.TECHNOLOGY.DATABASE.MYSQL, icon: <SiMysql />, color: "#00758F" }, // MySQL Blue
-            { name: "PostgreSQL", path: RoutePaths.TECHNOLOGY.DATABASE.POSTGRES, icon: <SiPostgresql />, color: "#336791" }, // PostgreSQL Blue
+            { name: "MongoDB", path:  RoutePaths.TECHNOLOGY.DATABASE.MONGO, icon: <MongoDbIcon />, color: "#4DB33D" }, // MongoDB Green
+            { name: "MySQL", path: RoutePaths.TECHNOLOGY.DATABASE.MYSQL, icon: <MysqlWordmarkIcon />, color: "#00758F" }, // MySQL Blue
+            { name: "PostgreSQL", path: RoutePaths.TECHNOLOGY.DATABASE.POSTGRES, icon: <PostgresqlIcon />, color: "#336791" }, // PostgreSQL Blue
             { name: "Firebase", path:  RoutePaths.TECHNOLOGY.DATABASE.FIREBASE, icon: <SiFirebase />, color: "#FFCA28" }, // Firebase Yellow
+          ],
+        },
+        {
+          title: "DevOps",
+          items: [
+            { name: "AWS", path: RoutePaths.TECHNOLOGY.DEVOPS.AWS, icon: <SiAmazonwebservices />, color: "#FF9900" }, // AWS Orange
+            { name: "Docker", path: RoutePaths.TECHNOLOGY.DEVOPS.DOCKER, icon: <DockerIcon className="text-3xl" />, color: "#2496ED" }, // Docker Blue
+            { name: "CI/CD", path: RoutePaths.TECHNOLOGY.DEVOPS.CI_CD, icon: <InfinityDuotoneIcon />, color: "#2088FF" }, // CI/CD Blue
+            { name: "Nginx", path: RoutePaths.TECHNOLOGY.DEVOPS.NGINX, icon: <NginxIcon />, color: "#009639" }, // Nginx Green
+          ],
+        },
+        {
+          title: "AI",
+          items: [
+            { name: "OpenAI", path: RoutePaths.TECHNOLOGY.AI.OPENAI, icon: <OpenAiIcon />, color: "#10A37F" }, // OpenAI Green
+            { name: "Flowise AI", path: RoutePaths.TECHNOLOGY.AI.FLOWISE, icon: <WorkflowSquareIcon />, color: "#EF6C00" }, // Flowise Orange
+            { name: "Workflow Automation", path: RoutePaths.TECHNOLOGY.AI.WORKFLOW_AUTOMATION, icon: <WorkflowSquareTenIcon />, color: "#FF4F00" }, // Workflow Orange
+            { name: "API Integrations", path: RoutePaths.TECHNOLOGY.AI.API_INTEGRATIONS, icon: <ApiIcon />, color: "#2B7FFF" }, // API Blue
+          ],
+        },
+        {
+          title: "Tools",
+          items: [
+            { name: "Git & GitHub", path: RoutePaths.TECHNOLOGY.TOOLS.GIT_GITHUB, icon: <GithubLightIcon />, color: "#181717" }, // GitHub Black
+            { name: "Postman", path: RoutePaths.TECHNOLOGY.TOOLS.POSTMAN, icon: <PostmanIcon />, color: "#FF6C37" }, // Postman Orange
+            { name: "Figma", path: RoutePaths.TECHNOLOGY.TOOLS.FIGMA, icon: <FigmaDevIcon />, color: "#A259FF" }, // Figma Purple
+            { name: "Jira / Trello", path: RoutePaths.TECHNOLOGY.TOOLS.JIRA_TRELLO, icon: <JiraLogoIcon />, color: "#0052CC" }, // Jira Blue
           ],
         },
       ],

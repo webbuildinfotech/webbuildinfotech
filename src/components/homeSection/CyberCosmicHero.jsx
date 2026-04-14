@@ -141,7 +141,7 @@ function CyberCosmicHero({ className = "" }) {
             <h2
               data-aos="fade-up"
               data-aos-duration="1500"
-              className="mt-5 text-3xl font-bold leading-tight text-white drop-shadow-[0_8px_24px_rgba(0,0,0,0.5)] sm:text-5xl"
+              className="mt-5 md:text-4xl text-3xl font-bold leading-tight text-white drop-shadow-[0_8px_24px_rgba(0,0,0,0.5)]"
             >
               Top Global Partner for Custom Software
               <br />
@@ -211,8 +211,8 @@ function CyberCosmicHero({ className = "" }) {
               src={RIGHT_IMAGE}
               alt="MERN stack development — laptop, neural network visualization, and connected technology icons"
               className="cyber-cosmic-hero__img"
-              width={900}
-              height={700}
+              width={800}
+              height={600}
               loading="eager"
               decoding="async"
             />

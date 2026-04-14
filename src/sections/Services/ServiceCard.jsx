@@ -3,15 +3,17 @@ import { useInView } from "react-intersection-observer";
 import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import {
-  HtmlIcon,
-  DataConfigurationIcon,
-  MobileIcon,
-  CloudIbmIcon,
-  JavascriptIcon,
-  RocketIcon,
+  ReactLogoIcon16,
+  NodeJsIcon16,
+  AiBrainIcon,
+  ProductsIcon,
+  JavascriptIcon16,
+  InfinityDuotoneIcon,
+  DashboardIcon,
+  ServicesIcon,
 } from "@/components/icons/Icon";
 
-const serviceIcons = [HtmlIcon, DataConfigurationIcon, JavascriptIcon, RocketIcon, MobileIcon, CloudIbmIcon];
+const serviceIcons = [NodeJsIcon16, ReactLogoIcon16, JavascriptIcon16, InfinityDuotoneIcon, AiBrainIcon, ProductsIcon, DashboardIcon, ServicesIcon];
 
 const ServiceCard = ({ service, index }) => {
   const { ref, inView } = useInView({

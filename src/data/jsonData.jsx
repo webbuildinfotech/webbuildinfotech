@@ -17,7 +17,7 @@ import {
   CodeSquareIcon,
   CogsIcon,
   JavascriptIcon,
-  ExchangeIcon,
+  CardExchangeIcon,
   MobileIcon,
   CloudIcon,
   ShieldAltIcon,
@@ -122,7 +122,7 @@ export const projects = [
       title: "API Development",
       description:
         "We design and implement secure, high-performance APIs to ensure seamless integration across platforms.",
-      icon: <ExchangeIcon className="text-3xl" />,
+      icon: <CardExchangeIcon className="text-3xl" />,
       colors: "text-green-500 bg-green-100",
       hoverFrom: "from-green-500",
       hoverTo: "to-green-700",

@@ -4,75 +4,72 @@ import { cn } from "@/lib/utils";
 import { glassCardLG, glassCardXL } from "@/lib/glassCard";
 import { InteractiveGradientCard } from "../../../../components/card";
 import {
-  FaCode,
-  FaPaintBrush,
-  FaMobileAlt,
-  FaPlug,
-  FaExchangeAlt,
-  FaTools,
-  FaDatabase,
-  FaCogs,
-  FaCloud,
-  FaRocket,
-  FaSyncAlt,
-  FaShieldAlt,
-} from "react-icons/fa";
-import { FaChartLine } from "react-icons/fa6";
+  CodeIcon,
+  PaintBrushIcon,
+  MobileIcon,
+  CardExchangeIcon,
+  DatabaseIcon,
+  CogLoopIcon,
+  CloudIbmIcon,
+  RocketIcon,
+  ShieldAltIcon,
+  ChartLineIcon,
+} from "../../../../components/icons";
 
 const services = [
   {
     title: "React JS for Web Development",
     description:
       "We specialize in building modern, scalable, and high-performance React JS web applications that are optimized for SEO, performance, and user engagement.",
-    icon: <FaCode className="text-blue-500 text-5xl" />,
+    icon: <CodeIcon className="text-blue-500 text-5xl" />,
   },
   {
     title: "React JS Dynamic UI/UX Frameworks",
     description:
       "Our team designs and implements user-friendly, interactive UI/UX frameworks with React, ensuring seamless experiences across all devices.",
-    icon: <FaPaintBrush className="text-green-500 text-5xl" />,
+    icon: <PaintBrushIcon className="text-green-500 text-5xl" />,
   },
   {
     title: "React Native Mobile Development",
     description:
       "We build high-performance cross-platform mobile apps using React Native, reducing development time while maintaining a native experience.",
-    icon: <FaMobileAlt className="text-purple-500 text-5xl" />,
+    icon: <MobileIcon className="text-purple-500 text-5xl" />,
   },
   {
     title: "Redux & Context API for State Management",
     description:
       "We implement Redux and Context API to efficiently manage global state in React applications, ensuring optimized and structured data flow.",
-    icon: <FaCogs className="text-yellow-500 text-5xl" />,
+    icon: <CogLoopIcon className="text-yellow-500 text-5xl" />,
   },
   {
     title: "API Integration: REST, GraphQL, Firebase",
     description:
       "We integrate REST APIs, GraphQL, and Firebase with React, ensuring real-time data synchronization and scalable backend communication.",
-    icon: <FaCloud className="text-red-500 text-5xl" />,
+    icon: <CloudIbmIcon className="text-red-500 text-5xl" />,
   },
   {
     title: "Database & Backend Connectivity",
     description:
       "We connect React applications to databases like MongoDB, MySQL, and PostgreSQL using APIs, ensuring secure and optimized data storage.",
-    icon: <FaDatabase className="text-indigo-500 text-5xl" />,
+    icon: <DatabaseIcon className="text-indigo-500 text-5xl" />,
   },
   {
     title: "React App Migration & Upgrades",
     description:
       "We help businesses migrate from legacy frameworks to React, upgrading applications to ensure modern UI, security, and maintainability.",
-    icon: <FaExchangeAlt className="text-orange-500 text-5xl" />,
+    icon: <CardExchangeIcon className="text-orange-500 text-5xl" />,
   },
   {
     title: "Performance Optimization & Lazy Loading",
     description:
       "We optimize React apps using lazy loading, code splitting, and caching strategies to improve speed and performance.",
-    icon: <FaRocket className="text-teal-500 text-5xl" />,
+    icon: <RocketIcon className="text-teal-500 text-5xl" />,
   },
   {
     title: "Security & Authentication",
     description:
       "We implement JWT authentication, OAuth, and security best practices to protect React applications from vulnerabilities.",
-    icon: <FaShieldAlt className="text-gray-500 text-5xl" />,
+    icon: <ShieldAltIcon className="text-gray-500 text-5xl" />,
   },
 ];
 
@@ -81,19 +78,19 @@ const whyChooseUs = [
     title: "Experienced React Developers",
     description:
       "Our developers have deep expertise in React, Redux, Context API, and the latest frontend technologies.",
-    icon: <FaCode className="text-blue-500 text-4xl" />,
+    icon: <CodeIcon className="text-blue-500 text-4xl" />,
   },
   {
     title: "Performance & Scalability",
     description:
       "We build highly scalable applications optimized for speed and seamless user experience.",
-    icon: <FaChartLine className="text-green-500 text-4xl" />,
+    icon: <ChartLineIcon className="text-green-500 text-4xl" />,
   },
   {
     title: "Security & Compliance",
     description:
       "We follow industry-standard security protocols to ensure safe and compliant React applications.",
-    icon: <FaShieldAlt className="text-red-500 text-4xl" />,
+    icon: <ShieldAltIcon className="text-red-500 text-4xl" />,
   },
 ];
 

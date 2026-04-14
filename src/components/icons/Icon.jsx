@@ -114,6 +114,10 @@ export function ServicesIcon({ className = '' }) {
   return <Icon iconClass="icon-[grommet-icons--services]" className={className} />;
 }
 
+export function AiBrainIcon({ className = '' }) {
+  return <Icon iconClass="icon-[hugeicons--ai-brain-03]" className={className} />;
+}
+
 export function CloudPlansIcon({ className = '' }) {
   return <Icon iconClass="icon-[emojione-monotone--cloud]" className={className} />;
 }
@@ -219,15 +223,15 @@ export function ProjectsIcon({ className = '' }) {
 
 // Technology / React info pages
 export function CodeIcon({ className = '' }) {
-  return <Icon iconClass="icon-[mdi--code-tags]" className={className} />;
+  return <Icon iconClass="icon-[solar--code-square-bold-duotone]" className={className} />;
 }
 
 export function PaintBrushIcon({ className = '' }) {
-  return <Icon iconClass="icon-[mdi--brush]" className={className} />;
+  return <Icon iconClass="icon-[glyphs--pencil-paintbrush-duo]" className={className} />;
 }
 
 export function MobileIcon({ className = '' }) {
-  return <Icon iconClass="icon-[mdi--cellphone]" className={className} />;
+  return <Icon iconClass="icon-[ic--twotone-phone-iphone]" className={className} />;
 }
 
 export function CogsIcon({ className = '' }) {
@@ -242,20 +246,20 @@ export function DatabaseIcon({ className = '' }) {
   return <Icon iconClass="icon-[mdi--database-outline]" className={className} />;
 }
 
-export function ExchangeIcon({ className = '' }) {
-  return <Icon iconClass="icon-[mdi--swap-horizontal]" className={className} />;
+export function CardExchangeIcon({ className = '' }) {
+  return <Icon iconClass="icon-[game-icons--card-exchange]" className={className} />;
 }
 
 export function RocketIcon({ className = '' }) {
-  return <Icon iconClass="icon-[mdi--rocket-launch-outline]" className={className} />;
+  return <Icon iconClass="icon-[uim--rocket]" className={className} />;
 }
 
 export function ShieldAltIcon({ className = '' }) {
-  return <Icon iconClass="icon-[mdi--shield-check-outline]" className={className} />;
+  return <Icon iconClass="icon-[ph--shield-check-duotone]" className={className} />;
 }
 
 export function ChartLineIcon({ className = '' }) {
-  return <Icon iconClass="icon-[mdi--chart-line]" className={className} />;
+  return <Icon iconClass="icon-[lucide--chart-spline]" className={className} />;
 }
 
 export function CheckCircleOutlineIcon({ className = '' }) {
@@ -302,8 +306,16 @@ export function JavascriptIcon({ className = '' }) {
   return <Icon iconClass="icon-[skill-icons--javascript]" className={className} />;
 }
 
+export function JavascriptIcon16({ className = '' }) {
+  return <Icon iconClass="icon-[fa7-brands--js-square]" className={className} />;
+}
+
 export function NodeJsIcon({ className = '' }) {
   return <Icon iconClass="icon-[logos--nodejs-icon]" className={className} />;
+}
+
+export function NodeJsIcon16({ className = '' }) {
+  return <Icon iconClass="icon-[nonicons--node-16]" className={className} />;
 }
 
 export function TailwindCssIcon({ className = '' }) {
@@ -320,6 +332,10 @@ export function Css3Icon({ className = '' }) {
 
 export function ReactLogoIcon({ className = '' }) {
   return <Icon iconClass="icon-[logos--react]" className={className} />;
+}
+
+export function ReactLogoIcon16({ className = '' }) {
+  return <Icon iconClass="icon-[proicons--reactjs]" className={className} />;
 }
 
 export function MongoDbIcon({ className = '' }) {
@@ -352,6 +368,18 @@ export function AngularIcon({ className = '' }) {
 
 export function NextJsIcon({ className = '' }) {
   return <Icon iconClass="icon-[vscode-icons--file-type-next]" className={className} />;
+}
+
+export function DockerIcon({ className = '' }) {
+  return <Icon iconClass="icon-[vscode-icons--file-type-docker]" className={className} />;
+}
+
+export function NginxIcon({ className = '' }) {
+  return <Icon iconClass="icon-[vscode-icons--file-type-nginx]" className={className} />;
+}
+
+export function OpenAiIcon({ className = '' }) {
+  return <Icon iconClass="icon-[ph--open-ai-logo-thin]" className={className} />;
 }
 
 export function NestJsIcon({ className = '' }) {
@@ -413,6 +441,38 @@ export function DataConfigurationIcon({ className = '' }) {
   return <Icon iconClass="icon-[flat-color-icons--data-configuration]" className={className} />;
 }
 
+export function WorkflowSquareIcon({ className = '' }) {
+  return <Icon iconClass="icon-[hugeicons--workflow-square-01]" className={className} />;
+}
+
+export function InfinityDuotoneIcon({ className = '' }) {
+  return <Icon iconClass="icon-[ph--infinity-duotone]" className={className} />;
+}
+
+export function WorkflowSquareTenIcon({ className = '' }) {
+  return <Icon iconClass="icon-[hugeicons--workflow-square-10]" className={className} />;
+}
+
+export function ApiIcon({ className = '' }) {
+  return <Icon iconClass="icon-[tabler--api]" className={className} />;
+}
+
+export function LayerGroupIcon({ className = '' }) {
+  return <Icon iconClass="icon-[uim--layer-group]" className={className} />;
+}
+
+export function BugBoldDuotoneIcon({ className = '' }) {
+  return <Icon iconClass="icon-[solar--bug-bold-duotone]" className={className} />;
+}
+
+export function FigmaDevIcon({ className = '' }) {
+  return <Icon iconClass="icon-[devicon--figma]" className={className} />;
+}
+
+export function JiraLogoIcon({ className = '' }) {
+  return <Icon iconClass="icon-[logos--jira]" className={className} />;
+}
+
 export function AndroidStudioIcon({ className = '' }) {
   return (
     <>
@@ -431,11 +491,16 @@ export function BashIcon({ className = '' }) {
   );
 }
 
+// export function GithubActionsIcon({ className = '' }) {
+//   return (
+//     <>
+//       <Icon iconClass="icon-[skill-icons--githubactions-light]" className={`inline dark:hidden ${className}`.trim()} />
+//       <Icon iconClass="icon-[skill-icons--githubactions-dark]" className={`hidden dark:inline ${className}`.trim()} />
+//     </>
+//   );
+// }
+
 export function GithubActionsIcon({ className = '' }) {
-  return (
-    <>
-      <Icon iconClass="icon-[skill-icons--githubactions-light]" className={`inline dark:hidden ${className}`.trim()} />
-      <Icon iconClass="icon-[skill-icons--githubactions-dark]" className={`hidden dark:inline ${className}`.trim()} />
-    </>
-  );
+  return <Icon iconClass="icon-[skill-icons--githubactions-light]" className={className} />;
+  // return <Icon iconClass="icon-[skill-icons--githubactions-dark]" className={className} />;
 }

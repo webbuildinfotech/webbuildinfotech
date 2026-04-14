@@ -15,9 +15,9 @@ const DesktopMenu = ({ menuItems, activeMenu, setIsMenuOpen, isHomeRoute, hasScr
   
   return (
     <React.Fragment>
-      <ul className="flex items-center gap-1" key={key}>
+      <ul className="relative flex items-center gap-1" key={key}>
         {menuItems?.map((item) => (
-          <li key={item.name} className="relative group">
+          <li key={item.name} className="group">
           <NavLink
           to={item.path}
           className={`menu-item ${
@@ -42,9 +42,14 @@ const DesktopMenu = ({ menuItems, activeMenu, setIsMenuOpen, isHomeRoute, hasScr
 
             {/* Submenu */}
                {/* Submenu (Appears only on hover) */}
-               {item.subMenu?.length > 0 && (
-                <div className="absolute left-1/2 top-full z-50 w-2xl max-w-4xl -translate-x-1/2 translate-y-4 rounded-b-xl border border-grey-200 border-t-2 border-t-primary-main/80 bg-white opacity-0 shadow-[0_20px_50px_-12px_rgba(15,23,42,0.2)] ring-1 ring-grey-200/60 transition-all duration-300 transform invisible group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 dark:border-grey-700 dark:border-t-primary-light/60 dark:bg-background-dark dark:ring-grey-700/80 dark:shadow-[0_24px_56px_-12px_rgba(0,0,0,0.55)]">
-                  <div className="container mx-auto grid grid-cols-3 gap-8 px-8 py-6 lg:px-12">
+              {item.subMenu?.length > 0 && (
+                <div className="absolute right-0 top-full z-50 w-[min(94vw,980px)] max-w-[calc(100vw-24px)] translate-y-4 rounded-b-xl border border-grey-200 border-t-2 border-t-primary-main/80 bg-white opacity-0 shadow-[0_20px_50px_-12px_rgba(15,23,42,0.2)] ring-1 ring-grey-200/60 transition-all duration-300 transform invisible group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 dark:border-grey-700 dark:border-t-primary-light/60 dark:bg-background-dark dark:ring-grey-700/80 dark:shadow-[0_24px_56px_-12px_rgba(0,0,0,0.55)]">
+                  <div
+                    className="mx-auto grid max-h-[72vh] gap-3 overflow-y-auto px-3 py-4 lg:gap-4 lg:px-5"
+                    style={{
+                      gridTemplateColumns: "repeat(auto-fit, minmax(110px, 1fr))",
+                    }}
+                  >
                     {item.subMenu.map((subItem, subIndex) => (
                       <div key={subIndex} className="flex flex-col">
                         <h4 className="mb-3 border-b border-grey-200 pb-2 text-sm font-bold uppercase tracking-wide text-grey-900 dark:border-grey-700 dark:text-grey-50">
@@ -64,7 +69,7 @@ const DesktopMenu = ({ menuItems, activeMenu, setIsMenuOpen, isHomeRoute, hasScr
                                 <span className="text-xl" style={{ color: menuItem.color }}>
                                   {menuItem.icon}
                                 </span>
-                                <span>{menuItem.name}</span>
+                                <span className="text-sm leading-5">{menuItem.name}</span>
                               </NavLink>
                             </li>
                           ))}

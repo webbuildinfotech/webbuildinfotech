@@ -1,224 +1,297 @@
 export const services = [
   {
     id: 1,
-    slug: "frontend-development",
-    title: "Frontend Development",
+    slug: "mern-stack-development",
+    title: "MERN Stack Development",
     description:
-      "We specialize in crafting responsive, dynamic, and visually stunning web interfaces using cutting-edge frontend technologies.",
+      "Full-stack web application development using React.js, Node.js, Express.js, and MongoDB for secure, scalable, and high-performance products.",
     image:
-      "https://media.licdn.com/dms/image/v2/D5612AQFfhTEictqBHA/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1721174916441?e=2147483647&v=beta&t=IqnGNJxS4J-yaL4rgLBlx-cbNAbFwpEMCRvkkLXsR48",
+      "https://miro.medium.com/v2/resize:fit:720/format:webp/1*AWOohKIQ_FGJrIb6VNKsdA.jpeg",
     details: `
-      Frontend development focuses on creating seamless user experiences, strong visual hierarchy, and responsive layouts.
-      We build scalable component systems, optimize load performance, and ensure your product behaves consistently across devices.
-      From landing pages to complex dashboards, our approach combines design precision with engineering best practices.
+      MERN is our core service and the foundation for most modern SaaS and business platforms.
+      We build complete products from database to API to user interface with a single consistent JavaScript stack.
+      This helps you launch faster, scale safely, and maintain your product with better development speed.
     `,
     keyBenefits: [
-      "Highly responsive and mobile-friendly designs.",
-      "Seamless user experience with modern frameworks.",
-      "SEO-optimized and high-performance websites.",
-      "Cross-browser compatibility.",
+      "Unified JavaScript stack for frontend and backend.",
+      "Scalable architecture for growing products.",
+      "Secure APIs and robust authentication flows.",
+      "High-performance web applications with clean codebase.",
     ],
     deliverables: [
-      "Reusable UI component architecture.",
-      "Pixel-perfect responsive pages and sections.",
-      "Performance optimization and Core Web Vitals improvements.",
-      "Accessibility-focused implementation (WCAG-friendly).",
+      "MongoDB schema and backend architecture setup.",
+      "REST API implementation with Express and Node.js.",
+      "React.js frontend with reusable components.",
+      "Deployment-ready production build and environment setup.",
     ],
     process: [
-      "UI planning and design-system alignment.",
-      "Component development with reusable patterns.",
-      "Responsive QA across devices and browsers.",
-      "Final optimization and deployment support.",
+      "Product requirement analysis and technical planning.",
+      "Backend architecture and API contract design.",
+      "Frontend implementation and integration with APIs.",
+      "Testing, optimization, and launch support.",
     ],
     bestFor: [
-      "Startups launching a new digital product.",
-      "Businesses redesigning outdated interfaces.",
-      "Teams needing fast and scalable frontend delivery.",
+      "SaaS products and startup MVPs.",
+      "Business web platforms with custom workflows.",
+      "Teams needing full-stack long-term development support.",
     ],
   },
   {
     id: 2,
-    slug: "backend-development",
-    title: "Backend Development",
+    slug: "frontend-development-react-nextjs",
+    title: "Frontend Development (React.js / Next.js)",
     description:
-      "Our backend services ensure robust, scalable, and efficient server-side solutions tailored to your business needs.",
+      "Responsive, pixel-perfect frontend development with React.js and Next.js focused on UI quality, speed, and SEO.",
     image:
-      "https://media.excellentwebworld.com/wp-content/uploads/2024/05/23071450/Backend-Development.webp",
+      "https://media.licdn.com/dms/image/v2/D5612AQFfhTEictqBHA/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1721174916441?e=2147483647&v=beta&t=IqnGNJxS4J-yaL4rgLBlx-cbNAbFwpEMCRvkkLXsR48",
     details: `
-      Backend development powers your application's business logic, authentication, and data processing.
-      We design clean service architecture, secure endpoints, and reliable integrations that handle high traffic gracefully.
-      The result is a stable foundation ready for scaling, analytics, and long-term product growth.
+      We design and build modern user interfaces that convert, engage, and perform well.
+      Using React.js and Next.js, we create maintainable frontend systems that stay fast across devices.
+      We can convert your Figma design into a production-ready UI with high visual accuracy.
     `,
     keyBenefits: [
-      "Scalable and secure server-side architecture.",
-      "Fast APIs for real-time data management.",
-      "Seamless database integration and management.",
-      "Custom backend solutions tailored to your needs.",
+      "Responsive and mobile-first UI implementation.",
+      "SEO-friendly pages and architecture using Next.js.",
+      "Pixel-perfect Figma-to-code development.",
+      "Reusable component structure for faster feature updates.",
     ],
     deliverables: [
-      "Modular backend architecture and folder structure.",
-      "Secure authentication and role-based authorization.",
-      "Database schema design and optimized queries.",
-      "Production-ready APIs with logging and monitoring hooks.",
+      "Production frontend architecture (React or Next.js).",
+      "Reusable component library aligned with design system.",
+      "Responsive pages optimized for all major devices.",
+      "Accessibility and performance improvements.",
     ],
     process: [
-      "Requirement mapping and data-flow planning.",
-      "Architecture setup and API contract definition.",
-      "Implementation with security and validation layers.",
-      "Load testing, deployment, and post-launch support.",
+      "UI/UX review and frontend technical planning.",
+      "Componentization and page implementation.",
+      "API integration and state management setup.",
+      "Cross-browser QA and launch readiness checks.",
     ],
     bestFor: [
-      "Products with heavy data or business rules.",
-      "Applications needing secure multi-user access.",
-      "Teams preparing for traffic and feature scaling.",
+      "Brands improving web presence and conversion.",
+      "Products that need modern and scalable UI.",
+      "Businesses wanting React Developer / Next.js Developer support.",
     ],
   },
   {
     id: 3,
-    slug: "javascript-technologies",
-    title: "JavaScript Technologies",
+    slug: "backend-development-nodejs-apis",
+    title: "Backend Development (Node.js / APIs)",
     description:
-      "Expertise in modern JavaScript frameworks like React, Angular, and Vue for building fast and interactive applications.",
+      "Scalable backend systems, REST and GraphQL APIs, secure authentication, and efficient database design with Node.js.",
     image:
-      "https://www.tatvasoft.com/outsourcing/wp-content/uploads/2022/07/Best-JavaScript-Frameworks.jpg",
+      "https://media.excellentwebworld.com/wp-content/uploads/2024/05/23071450/Backend-Development.webp",
     details: `
-      JavaScript technologies enable rich digital experiences for web apps, portals, and product interfaces.
-      We use modern frameworks like React, Angular, and Vue with robust state management and clean architecture.
-      Our focus is maintainable code, better developer velocity, and smooth user interactions at scale.
+      Backend engineering is where product logic, security, and reliability are built.
+      We develop robust Node.js services with clean API contracts and secure access control.
+      From small products to large systems, we design backend layers that support growth.
     `,
     keyBenefits: [
-      "Fast and interactive user interfaces.",
-      "Reusable component-based development.",
-      "Cross-platform compatibility.",
-      "Rich features with modern frameworks.",
+      "Reliable REST API and GraphQL development.",
+      "Authentication and authorization best practices.",
+      "Optimized data modeling and database performance.",
+      "Maintainable architecture for long-term scaling.",
     ],
     deliverables: [
-      "Framework-specific project setup and optimization.",
-      "Reusable components with consistent coding standards.",
-      "State management implementation and API integration.",
-      "Code quality tooling, linting, and documentation.",
+      "Node.js backend project setup and standards.",
+      "REST/GraphQL endpoints with validation and error handling.",
+      "Role-based access and auth integration.",
+      "Database schema design and query optimization.",
     ],
     process: [
-      "Technology fit analysis for your product goals.",
-      "Architecture and package strategy planning.",
-      "Feature implementation with iterative review cycles.",
-      "Refinement, testing, and production hardening.",
+      "Data flow and backend architecture planning.",
+      "API contract design and endpoint development.",
+      "Security hardening and integration testing.",
+      "Deployment and observability setup.",
     ],
     bestFor: [
-      "Web products requiring rich interactivity.",
-      "Projects migrating from legacy JavaScript stacks.",
-      "Teams aiming for faster feature releases.",
+      "Products with custom business logic.",
+      "Platforms needing secure multi-user access.",
+      "Teams looking for Node.js Developer / API Development support.",
     ],
   },
   {
     id: 4,
-    slug: "api-development",
-    title: "API Development",
+    slug: "saas-application-development",
+    title: "SaaS Application Development",
     description:
-      "We design and implement secure, high-performance APIs to ensure seamless integration across platforms.",
+      "End-to-end SaaS application development with subscription flows, multi-user architecture, and admin control systems.",
     image:
-      "https://cdn.prod.website-files.com/6448bf6f064020ce1b2ca19d/6448bf6f0640204bbb2ca41c_shawayo%20odd%20pages%20(4).png",
+      "https://img.freepik.com/free-photo/saas-concept-collage_23-2149399295.jpg",
     details: `
-      APIs are the bridge between applications, platforms, and external services.
-      We craft RESTful and integration-ready APIs with strong validation, security controls, and clear documentation.
-      Our API solutions are built to remain reliable under growth and changing business requirements.
+      SaaS is a high-value model and one of our strongest offerings.
+      We build subscription-ready platforms with user roles, billing logic, and scalable architecture.
+      You get a product built for recurring revenue and long-term growth.
     `,
     keyBenefits: [
-      "Secure and fast APIs.",
-      "Comprehensive API documentation.",
-      "Integration with third-party services.",
-      "Scalable for future business needs.",
+      "Multi-tenant and multi-user architecture support.",
+      "Subscription and billing model integration.",
+      "Admin dashboards for product and user management.",
+      "Scalable and secure app foundation.",
     ],
     deliverables: [
-      "REST API design with standardized response format.",
-      "Auth, rate-limiting, and validation middleware.",
-      "Swagger or Postman-ready API documentation.",
-      "Webhook and third-party integration endpoints.",
+      "SaaS architecture blueprint and core module setup.",
+      "User onboarding, account, and role management flows.",
+      "Subscription and payment workflow integration.",
+      "Admin analytics and management dashboard.",
     ],
     process: [
-      "Endpoint planning from product workflows.",
-      "Contract-first API design and approval.",
-      "Implementation with testing and documentation.",
-      "Monitoring setup and versioning strategy.",
+      "Business model and user journey planning.",
+      "MVP feature prioritization and architecture setup.",
+      "Core module implementation and payment integration.",
+      "Iteration, scaling, and post-launch improvements.",
     ],
     bestFor: [
-      "Products integrating multiple systems.",
-      "Mobile/web apps requiring dependable data APIs.",
-      "Businesses automating partner or vendor integrations.",
+      "Founders launching B2B or B2C SaaS products.",
+      "Businesses moving from service to subscription model.",
+      "Teams needing SaaS Development and Web App Development expertise.",
     ],
   },
   {
     id: 5,
-    slug: "mobile-app-development",
-    title: "Mobile App Development",
+    slug: "ai-integration-automation",
+    title: "AI Integration & Automation",
     description:
-      "Building cross-platform mobile apps with React Native, Flutter, and more to extend your business to mobile platforms.",
-    image:
-      "https://api.reliasoftware.com/uploads/the_complete_guide_to_mobile_app_development_2021_ded2abd1b1.png",
+      "AI-powered integrations and workflow automation using OpenAI, ChatGPT, Flowise, and custom process automation systems.",
+    image: "https://img.freepik.com/premium-photo/futuristic-ai-technology-connection-desktop-wallpaper_53876-1119645.jpg",
     details: `
-      Mobile development transforms your idea into intuitive iOS and Android experiences.
-      We build performant, maintainable apps with clean navigation, robust offline behavior, and reliable API connectivity.
-      Every release is optimized for usability, growth, and future feature extensions.
+      AI Integration is one of our unique advantages.
+      We integrate models and automation tools into your product to improve productivity, support, and operations.
+      From smart assistants to workflow orchestration, we convert repetitive work into reliable automation.
     `,
     keyBenefits: [
-      "Cross-platform development with React Native and Flutter.",
-      "User-friendly designs and smooth performance.",
-      "Integration with cloud-based services and APIs.",
-      "Scalable apps for future updates.",
+      "OpenAI and ChatGPT integration into existing products.",
+      "Automated workflow execution with Flowise and custom logic.",
+      "Reduced manual operations and faster turnaround.",
+      "Improved customer support and internal efficiency.",
     ],
     deliverables: [
-      "Cross-platform app architecture and reusable modules.",
-      "UI implementation with smooth interactions and animations.",
-      "API, push notifications, and analytics integration.",
-      "Store-ready build support and release guidance.",
+      "AI-powered feature architecture and integration plan.",
+      "Prompt workflows and model interaction pipelines.",
+      "Automation engine for repetitive business processes.",
+      "Monitoring and fallback strategy for reliable AI behavior.",
     ],
     process: [
-      "Feature planning and app flow wireframing.",
-      "Agile development with sprint-wise demos.",
-      "Device testing and performance optimization.",
-      "Publish, monitor, and iterate with user feedback.",
+      "Use-case identification and automation scoping.",
+      "Model and workflow design with risk controls.",
+      "Integration, testing, and quality tuning.",
+      "Deployment, monitoring, and iterative optimization.",
     ],
     bestFor: [
-      "Businesses launching customer-facing mobile apps.",
-      "Startups building MVPs for Android and iOS.",
-      "Companies modernizing legacy mobile experiences.",
+      "Businesses with repetitive operational tasks.",
+      "Products adding AI chat, summarization, or recommendation.",
+      "Teams seeking AI Integration and Automation Developer support.",
     ],
   },
   {
     id: 6,
-    slug: "cloud-solutions",
-    title: "Cloud Solutions",
+    slug: "ecommerce-development",
+    title: "E-commerce Development",
     description:
-      "Providing scalable cloud services with AWS, Azure, and Google Cloud to power your web applications.",
+      "Custom eCommerce application development with secure payments, order workflows, and inventory management.",
     image:
-      "https://community.nasscom.in/sites/default/files/styles/560_x_350/public/media/images/Nasscom-Cloud-solutions.jpg?itok=AQCTJCWV",
+      "https://img.freepik.com/premium-photo/online-shopping-e-commerce-experience-laptop_1101054-89106.jpg",
     details: `
-      Cloud solutions provide resilient infrastructure, elastic scaling, and operational efficiency.
-      We design cloud environments that improve uptime, security posture, and deployment speed.
-      From architecture to migration and optimization, we help you get long-term value from cloud investments.
+      We build eCommerce systems that are conversion-focused and operationally efficient.
+      Your store can include custom catalog logic, secure checkout, and integrated order workflows.
+      We optimize both customer experience and backend commerce operations.
     `,
     keyBenefits: [
-      "Secure and scalable cloud infrastructure.",
-      "Optimized for cost-efficiency.",
-      "Integration with AWS, Azure, and Google Cloud.",
-      "Support for serverless applications.",
+      "Custom eCommerce experiences tailored to business model.",
+      "Payment gateway integration with secure checkout.",
+      "Order processing and inventory management systems.",
+      "Scalable architecture for product and traffic growth.",
     ],
     deliverables: [
-      "Cloud architecture blueprint and environment setup.",
-      "CI/CD pipeline integration and deployment automation.",
-      "Security hardening, backup, and disaster recovery plans.",
-      "Cost monitoring and resource optimization strategy.",
+      "Product listing, category, cart, and checkout modules.",
+      "Payment and shipping integrations.",
+      "Order lifecycle and inventory control panel.",
+      "Performance optimization for faster shopping flow.",
     ],
     process: [
-      "Current infrastructure assessment and goal mapping.",
-      "Cloud migration or greenfield architecture planning.",
-      "Implementation with policy and security controls.",
-      "Ongoing optimization, monitoring, and support.",
+      "Commerce requirement and funnel analysis.",
+      "Store architecture and UX flow planning.",
+      "Development of storefront and admin commerce modules.",
+      "Testing, launch, and post-launch optimization.",
     ],
     bestFor: [
-      "Applications expecting variable or rapid traffic growth.",
-      "Teams moving from local servers to cloud-native systems.",
-      "Organizations improving reliability and DevOps speed.",
+      "Retail and D2C brands selling online.",
+      "Businesses migrating from generic platforms to custom apps.",
+      "Teams needing advanced checkout and operations control.",
+    ],
+  },
+  {
+    id: 7,
+    slug: "dashboard-admin-panel-development",
+    title: "Dashboard & Admin Panel Development",
+    description:
+      "Analytics dashboards, CRM panels, and role-based admin systems for better visibility, control, and team productivity.",
+    image:
+      "https://cdn.dribbble.com/userupload/5011472/file/original-2426331e7de82bfe0dabff6b77baae2d.png?resize=1024x768&vertical=center",
+    details: `
+      Dashboards turn raw data into actionable decisions.
+      We build admin panels with role-based access, analytics modules, and operational workflows.
+      The result is a central control system for your product, team, and business processes.
+    `,
+    keyBenefits: [
+      "Real-time analytics dashboards for business tracking.",
+      "CRM and operational panel customization.",
+      "Role-based access and permission management.",
+      "Better visibility into users, sales, and performance.",
+    ],
+    deliverables: [
+      "Admin panel architecture with secure auth controls.",
+      "Widgets, reports, and analytics visualizations.",
+      "Role and permission matrix implementation.",
+      "Filters, exports, and workflow action modules.",
+    ],
+    process: [
+      "Metric definition and dashboard planning.",
+      "Panel information architecture and UX wireflow.",
+      "Feature implementation with role logic.",
+      "Validation, QA, and rollout support.",
+    ],
+    bestFor: [
+      "SaaS products requiring operations visibility.",
+      "Internal teams managing users and transactions.",
+      "Businesses needing CRM-style control systems.",
+    ],
+  },
+  {
+    id: 8,
+    slug: "maintenance-support",
+    title: "Maintenance & Support",
+    description:
+      "Ongoing support services including bug fixing, performance optimization, monitoring, and long-term product maintenance.",
+    image:
+      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1400&q=80",
+    details: `
+      Long-term stability is critical after launch.
+      We provide maintenance plans to keep your application secure, fast, and reliable.
+      This includes proactive improvements, issue resolution, and technical support as your product evolves.
+    `,
+    keyBenefits: [
+      "Fast bug resolution and production issue support.",
+      "Regular performance and security improvements.",
+      "Stable product operation with monitoring workflows.",
+      "Long-term technical partnership and roadmap support.",
+    ],
+    deliverables: [
+      "Bug-fix and patch release cycles.",
+      "Performance audits and optimization updates.",
+      "Uptime/health checks and incident response support.",
+      "Feature enhancements and refactor support as needed.",
+    ],
+    process: [
+      "Initial audit of current product state.",
+      "Prioritized backlog for fixes and improvements.",
+      "Scheduled maintenance and support cycles.",
+      "Reporting, recommendations, and roadmap planning.",
+    ],
+    bestFor: [
+      "Businesses with live products needing steady support.",
+      "Teams without a full in-house maintenance crew.",
+      "Apps requiring ongoing optimization and reliability work.",
     ],
   },
 ];
