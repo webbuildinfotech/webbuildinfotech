@@ -118,6 +118,14 @@ export function AiBrainIcon({ className = '' }) {
   return <Icon iconClass="icon-[hugeicons--ai-brain-03]" className={className} />;
 }
 
+export function ChatBotMessageIcon({ className = '' }) {
+  return <Icon iconClass="icon-[tabler--message-chatbot]" className={className} />;
+}
+
+export function SendHorizontalIcon({ className = '' }) {
+  return <Icon iconClass="icon-[lets-icons--send-hor-fill]" className={className} />;
+}
+
 export function CloudPlansIcon({ className = '' }) {
   return <Icon iconClass="icon-[emojione-monotone--cloud]" className={className} />;
 }

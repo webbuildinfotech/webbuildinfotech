@@ -5,7 +5,7 @@ import Footer from './Footer/Footer';
 import SocialButtons from './SocialButtons/SocialButtons';
 import { CgChevronDoubleDownR, CgChevronDoubleUpR } from "react-icons/cg";
 import ScrollButton from './SocialButtons/ScrollButton';
-// import Chatbot from './Chat/Chat';
+import Chatbot from './Chat/Chat';
 
 const Layout = () => {
   const location = useLocation();
@@ -63,7 +63,7 @@ const Layout = () => {
       <main className="flex-1">
         <Outlet />
       </main>
-      {/* <Chatbot /> */}
+      <Chatbot />
       <Footer />
 
       <ScrollButton 

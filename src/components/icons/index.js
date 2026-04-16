@@ -108,4 +108,6 @@ export {
   PhoneColorIcon,
   MicrosoftTeamsIcon,
   AiBrainIcon,
+  ChatBotMessageIcon,
+  SendHorizontalIcon,
 } from './Icon';
