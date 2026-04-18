@@ -35,6 +35,13 @@ export const services = [
       "Business web platforms with custom workflows.",
       "Teams needing full-stack long-term development support.",
     ],
+      seo: {
+      title: "MERN Stack Development | React, Node, Express, MongoDB | WebBuild Infotech",
+      description:
+        "Full-stack MERN development: React UIs, Node.js and Express APIs, MongoDB modeling, auth, and production-ready deployment for SaaS and business platforms from WebBuild Infotech.",
+      keywords:
+        "MERN stack development, React Node MongoDB, Express API, full stack agency, WebBuild Infotech",
+    },
   },
   {
     id: 2,
@@ -72,6 +79,13 @@ export const services = [
       "Products that need modern and scalable UI.",
       "Businesses wanting React Developer / Next.js Developer support.",
     ],
+    seo: {
+      title: "React & Next.js Frontend Development | WebBuild Infotech",
+      description:
+        "Pixel-perfect React and Next.js frontends: responsive UI, design-system components, performance, SEO-friendly architecture, and Figma-to-code delivery by WebBuild Infotech.",
+      keywords:
+        "React development, Next.js development, frontend agency, responsive UI, WebBuild Infotech",
+    },
   },
   {
     id: 3,
@@ -109,6 +123,13 @@ export const services = [
       "Platforms needing secure multi-user access.",
       "Teams looking for Node.js Developer / API Development support.",
     ],
+    seo: {
+      title: "Node.js Backend & API Development | REST, GraphQL | WebBuild Infotech",
+      description:
+        "Scalable Node.js backends: REST and GraphQL APIs, authentication, validation, database design, and secure patterns for web and mobile products built by WebBuild Infotech.",
+      keywords:
+        "Node.js backend, REST API development, GraphQL API, Express Nest, WebBuild Infotech",
+    },
   },
   {
     id: 4,
@@ -146,6 +167,13 @@ export const services = [
       "Businesses moving from service to subscription model.",
       "Teams needing SaaS Development and Web App Development expertise.",
     ],
+    seo: {
+      title: "SaaS Application Development | Subscriptions & Multi-Tenant | WebBuild Infotech",
+      description:
+        "End-to-end SaaS builds: subscriptions, roles, admin panels, billing hooks, and scalable architecture so you can launch and grow recurring-revenue products with WebBuild Infotech.",
+      keywords:
+        "SaaS development, subscription software, multi-tenant app, B2B SaaS, WebBuild Infotech",
+    },
   },
   {
     id: 5,
@@ -182,6 +210,13 @@ export const services = [
       "Products adding AI chat, summarization, or recommendation.",
       "Teams seeking AI Integration and Automation Developer support.",
     ],
+    seo: {
+      title: "AI Integration & Workflow Automation | OpenAI, Flowise | WebBuild Infotech",
+      description:
+        "Ship AI features and automation: OpenAI and ChatGPT integrations, Flowise workflows, guardrails, and custom pipelines that cut manual work and improve support and operations.",
+      keywords:
+        "AI integration, OpenAI API, ChatGPT integration, workflow automation, Flowise, WebBuild Infotech",
+    },
   },
   {
     id: 6,
@@ -219,6 +254,13 @@ export const services = [
       "Businesses migrating from generic platforms to custom apps.",
       "Teams needing advanced checkout and operations control.",
     ],
+    seo: {
+      title: "Custom E-commerce Development | Payments & Orders | WebBuild Infotech",
+      description:
+        "Custom online stores: secure checkout, payment gateways, catalog and inventory, order workflows, and performance-tuned storefronts tailored to your brand by WebBuild Infotech.",
+      keywords:
+        "e-commerce development, custom online store, payment integration, WebBuild Infotech",
+    },
   },
   {
     id: 7,
@@ -256,6 +298,13 @@ export const services = [
       "Internal teams managing users and transactions.",
       "Businesses needing CRM-style control systems.",
     ],
+    seo: {
+      title: "Admin Dashboard & Analytics Panel Development | WebBuild Infotech",
+      description:
+        "Role-based admin panels, CRM-style tools, analytics dashboards, exports, and operational workflows so teams can manage users, revenue, and data with clarity.",
+      keywords:
+        "admin panel development, analytics dashboard, CRM panel, internal tools, WebBuild Infotech",
+    },
   },
   {
     id: 8,
@@ -293,8 +342,30 @@ export const services = [
       "Teams without a full in-house maintenance crew.",
       "Apps requiring ongoing optimization and reliability work.",
     ],
+    seo: {
+      title: "Web App Maintenance & Support | Performance & Fixes | WebBuild Infotech",
+      description:
+        "Ongoing product care: bug fixes, releases, performance tuning, security updates, monitoring, and roadmap support so your live app stays fast, stable, and secure.",
+      keywords:
+        "web maintenance, application support, bug fixes, performance optimization, WebBuild Infotech",
+    },
   },
 ];
 
 export const getServiceBySlug = (serviceSlug) =>
   services.find((service) => service.slug === serviceSlug);
+
+/** Head meta for a service detail page; uses `service.seo` when defined. */
+export function getServiceSeoMeta(service) {
+  if (!service) return null;
+  if (service.seo?.title && service.seo?.description && service.seo?.keywords) {
+    return service.seo;
+  }
+  return {
+    title: `${service.title} | WebBuild Infotech Services`,
+    description:
+      (service.description && String(service.description).slice(0, 160)) ||
+      `Details and deliverables for ${service.title} by WebBuild Infotech.`,
+    keywords: `${service.title}, web development, WebBuild Infotech, ${String(service.slug).replace(/-/g, " ")}`,
+  };
+}

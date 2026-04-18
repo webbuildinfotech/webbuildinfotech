@@ -1,7 +1,9 @@
 import React from "react";
 import { Link, Navigate, useParams } from "react-router-dom";
 import { ChevronLeftIcon, PlusIcon } from "@/components/icons/Icon";
-import { getServiceBySlug } from "@/sections/Services/servicesData";
+import { getServiceBySlug, getServiceSeoMeta } from "@/sections/Services/servicesData";
+import { PageMeta, toCanonicalUrl } from "@/components/pageMeta";
+import { RoutePaths } from "@/routes/constant/path";
 
 const ServiceDetail = () => {
   const { serviceSlug } = useParams();
@@ -11,8 +13,17 @@ const ServiceDetail = () => {
     return <Navigate to="/services" replace />;
   }
 
+  const canonical = toCanonicalUrl(`${RoutePaths.SERVICES}/${service.slug}`);
+  const seo = getServiceSeoMeta(service);
+
   return (
     <section className="relative isolate overflow-hidden bg-slate-50 pb-14 pt-24 dark:bg-slate-950 sm:pb-16 sm:pt-28">
+      <PageMeta
+        title={seo.title}
+        description={seo.description}
+        keywords={seo.keywords}
+        canonical={canonical}
+      />
       <div className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute left-0 top-0 h-64 w-64 rounded-full bg-indigo-500/20 blur-3xl dark:bg-indigo-400/15" />
         <div className="absolute bottom-0 right-0 h-80 w-80 rounded-full bg-fuchsia-500/20 blur-3xl dark:bg-fuchsia-400/10" />

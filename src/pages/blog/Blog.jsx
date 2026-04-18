@@ -2,6 +2,7 @@ import React, { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { blogPosts } from "../../data/blogData";
 import { RoutePaths } from "../../routes/constant/path";
+import { PageMeta, toCanonicalUrl } from "@/components/pageMeta";
 import { CalendarDays } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { glassCard } from "@/lib/glassCard";
@@ -21,6 +22,12 @@ const Blog = () => {
 
   return (
     <section className="w-full bg-background-light py-20 dark:bg-background-dark">
+      <PageMeta
+        title="Blog | Web Development, AI & DevOps Insights | WebBuild Infotech"
+        description="Articles on full-stack development, cloud, DevOps, AI in business, and modern engineering from the WebBuild Infotech team."
+        keywords="web development blog, full stack, DevOps, AI workflows, WebBuild Infotech"
+        canonical={toCanonicalUrl(RoutePaths.BLOG)}
+      />
       <div className="relative isolate mb-10 w-full overflow-hidden rounded-b-3xl px-6 py-12 text-center shadow-[0_20px_50px_-15px_rgba(15,23,42,0.35)] dark:shadow-[0_24px_60px_-12px_rgba(0,0,0,0.55)] sm:px-8 sm:py-14">
         <div className="absolute inset-0 bg-gradient-to-br from-grey-950 via-primary-darker to-secondary-darker" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_90%_60%_at_50%_-30%,rgba(91,228,155,0.18),transparent_55%)]" />

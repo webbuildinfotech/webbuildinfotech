@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import { blogPosts, getBlogBySlug } from "../../data/blogData";
 import { RoutePaths } from "../../routes/constant/path";
 import { ChevronLeftIcon, PlusIcon } from "@/components/icons/Icon";
+import { PageMeta, toCanonicalUrl } from "@/components/pageMeta";
 
 const BlogDetail = () => {
   const { slug } = useParams();
@@ -13,6 +14,11 @@ const BlogDetail = () => {
   if (!post) {
     return (
       <section className="bg-slate-50 pb-14 pt-24 dark:bg-slate-950 sm:pb-16 sm:pt-28">
+        <PageMeta
+          title="Blog post not found | WebBuild Infotech"
+          description="The article you requested is not available. Browse our blog for web development, cloud, and AI insights."
+          canonical={toCanonicalUrl(RoutePaths.BLOG)}
+        />
         <div className="container mx-auto px-4 text-center sm:px-6 lg:px-8">
           <h1 className="text-3xl font-bold text-slate-900 dark:text-slate-100">Blog not found</h1>
           <p className="mt-3 text-slate-600 dark:text-slate-300">
@@ -28,8 +34,18 @@ const BlogDetail = () => {
 
   const relatedPosts = blogPosts.filter((item) => item.slug !== post.slug).slice(0, 3);
 
+  const blogCanonical = toCanonicalUrl(`${RoutePaths.BLOG}/${post.slug}`);
+  const metaDescription = post.excerpt?.slice(0, 160) || `${post.title} — WebBuild Infotech blog.`;
+  const metaKeywords = [post.category, ...(post.tags || []), "WebBuild Infotech", "blog"].filter(Boolean).join(", ");
+
   return (
     <section className="relative isolate overflow-hidden bg-slate-50 pb-14 pt-24 dark:bg-slate-950 sm:pb-16 sm:pt-28">
+      <PageMeta
+        title={`${post.title} | WebBuild Infotech Blog`}
+        description={metaDescription}
+        keywords={metaKeywords}
+        canonical={blogCanonical}
+      />
       <div className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute left-0 top-0 h-64 w-64 rounded-full bg-indigo-500/20 blur-3xl dark:bg-indigo-400/15" />
         <div className="absolute bottom-0 right-0 h-80 w-80 rounded-full bg-fuchsia-500/20 blur-3xl dark:bg-fuchsia-400/10" />
