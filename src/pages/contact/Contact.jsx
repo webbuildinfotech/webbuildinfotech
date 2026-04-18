@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaWhatsapp } from "react-icons/fa";
 import { GiSpiderWeb } from "react-icons/gi";
 import ContactBanner from "../../sections/Contact/ContactBanner";
-import { PageMeta } from "../../components/pageMeta";
+import { PageMeta, toCanonicalUrl } from "../../components/pageMeta";
+import { RoutePaths } from "../../routes/constant/path";
 import { cn } from "@/lib/utils";
 import { glassCard } from "@/lib/glassCard";
 
@@ -283,6 +284,7 @@ const ContactUs = () => {
         title="Contact WebBuild Infotech | Get in Touch With Our Team"
         description="Contact WebBuild Infotech for professional web development and IT solutions. Reach out to our team in Gujarat for consultations and inquiries."
         keywords="contact webbuild, IT company contact, web development gujarat, technology solutions contact"
+        canonical={toCanonicalUrl(RoutePaths.CONTACT)}
       />
 
       <div className="bg-gradient-to-b from-background-light via-background-light/80 to-background-light dark:from-background-dark dark:via-background-dark/95 dark:to-background-dark min-h-screen pt-24 pb-12 sm:pt-28 sm:pb-16">

@@ -3,6 +3,8 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { cn } from "@/lib/utils";
 import { glassCard, glassCardXL } from "@/lib/glassCard";
+import { PageMeta, toCanonicalUrl } from "@/components/pageMeta";
+import { RoutePaths } from "@/routes/constant/path";
 
 // Initialize AOS animations
 AOS.init();
@@ -214,6 +216,12 @@ const ProjectsWithPagination = () => {
 
     return (
         <section className="bg-gradient-to-b from-background-light via-background-light/80 to-background-light pb-16 pt-24 dark:from-background-dark dark:via-background-dark/95 dark:to-background-dark sm:pb-20 sm:pt-28">
+            <PageMeta
+                title="Portfolio & Case Studies | WebBuild Infotech Projects"
+                description="Explore featured web applications, platforms, and product work delivered by WebBuild Infotech across marketing, SaaS, healthcare, and more."
+                keywords="web development portfolio, case studies, React projects, WebBuild Infotech"
+                canonical={toCanonicalUrl(RoutePaths.PROJECTS)}
+            />
             <div className="relative isolate mb-10 w-full overflow-hidden rounded-b-3xl px-6 py-12 text-center shadow-[0_20px_50px_-15px_rgba(15,23,42,0.35)] dark:shadow-[0_24px_60px_-12px_rgba(0,0,0,0.55)] sm:px-8 sm:py-14">
                 <div className="absolute inset-0 bg-gradient-to-br from-grey-950 via-primary-darker to-secondary-darker" />
                 <div className="absolute inset-0 bg-[radial-gradient(ellipse_90%_60%_at_50%_-30%,rgba(91,228,155,0.18),transparent_55%)]" />
