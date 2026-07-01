@@ -1,167 +1,111 @@
-import React, { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import React from "react";
+import { NavLink, Link } from "react-router-dom";
+import { Calendar, ChevronDown } from "lucide-react";
+import { RoutePaths } from "@/routes/constant/path";
+import TechnologyMegaMenu from "./TechnologyMegaMenu";
+import "./mega-menu.css";
 
-const DesktopMenu = ({ menuItems, activeMenu, setIsMenuOpen, isHomeRoute, hasScrolled, isDarkMode }) => {
-    const [key, setKey] = useState(0); // Key to re-trigger the animation
-    const useLightText = isDarkMode || (isHomeRoute && !hasScrolled);
-  
-    useEffect(() => {
-      const interval = setInterval(() => {
-        setKey((prevKey) => prevKey + 1); // Update the key to restart animation
-      }, 20000); // 5 seconds
-  
-      return () => clearInterval(interval); // Cleanup interval on unmount
-    }, []);
-  
+const DesktopMenu = ({
+  menuItems,
+  activeMenu,
+  setIsMenuOpen,
+  heroChrome,
+}) => {
+  const linkClass = (isActive, hasMega = false) =>
+    `menu-item ${hasMega ? "has-mega" : ""} ${isActive ? "active" : ""} ${
+      heroChrome ? "!text-white" : "!text-grey-800 dark:!text-slate-200"
+    }`;
+
+  const labelClass = heroChrome ? "text-white/90" : "text-grey-800 dark:text-slate-200";
+
+  const handleNavigate = () => {
+    setIsMenuOpen(false);
+    window.scrollTo(0, 0);
+  };
+
   return (
-    <React.Fragment>
-      <ul className="relative flex items-center gap-1" key={key}>
-        {menuItems?.map((item) => (
-          <li key={item.name} className="group">
-          <NavLink
-          to={item.path}
-          className={`menu-item ${
-            activeMenu === item.path ? "active" : ""
-          } ${useLightText ? "!text-white" : "!text-black"} relative flex items-center justify-center gap-2`}
-        >
-          {/* <span
-            className={`icon-wrapper typing-effect-icon transition-transform duration-300 ease-in-out text-xl ${
-              activeMenu === item.path
-                ? "text-blue-500"
-                : useLightText
-                ? "text-gray-50"
-                : "text-gray-700"
-            }`}
-          >
-            {item.icon}
-          </span> */}
-          <span className={`font-mooli mb-2 ${useLightText ? "text-white" : "text-black"}`}>
-            {item.name}
-          </span>
-        </NavLink>
+    <>
+      <ul className="relative hidden items-center xl:flex">
+        {menuItems?.map((item) => {
+          const hasMega = item.subMenu?.length > 0;
 
-            {/* Submenu */}
-               {/* Submenu (Appears only on hover) */}
-              {item.subMenu?.length > 0 && (
-                <div className="absolute right-0 top-full z-50 w-[min(94vw,980px)] max-w-[calc(100vw-24px)] translate-y-4 rounded-b-xl border border-grey-200 border-t-2 border-t-primary-main/80 bg-white opacity-0 shadow-[0_20px_50px_-12px_rgba(15,23,42,0.2)] ring-1 ring-grey-200/60 transition-all duration-300 transform invisible group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 dark:border-grey-700 dark:border-t-primary-light/60 dark:bg-background-dark dark:ring-grey-700/80 dark:shadow-[0_24px_56px_-12px_rgba(0,0,0,0.55)]">
-                  <div
-                    className="mx-auto grid max-h-[72vh] gap-3 overflow-y-auto px-3 py-4 lg:gap-4 lg:px-5"
-                    style={{
-                      gridTemplateColumns: "repeat(auto-fit, minmax(110px, 1fr))",
-                    }}
-                  >
-                    {item.subMenu.map((subItem, subIndex) => (
-                      <div key={subIndex} className="flex flex-col">
-                        <h4 className="mb-3 border-b border-grey-200 pb-2 text-sm font-bold uppercase tracking-wide text-grey-900 dark:border-grey-700 dark:text-grey-50">
-                          {subItem.title}
-                        </h4>
-                        <ul className="space-y-1">
-                          {subItem.items.map((menuItem, itemIndex) => (
-                            <li key={itemIndex}>
-                              <NavLink
-                                to={menuItem.path}
-                                onClick={() => {
-                                  setIsMenuOpen(false);
-                                  window.scrollTo(0, 0); // Scroll to top when navigating
-                                }}
-                                className="flex items-center gap-x-2 rounded-lg px-3 py-2 text-grey-800 transition-colors hover:bg-grey-100 hover:text-grey-950 dark:text-grey-200 dark:hover:bg-grey-800/90 dark:hover:text-white"
-                              >
-                                <span className="text-xl" style={{ color: menuItem.color }}>
-                                  {menuItem.icon}
-                                </span>
-                                <span className="text-sm leading-5">{menuItem.name}</span>
-                              </NavLink>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    ))}
-                  </div>
-                </div>
+          return (
+            <li key={item.name} className={hasMega ? "mega-menu-trigger static" : "group"}>
+              {item.hash ? (
+                <a href={`/#${item.hash}`} className={linkClass(false)}>
+                  <span className={`text-[13px] font-medium ${labelClass}`}>{item.name}</span>
+                </a>
+              ) : (
+                <NavLink
+                  to={item.path}
+                  className={({ isActive }) => linkClass(isActive || activeMenu === item.path, hasMega)}
+                >
+                  <span className={`inline-flex items-center gap-0.5 text-[13px] font-medium ${labelClass}`}>
+                    {item.name}
+                    {hasMega && <ChevronDown className="mega-menu-chevron h-3.5 w-3.5" aria-hidden />}
+                  </span>
+                </NavLink>
+              )}
+
+              {hasMega && (
+                <>
+                  <span className="mega-menu-bridge" aria-hidden />
+                  <TechnologyMegaMenu subMenu={item.subMenu} onNavigate={handleNavigate} />
+                </>
               )}
             </li>
-          ))}
+          );
+        })}
       </ul>
+
+      <div className="ml-2 hidden items-center gap-2 lg:flex">
+        <Link
+          to={RoutePaths.CONTACT}
+          className={`inline-flex items-center justify-center rounded-xl border px-4 py-2 text-xs font-semibold transition ${
+            heroChrome
+              ? "border-white/30 text-white hover:bg-white/10"
+              : "border-blue-500/50 text-blue-600 hover:bg-blue-50 dark:border-blue-400/40 dark:text-blue-400 dark:hover:bg-blue-950/40"
+          }`}
+        >
+          Get Quote
+        </Link>
+        <Link
+          to={RoutePaths.CONTACT}
+          className="inline-flex items-center justify-center gap-1.5 rounded-xl bg-blue-600 px-4 py-2 text-xs font-semibold text-white shadow-md shadow-blue-600/25 transition hover:bg-blue-500"
+        >
+          <Calendar className="h-3.5 w-3.5" />
+          Schedule Meeting
+        </Link>
+      </div>
+
       <style>{`
-        @keyframes typing {
-          from {
-            width: 0;
-          }
-          to {
-            width: 100%;
-          }
-        }
-
-        .typing-effect {
-          display: inline-block;
-          white-space: nowrap;
-          overflow: hidden;
-          max-width: 100%;
-          animation: typing 2s steps(20) forwards;
-        }
-
-        @keyframes typing-icon {
-          0% {
-            opacity: 0;
-            transform: translateX(-10px);
-          }
-          100% {
-            opacity: 1;
-            transform: translateX(0);
-          }
-        }
-
-        .typing-effect-icon {
-          display: inline-block;
-          animation: typing-icon 2s steps(20) forwards;
-        }
-
         .menu-item {
           position: relative;
-          padding: 20px 20px;
-          font-size: 18px;
-          font-weight: bold;
-          text-transform: capitalize;
-          transition: all 0.3s ease-in-out;
-          color: black;
-          opacity: 1;
+          padding: 10px 10px;
+          transition: all 0.25s ease;
         }
-
-        .menu-item:hover {
-          color: #453f86;
-        }
-
+        .menu-item:hover { color: #60a5fa; }
         .menu-item::after {
           content: "";
           position: absolute;
-          left: 20px;
-          right: 20px;
-          bottom: 10px;
+          left: 10px;
+          right: 10px;
+          bottom: 4px;
           height: 2px;
           border-radius: 9999px;
-          background: #453f86;
+          background: linear-gradient(90deg, #2563eb, #0d9488);
           transform: scaleX(0);
-          transform-origin: center;
           transition: transform 0.25s ease;
         }
-
-        .menu-item:hover::after {
+        .menu-item:hover::after,
+        .menu-item.active::after { transform: scaleX(1); }
+        .menu-item.active { color: #60a5fa; }
+        .mega-menu-trigger:hover .menu-item::after,
+        .mega-menu-trigger:focus-within .menu-item::after {
           transform: scaleX(1);
-        }
-
-        .menu-item.active {
-          color: #453f86;
-        }
-
-        .menu-item.active::after {
-          transform: scaleX(1);
-        }
-
-        .group:hover .group-hover\:flex {
-          display: flex;
         }
       `}</style>
-    </React.Fragment>
+    </>
   );
 };
 

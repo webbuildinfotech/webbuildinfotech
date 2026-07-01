@@ -9,6 +9,8 @@ export const RoutePaths = {
     BLOG: "/blog",
     COMPANY: "/company",
     CONTACT: "/contact",
+    PRICING: "/#pricing",
+    CASE_STUDIES: "/#case-studies",
 
    // Technology Sub-Routes
    TECHNOLOGY: {

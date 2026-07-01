@@ -2,36 +2,29 @@ const { addDynamicIconSelectors } = require("@iconify/tailwind");
 
 module.exports = {
   darkMode: "class",
-  content: ["./src/**/*.{html,js,jsx,ts,tsx}"], // Scan all component/template files
+  content: ["./src/**/*.{html,js,jsx,ts,tsx}"],
   safelist: [
-    { pattern: /(text|bg|ring)-(primary|secondary|info|success|warning|error|grey|background)(-(main|lighter|light|dark|darker|darkLight|50|100|200|300|400|500|600|700|800|900))?/ },
+    { pattern: /(text|bg|ring|from|to|via)-(primary|secondary|info|success|warning|error|grey|background)(-(main|lighter|light|dark|darker|darkLight|50|100|200|300|400|500|600|700|800|900))?/ },
     { pattern: /text-(indigo|emerald|blue|amber|purple|rose|pink|teal|orange|cyan|lime|sky)-600/ },
   ],
   theme: {
     extend: {
-      // Define CSS variables for Tailwind v4 theme tokens
-      // so bg-background-light / bg-background-dark are generated.
-
-              // primary: "#000000",
-        // secondary: "#150050",
-        // accent: "#3F0071",
-        // highlight: "#610094",
-        
       colors: {
         primary: {
-          main: "#00A76F",
-          lighter: "#C8FAD6",
-          light: "#5BE49B",
-          DEFAULT: "#00A76F",
-          dark: "#007867",
-          darker: "#004B50",
+          main: "#0891B2",
+          lighter: "#CFFAFE",
+          light: "#22D3EE",
+          DEFAULT: "#0891B2",
+          dark: "#0E7490",
+          darker: "#155E75",
         },
         secondary: {
-          lighter: "#EFD6FF",
-          light: "#C684FF",
-          DEFAULT: "#8E33FF",
-          dark: "#5119B7",
-          darker: "#27097A",
+          main: "#4F46E5",
+          lighter: "#E0E7FF",
+          light: "#818CF8",
+          DEFAULT: "#4F46E5",
+          dark: "#3730A3",
+          darker: "#1E1B4B",
         },
         info: {
           lighter: "#CAFDF5",
@@ -62,33 +55,39 @@ module.exports = {
           darker: "#7A0916",
         },
         grey: {
-          50: "#FCFDFD",
-          100: "#F9FAFB",
-          200: "#F4F6F8",
-          300: "#DFE3E8",
-          400: "#C4CDD5",
-          500: "#919EAB",
-          600: "#637381",
-          700: "#454F5B",
-          800: "#1C252E",
-          900: "#141A21",
+          50: "#F8FAFC",
+          100: "#F1F5F9",
+          200: "#E2E8F0",
+          300: "#CBD5E1",
+          400: "#94A3B8",
+          500: "#64748B",
+          600: "#475569",
+          700: "#334155",
+          800: "#1E293B",
+          900: "#0F172A",
         },
         background: {
-          light: "#F4F6F8",
-          DEFAULT: "#F4F6F8",
-          // dark: "#141A20",
-          // darkLight: "#1C252E",
-          dark: "#030303",
-          darkLight: "#131313",
+          light: "#F8FAFC",
+          DEFAULT: "#F8FAFC",
+          dark: "#0B1120",
+          darkLight: "#131C31",
         },
       },
       fontFamily: {
-        ovo: ['"Ovo"', "serif"],
-        mooli: ['"Mooli"', "sans-serif"],
-        monda: ['"Monda"', "sans-serif"],
+        sans: ['"Plus Jakarta Sans"', "system-ui", "-apple-system", "sans-serif"],
+        jakarta: ['"Plus Jakarta Sans"', "system-ui", "sans-serif"],
+        ovo: ['"Plus Jakarta Sans"', "serif"],
+        mooli: ['"Plus Jakarta Sans"', "sans-serif"],
+        monda: ['"Plus Jakarta Sans"', "sans-serif"],
+      },
+      boxShadow: {
+        brand: "0 4px 24px rgba(8, 145, 178, 0.2)",
+        "brand-lg": "0 8px 40px rgba(8, 145, 178, 0.25)",
+      },
+      animation: {
+        "fade-in-up": "fadeInUp 0.6s ease-out forwards",
       },
     },
   },
   plugins: [addDynamicIconSelectors()],
 };
-

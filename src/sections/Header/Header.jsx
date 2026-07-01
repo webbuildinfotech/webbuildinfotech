@@ -1,15 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import { FiMenu, FiX } from "react-icons/fi"; // Icons for menu toggle
+import { FiMenu, FiX } from "react-icons/fi";
 import LogoHeader from "../LogoHeader/LogoHeader";
 import MobileMenu from "./MobileMenu";
 import DesktopMenu from "./DesktopMenu";
 import {
-  HomeContentIcon,
-  ServicesIcon,
-  CodeIcon,
-  ProjectsIcon,
-  EnquiriesIcon,
   ReactLogoIcon,
   VueIcon,
   AngularIcon,
@@ -26,9 +21,7 @@ import {
   DockerIcon,
   NginxIcon,
   OpenAiIcon,
-  GithubActionsIcon,
   GithubLightIcon,
-  DataConfigurationIcon,
   WorkflowSquareIcon,
   InfinityDuotoneIcon,
   WorkflowSquareTenIcon,
@@ -36,13 +29,10 @@ import {
   FigmaDevIcon,
   JiraLogoIcon,
 } from "../../components/icons";
-
 import { SiGraphql, SiFirebase, SiNextdotjs, SiTypescript, SiMui, SiAmazonwebservices } from "react-icons/si";
 import { RoutePaths } from "../../routes/constant/path";
-// import { ThemeToggle } from "../../components/themeToggle";
+import { ThemeToggle } from "../../components/themeToggle";
 import { useTheme } from "../../context/ThemeContext";
-import { FaRegNewspaper } from "react-icons/fa";
-
 
 const Header = () => {
   const location = useLocation();
@@ -71,17 +61,11 @@ const Header = () => {
   }, []);
 
   const menuItems = [
-    { name: "Home", path: "/", icon: <HomeContentIcon />, subMenu: [] },
-    {
-      name: "Services",
-      path: "/services",
-      icon: <ServicesIcon />,
-      subMenu: [],
-    },
+    { name: "Home", path: RoutePaths.HOME, subMenu: [] },
+    { name: "Services", path: RoutePaths.SERVICES, subMenu: [] },
     {
       name: "Technologies",
-      path: "/technologies",
-      icon: <CodeIcon />,
+      path: RoutePaths.TECHNOLOGIES,
       subMenu: [
         {
           title: "Frontend",
@@ -146,41 +130,53 @@ const Header = () => {
       ],
    
     },
-    { name: "Projects", path: "/project", icon: <ProjectsIcon />, subMenu: [] },
-    { name: "Blog", path: RoutePaths.BLOG, icon: <FaRegNewspaper />, subMenu: [] },
-    { name: "Contact", path: "/contact", icon: <EnquiriesIcon />, subMenu: [] },
+    { name: "Portfolio", path: RoutePaths.PROJECTS, subMenu: [] },
+    { name: "Case Studies", path: RoutePaths.CASE_STUDIES, hash: "case-studies", subMenu: [] },
+    { name: "Industries", path: RoutePaths.INDUSTRIES, subMenu: [] },
+    { name: "Pricing", path: RoutePaths.PRICING, hash: "pricing", subMenu: [] },
+    { name: "Blog", path: RoutePaths.BLOG, subMenu: [] },
+    { name: "About", path: RoutePaths.COMPANY, subMenu: [] },
+    { name: "Contact", path: RoutePaths.CONTACT, subMenu: [] },
   ];
 // backdrop-blur-[3px]
+  const heroChrome = isHomeRoute && !hasScrolled && !isDark;
+
   const headerBgClass = hasScrolled
-    ? "bg-white/25 dark:bg-background-dark/80 border-b border-grey-200/60 shadow-[0_8px_30px_rgba(15,23,42,0.12)] backdrop-blur-xl"
+    ? "bg-white/90 dark:bg-background-dark/95 border-b border-slate-200/80 shadow-sm backdrop-blur-xl dark:border-slate-800"
     : "bg-transparent";
 
   return (
     <header
-      className={`fixed top-0 left-0 z-50 w-full transition-all duration-300 ${headerBgClass}`}
+      className={`w-full transition-all duration-300 ${headerBgClass}`}
     >
       <div className="container mx-auto flex h-[78px] items-center justify-between gap-3 px-4 sm:px-6 lg:px-8">
-        <LogoHeader isLight={isDark || (!hasScrolled && isHomeRoute)} />
+        <LogoHeader isLight={heroChrome} />
 
         <div className="flex items-center gap-3">
           {/* Desktop nav */}
-          <nav className="menu-container hidden items-center gap-4 lg:flex">
+          <nav className="menu-container hidden items-center gap-2 lg:flex">
             <DesktopMenu
               menuItems={menuItems}
               activeMenu={activeMenu}
               setIsMenuOpen={setIsMenuOpen}
               isHomeRoute={isHomeRoute}
               hasScrolled={hasScrolled}
-              isDarkMode={isDark}
+              heroChrome={heroChrome}
             />
           </nav>
 
-          {/* Theme toggle: visible on all breakpoints (between nav and menu on mobile) */}
-          {/* <ThemeToggle className="lg:rounded-full" /> */}
+          <ThemeToggle
+            glass={heroChrome}
+            className="hidden sm:inline-flex"
+          />
 
           {/* Mobile menu button */}
           <button
-            className="inline-flex h-10 w-10 cursor-pointer items-center justify-center rounded-xl border border-grey-200/80 bg-white/90 text-grey-700 shadow-sm transition hover:bg-white hover:text-secondary-main focus:outline-none focus:ring-2 focus:ring-secondary/30 dark:border-grey-600 dark:bg-grey-800/90 dark:text-grey-100 dark:hover:bg-grey-800 dark:hover:text-secondary-light lg:hidden"
+            className={`inline-flex h-10 w-10 cursor-pointer items-center justify-center rounded-xl border shadow-sm transition focus:outline-none focus:ring-2 lg:hidden ${
+              heroChrome
+                ? "border-white/25 bg-white/10 text-white hover:bg-white/20 focus:ring-white/30"
+                : "border-grey-200/80 bg-white/90 text-grey-700 hover:bg-white focus:ring-secondary/30 dark:border-grey-600 dark:bg-grey-800/90 dark:text-grey-100"
+            }`}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           >

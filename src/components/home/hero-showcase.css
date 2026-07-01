@@ -1,0 +1,259 @@
+/* ── Premium hero visual ── */
+.hero-visual {
+  position: relative;
+  width: 100%;
+  min-height: 420px;
+  padding: 1rem 0 2rem;
+}
+
+@media (min-width: 1024px) {
+  .hero-visual {
+    min-height: 480px;
+    padding: 0.5rem 0 1rem;
+  }
+}
+
+/* Ambient lighting */
+.hero-visual__orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(60px);
+}
+
+.hero-visual__orb--blue {
+  top: 8%;
+  left: 15%;
+  width: 55%;
+  height: 45%;
+  background: rgba(37, 99, 235, 0.35);
+}
+
+.hero-visual__orb--teal {
+  bottom: 5%;
+  right: 10%;
+  width: 45%;
+  height: 40%;
+  background: rgba(13, 148, 136, 0.22);
+}
+
+.hero-visual__grid {
+  position: absolute;
+  inset: 5% 8% 10%;
+  border-radius: 1.5rem;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 45%, black, transparent);
+  pointer-events: none;
+}
+
+/* 3D stage */
+.hero-visual__stage {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1400px;
+  padding: 0 0.5rem;
+}
+
+.hero-visual__laptop {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 580px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 40px 80px rgba(0, 0, 0, 0.55));
+  transform: rotateY(-6deg) rotateX(2deg);
+  transform-style: preserve-3d;
+}
+
+@media (min-width: 1024px) {
+  .hero-visual__laptop {
+    max-width: 640px;
+    transform: rotateY(-8deg) rotateX(3deg);
+  }
+}
+
+/* Phone mockup */
+.hero-visual__phone {
+  position: absolute;
+  z-index: 4;
+  right: 0;
+  bottom: 2%;
+  width: 26%;
+  max-width: 118px;
+}
+
+@media (min-width: 640px) {
+  .hero-visual__phone {
+    right: 2%;
+    bottom: 6%;
+    max-width: 132px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-visual__phone {
+    right: 4%;
+    bottom: 8%;
+    max-width: 148px;
+  }
+}
+
+.hero-visual__phone-frame {
+  border-radius: 1.25rem;
+  border: 2px solid rgba(255, 255, 255, 0.18);
+  background: linear-gradient(160deg, #1e293b, #0f172a);
+  padding: 0.35rem;
+  box-shadow:
+    0 24px 48px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.06) inset;
+  overflow: hidden;
+}
+
+.hero-visual__phone-notch {
+  width: 36%;
+  height: 0.3rem;
+  margin: 0.2rem auto 0.35rem;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.hero-visual__phone-screen {
+  display: block;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: 0.85rem;
+}
+
+/* Floating stat cards */
+.hero-visual__card {
+  position: absolute;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  border-radius: 0.875rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(15, 23, 42, 0.82);
+  backdrop-filter: blur(16px);
+  padding: 0.625rem 0.875rem;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+  min-width: 9.5rem;
+}
+
+.hero-visual__card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.125rem;
+  height: 2.125rem;
+  flex-shrink: 0;
+  border-radius: 0.625rem;
+}
+
+.hero-visual__card--blue .hero-visual__card-icon {
+  background: rgba(37, 99, 235, 0.2);
+  color: #60a5fa;
+}
+
+.hero-visual__card--teal .hero-visual__card-icon {
+  background: rgba(13, 148, 136, 0.2);
+  color: #2dd4bf;
+}
+
+.hero-visual__card--violet .hero-visual__card-icon {
+  background: rgba(139, 92, 246, 0.2);
+  color: #a78bfa;
+}
+
+.hero-visual__card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.0625rem;
+}
+
+.hero-visual__card-label {
+  font-size: 0.625rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #94a3b8;
+}
+
+.hero-visual__card-value {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #f1f5f9;
+  white-space: nowrap;
+}
+
+.hero-visual__card--top-left {
+  top: 6%;
+  left: 0;
+}
+
+.hero-visual__card--top-right {
+  top: 14%;
+  right: 0;
+}
+
+.hero-visual__card--bottom-left {
+  bottom: 18%;
+  left: 0;
+}
+
+@media (max-width: 639px) {
+  .hero-visual__card--top-left {
+    top: 0;
+    left: -0.25rem;
+    transform: scale(0.88);
+    transform-origin: top left;
+  }
+
+  .hero-visual__card--top-right {
+    top: auto;
+    bottom: 42%;
+    right: -0.25rem;
+    transform: scale(0.88);
+    transform-origin: bottom right;
+  }
+
+  .hero-visual__card--bottom-left {
+    display: none;
+  }
+}
+
+/* Bottom pill */
+.hero-visual__pill {
+  position: absolute;
+  z-index: 5;
+  bottom: 0;
+  left: 50%;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(12px);
+  padding: 0.5rem 1rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #cbd5e1;
+  white-space: nowrap;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+@media (min-width: 1024px) {
+  .hero-visual__pill {
+    bottom: -0.5rem;
+  }
+}

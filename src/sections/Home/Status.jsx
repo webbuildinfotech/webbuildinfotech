@@ -3,6 +3,7 @@ import CountUp from "react-countup";
 import { stats } from "../../data/jsonData";
 import { BorderBeam } from "@/components/lightswind/border-beam";
 import { cn } from "@/lib/utils";
+import SectionHeader from "@/components/ui/SectionHeader";
 import { glassCard } from "@/lib/glassCard";
 
 const StatsComponent = () => {
@@ -18,17 +19,11 @@ const StatsComponent = () => {
   return (
     <section className="w-full bg-background-light py-12 sm:py-16 dark:bg-background-dark">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto mb-10 max-w-3xl text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary-main">
-            By the numbers
-          </p>
-          <h2 className="mt-2 text-2xl font-bold text-grey-900 sm:text-3xl dark:text-white">
-            A track record you can trust
-          </h2>
-          <p className="font-mooli mt-3 text-sm text-grey-600 sm:text-base dark:text-grey-300">
-            Measurable outcomes, consistent delivery, and long-term partnerships.
-          </p>
-        </div>
+        <SectionHeader
+          eyebrow="By the numbers"
+          title="A track record you can trust"
+          description="Measurable outcomes, consistent delivery, and long-term partnerships."
+        />
 
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-5 lg:gap-6">
           {stats.map((stat, index) => (

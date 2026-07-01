@@ -136,39 +136,40 @@ function CyberCosmicHero({ className = "" }) {
         <div className="grid flex-1 grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-12">
           <div className="order-2 max-w-3xl lg:order-1 lg:max-w-none">
             <span className="inline-flex rounded-full border border-cyan-400/35 bg-cyan-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-cyan-100 shadow-[0_0_20px_rgba(34,211,238,0.28)]">
-              Web Build Infotech
+              Trusted Web Development Agency
             </span>
             <h2
               data-aos="fade-up"
               data-aos-duration="1500"
-              className="mt-5 md:text-4xl text-3xl font-bold leading-tight text-white drop-shadow-[0_8px_24px_rgba(0,0,0,0.5)]"
+              className="mt-5 text-3xl font-bold leading-tight text-white drop-shadow-[0_8px_24px_rgba(0,0,0,0.5)] md:text-4xl lg:text-5xl"
             >
-              Top Global Partner for Custom Software
+              Custom Software That
               <br />
               <span
                 data-aos="fade-up"
                 data-aos-duration="1500"
                 className="md:inline-flex items-baseline gap-2 whitespace-nowrap"
               >
-                <span>Development in</span> <br />
+                <span className="text-gradient-brand">Scales Your </span>
                 <span
                   data-aos="fade-up"
                   data-aos-duration="1500"
                   key={industries[industryIndex]}
-                  className="cyber-industry-word cyber-industry-word--typing"
+                  className="cyber-industry-word cyber-industry-word--typing text-cyan-300"
                   style={{ "--chars": industries[industryIndex].length }}
                 >
-                  {industries[industryIndex]}.
+                  {industries[industryIndex]}
                 </span>
               </span>
             </h2>
             <p
               data-aos="fade-up"
               data-aos-duration="1500"
-              className="font-mooli mt-4 max-w-2xl text-sm leading-relaxed text-white/85 sm:text-lg"
+              className="mt-4 max-w-2xl text-sm leading-relaxed text-white/85 sm:text-lg"
             >
-              We build scalable web applications and automate workflows using the MERN stack
-              (MongoDB, Express, React, Node.js)
+              We design and build high-performance web applications, SaaS platforms, and workflow
+              automations — using React, Node.js, and modern cloud infrastructure trusted by
+              businesses worldwide.
             </p>
 
             <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">

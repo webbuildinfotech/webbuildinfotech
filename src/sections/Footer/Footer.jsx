@@ -1,154 +1,139 @@
 import React from 'react';
-import { useInView } from 'react-intersection-observer';
-import './Footer.css';
-import { FaFacebookF, FaTwitter, FaLinkedinIn, FaWhatsapp } from 'react-icons/fa';
+import {
+  FaFacebook,
+  FaWhatsapp,
+  FaLinkedinIn,
+  FaTwitter,
+  FaGithub,
+  FaInstagram,
+  FaYoutube,
+  FaMapMarkerAlt,
+} from 'react-icons/fa';
+import { FaMobileButton } from 'react-icons/fa6';
 import LogoHeader from '../LogoHeader/LogoHeader';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { RoutePaths } from '../../routes/constant/path';
-import { FaMapMarkerAlt, FaPhone, FaGlobe } from 'react-icons/fa';
-import { FaFacebook, FaMobileButton } from 'react-icons/fa6';
 import { useTheme } from '../../context/ThemeContext';
 
-const FooterSection = ({ children, index }) => {
-  const { ref, inView } = useInView({
-    triggerOnce: true, // Changed to true to make animation happen only once
-    threshold: 0.1,
-  });
-
-  return (
-    <div
-      ref={ref}
-      className={`transition-all duration-700 ease-in-out ${
-        inView ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-      }`}
-      style={{ transitionDelay: `${index * 150}ms` }}
+const FooterLink = ({ to, children, onClick }) => (
+  <li>
+    <Link
+      to={to}
+      onClick={onClick}
+      className="text-sm text-slate-500 transition hover:text-indigo-600 dark:text-slate-400 dark:hover:text-indigo-400"
     >
       {children}
-    </div>
-  );
-};
+    </Link>
+  </li>
+);
 
 const Footer = () => {
-  const navigate = useNavigate();
   const { isDark } = useTheme();
-  const handleClick = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
+  const scrollTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
-  const handleNavigate = () => {
-    navigate(RoutePaths.CONTACT);
-    handleClick();
-  };
+  const columns = [
+    {
+      title: 'Company',
+      links: [
+        { label: 'About', to: RoutePaths.COMPANY },
+        { label: 'Contact', to: RoutePaths.CONTACT },
+        { label: 'Blog', to: RoutePaths.BLOG },
+        { label: 'Portfolio', to: RoutePaths.PROJECTS },
+        { label: 'Case Studies', to: RoutePaths.CASE_STUDIES },
+      ],
+    },
+    {
+      title: 'Services',
+      links: [
+        { label: 'Web Development', to: RoutePaths.SERVICES },
+        { label: 'Mobile Apps', to: RoutePaths.SERVICES },
+        { label: 'AI Solutions', to: RoutePaths.TECHNOLOGY.AI.OPENAI },
+        { label: 'Cloud & DevOps', to: RoutePaths.TECHNOLOGY.DEVOPS.AWS },
+        { label: 'UI/UX Design', to: RoutePaths.SERVICES },
+      ],
+    },
+    {
+      title: 'Resources',
+      links: [
+        { label: 'FAQs', to: RoutePaths.HOME + '#faq' },
+        { label: 'Pricing', to: RoutePaths.PRICING },
+        { label: 'Technologies', to: RoutePaths.TECHNOLOGIES },
+        { label: 'Industries', to: RoutePaths.INDUSTRIES },
+      ],
+    },
+    {
+      title: 'Technologies',
+      links: [
+        { label: 'React', to: RoutePaths.TECHNOLOGY.FRONTEND.REACT },
+        { label: 'Next.js', to: RoutePaths.TECHNOLOGY.FRONTEND.NEXT },
+        { label: 'Node.js', to: RoutePaths.TECHNOLOGY.BACKEND.NODE },
+        { label: 'AWS', to: RoutePaths.TECHNOLOGY.DEVOPS.AWS },
+        { label: 'OpenAI', to: RoutePaths.TECHNOLOGY.AI.OPENAI },
+      ],
+    },
+  ];
 
   return (
-    <footer className="bg-gradient-to-b from-gray-50 to-gray-100 dark:from-grey-900 dark:to-background-dark">
-      <div className="container mx-auto px-6 pt-16 pb-8">
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
-          {/* Company Info Section */}
-          <FooterSection index={0}>
-            <div className="flex flex-col space-y-6">
-              <LogoHeader isLight={isDark} />
-              <p className="text-gray-600 dark:text-grey-300 leading-relaxed">
-                Transforming ideas into powerful digital solutions. Your trusted partner in web and mobile development.
-              </p>
-              <button 
-                onClick={handleNavigate} 
-                className="inline-flex items-center justify-center w-fit bg-blue-600 dark:bg-primary-main text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 dark:hover:bg-primary-dark transition-colors duration-200 shadow-sm hover:shadow-md"
-              >
-                Let's Talk
-              </button>
-            </div>
-          </FooterSection>
-
-          {/* Services Section */}
-          <FooterSection index={1} >
-            <div className="space-y-6 ml:0 lg:ml-15">
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white border-b-2 border-blue-600 dark:border-primary-main pb-2 w-fit">
-                Our Services
-              </h3>
-              <nav>
-                <Link to={RoutePaths.SERVICES} onClick={handleClick}>
-                  <ul className="space-y-4 text-gray-600 dark:text-grey-300">
-                    <li className="hover:text-blue-600 dark:hover:text-primary-light transition-colors duration-200">Frontend Development</li>
-                    <li className="hover:text-blue-600 dark:hover:text-primary-light transition-colors duration-200">Backend Development</li>
-                    <li className="hover:text-blue-600 dark:hover:text-primary-light transition-colors duration-200">Mobile App Development</li>
-                    <li className="hover:text-blue-600 dark:hover:text-primary-light transition-colors duration-200">API Integration</li>
-                    <li className="hover:text-blue-600 dark:hover:text-primary-light transition-colors duration-200">Cloud Solutions</li>
-                  </ul>
-                </Link>
-              </nav>
-            </div>
-          </FooterSection>
-
-          {/* Technologies Section */}
-          <FooterSection index={2}>
-            <div className="space-y-6">
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white border-b-2 border-blue-600 dark:border-primary-main pb-2 w-fit">
-                Technologies
-              </h3>
-              <div className="grid grid-cols-2 gap-4 text-gray-600 dark:text-grey-300">
-                <Link to={RoutePaths.TECHNOLOGY.FRONTEND.REACT} onClick={handleClick} className="hover:text-blue-600 dark:hover:text-primary-light transition-colors duration-200">React.js</Link>
-                <Link to={RoutePaths.TECHNOLOGY.FRONTEND.ANGULAR} onClick={handleClick} className="hover:text-blue-600 dark:hover:text-primary-light transition-colors duration-200">Angular</Link>
-                <Link to={RoutePaths.TECHNOLOGY.BACKEND.NODE} onClick={handleClick} className="hover:text-blue-600 dark:hover:text-primary-light transition-colors duration-200">Node.js</Link>
-                <Link to={RoutePaths.TECHNOLOGY.BACKEND.NEST} onClick={handleClick} className="hover:text-blue-600 dark:hover:text-primary-light transition-colors duration-200">Nest.js</Link>
-                <Link to={RoutePaths.TECHNOLOGY.DATABASE.MONGO} onClick={handleClick} className="hover:text-blue-600 dark:hover:text-primary-light transition-colors duration-200">MongoDB</Link>
-                <Link to={RoutePaths.TECHNOLOGY.DATABASE.POSTGRES} onClick={handleClick} className="hover:text-blue-600 dark:hover:text-primary-light transition-colors duration-200">PostgreSQL</Link>
-              </div>
-            </div>
-          </FooterSection>
-
-          {/* Contact Section */}
-          <FooterSection index={3}>
-            <div className="space-y-6">
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white border-b-2 border-blue-600 dark:border-primary-main pb-2 w-fit">
-                Get in Touch
-              </h3>
-              <ul className="space-y-4 text-gray-600 dark:text-grey-300">
-                <li className="flex items-start space-x-3">
-                  <FaMapMarkerAlt className="mt-1 text-[#FF4B4B] hover:scale-110 transition-all duration-200" />
-                  <span>2nd Floor, Mox Mall, Mandvi, near Bus Station, Gujarat 394160</span>
-                </li>
-                <li className="flex items-center space-x-3">
-                  <FaMobileButton className="text-[#4CAF50] hover:scale-110 transition-all duration-200" />
-                  <span>+91 9265128409</span>
-                </li>
-                <li className="flex items-center space-x-3">
-                  <FaGlobe className="text-[#2196F3] hover:scale-110 transition-all duration-200" />
-                  <a href="https://webbuildinfotech.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 dark:hover:text-primary-light transition-colors duration-200">
-                    <span className="font-semibold typing-text">webbuildinfotech.com</span>
-                  </a>
-                </li>
-              </ul>
-              <div className="flex space-x-10 pt-2">
-                <a href="https://facebook.com/webbuildinfotech/" target="_blank" rel="noopener noreferrer" className="text-[#1877F2] hover:scale-110 transition-all duration-200">
-                  <FaFacebook size={26} />
-                </a>
-             
-                <a href="https://wa.me/919265128409" target="_blank" rel="noopener noreferrer" className="text-[#25D366] hover:scale-110 transition-all duration-200">
-                  <FaWhatsapp size={26} />
-                </a>
-                <a href="https://linkedin.com/company/webbuildinfotech/" target="_blank" rel="noopener noreferrer" className="text-[#0A66C2] hover:scale-110 transition-all duration-200">
-                  <FaLinkedinIn size={26} />
-                </a>
-
-                <a href="https://twitter.com/ChaudhariSimal" target="_blank" rel="noopener noreferrer" className="text-[#1DA1F2] twitter-fly">
-                  <FaTwitter size={26} />
-                </a>
-                
-              </div>
-            </div>
-          </FooterSection>
-        </div>
-      </div>
-
-      {/* Copyright Section */}
-      <div className="border-t border-gray-200 dark:border-grey-700">
-        <div className="container mx-auto px-6 py-4">
-          <FooterSection index={4}>
-            <p className="text-center text-gray-600 dark:text-grey-300 text-sm">
-              © {new Date().getFullYear()} Web Build InfoTech. All rights reserved.
+    <footer className="border-t border-slate-200 bg-slate-900 text-slate-300">
+      <div className="container mx-auto px-6 py-16">
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-6">
+          <div className="lg:col-span-2">
+            <LogoHeader isLight />
+            <p className="mt-4 max-w-xs text-sm leading-relaxed text-slate-400">
+              We build powerful websites, web apps, and AI solutions that help businesses grow worldwide.
             </p>
-          </FooterSection>
+            <div className="mt-5 space-y-2 text-sm text-slate-400">
+              <p className="flex items-start gap-2">
+                <FaMapMarkerAlt className="mt-1 shrink-0 text-indigo-400" />
+                2nd Floor, Mox Mall, Mandvi, Gujarat 394160
+              </p>
+              <p className="flex items-center gap-2">
+                <FaMobileButton className="shrink-0 text-indigo-400" />
+                <a href="tel:+919265128409" className="hover:text-white">+91 92651 28409</a>
+              </p>
+            </div>
+          </div>
+
+          {columns.map((col) => (
+            <div key={col.title}>
+              <h3 className="mb-4 text-sm font-bold uppercase tracking-wider text-white">{col.title}</h3>
+              <ul className="space-y-2.5">
+                {col.links.map((link) => (
+                  <FooterLink key={link.label} to={link.to} onClick={scrollTop}>
+                    {link.label}
+                  </FooterLink>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-slate-800 pt-8 sm:flex-row">
+          <p className="text-xs text-slate-500">
+            © {new Date().getFullYear()} WebBuild InfoTech. All rights reserved.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            {[
+              { href: 'https://linkedin.com/company/webbuildinfotech/', Icon: FaLinkedinIn },
+              { href: 'https://github.com/', Icon: FaGithub },
+              { href: 'https://facebook.com/webbuildinfotech/', Icon: FaFacebook },
+              { href: 'https://instagram.com/', Icon: FaInstagram },
+              { href: 'https://twitter.com/ChaudhariSimal', Icon: FaTwitter },
+              { href: 'https://wa.me/919265128409', Icon: FaWhatsapp },
+              { href: 'https://youtube.com/', Icon: FaYoutube },
+            ].map(({ href, Icon }) => (
+              <a
+                key={href}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-slate-500 transition hover:scale-110 hover:text-white"
+                aria-label="Social"
+              >
+                <Icon size={20} />
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </footer>

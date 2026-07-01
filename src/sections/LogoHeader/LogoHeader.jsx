@@ -9,15 +9,16 @@ const LogoHeader = ({ isLight }) => {
       {isLight ? (
         <LightLogoIcon className="w-12 h-12 text-white" />
       ) : (
-        <LightLogoIcon className="w-12 h-12 text-grey-900" />
+        <LightLogoIcon className="h-12 w-12 text-slate-900 dark:text-white" />
       )}
 
       <div className="flex flex-col items-start">
         {/* Animated WebBuild Text */}
         <h1
           // className={`text-lg max-lg:text-base font-bold tracking-wide leading-tight animate-webbuild ${
-          className={`text-lg max-lg:text-base font-bold tracking-wide leading-tight ${isLight ? "text-white" : "text-black"
-            }`}
+          className={`text-lg max-lg:text-base font-bold tracking-wide leading-tight ${
+            isLight ? "text-white" : "text-slate-900 dark:text-white"
+          }`}
           style={{
             // fontFamily: "'Poppins', sans-serif",
             letterSpacing: "0.1em",
@@ -29,8 +30,9 @@ const LogoHeader = ({ isLight }) => {
         {/* Animated InfoTech Text */}
         <h2
           // className={`text-lg max-lg:text-base font-medium tracking-widest animate-slide-in ${
-          className={`text-lg max-lg:text-base font-medium tracking-widest ${isLight ? "text-white/80" : "text-gray-700"
-            }`}
+          className={`text-lg max-lg:text-base font-medium tracking-widest ${
+            isLight ? "text-white/80" : "text-slate-600 dark:text-slate-300"
+          }`}
           style={{
             // fontFamily: "'Roboto Mono', monospace",
             letterSpacing: "0.2em",

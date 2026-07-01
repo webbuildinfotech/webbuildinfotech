@@ -1,150 +1,93 @@
 @config "../tailwind.config.js";
-@import url('https://fonts.googleapis.com/css2?family=Monda:wght@400..700&family=Mooli&family=Ovo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
 @import 'tailwindcss';
-/* @import "tw-animate-css"; */
 @plugin 'lightswind/plugin';
+
+@theme {
+  --color-primary-main: #0891B2;
+  --color-primary-lighter: #CFFAFE;
+  --color-primary-light: #22D3EE;
+  --color-primary-dark: #0E7490;
+  --color-primary-darker: #155E75;
+  --color-secondary-main: #4F46E5;
+  --color-secondary-lighter: #E0E7FF;
+  --color-secondary-light: #818CF8;
+  --color-secondary-dark: #3730A3;
+  --color-secondary-darker: #1E1B4B;
+  --color-background-light: #F8FAFC;
+  --color-background-dark: #0B1120;
+  --color-background-darkLight: #131C31;
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+}
 
 :root {
   --animation-iteration: infinite;
+  --color-brand-primary: #0891B2;
+  --color-brand-secondary: #4F46E5;
+  --color-surface-light: #F8FAFC;
+  --color-surface-dark: #0B1120;
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  scroll-behavior: smooth;
 }
 
 @keyframes animStar {
-  from {
-    transform: translateY(0px);
-  }
-  to {
-    transform: translateY(-2000px);
-  }
-}
-
-@keyframes animGravity {
-  0% {
-    transform: translateY(-26px);
-    opacity: 0;
-  }
-  30%, 80% {
-    letter-spacing: 40px;
-    padding-left: 40px;
-    transform: translateY(0px);
-    opacity: 1;
-  }
-  92%, 100% {
-    letter-spacing: 35px;
-    padding-left: 35px;
-    transform: translateY(-4px);
-    opacity: 0;
-  }
-}
-
-@keyframes animDont {
-  0%, 15% {
-    transform: translateY(-26px);
-    opacity: 0;
-  }
-  35%, 80% {
-    transform: translateY(0px);
-    opacity: 1;
-  }
-  92%, 100% {
-    transform: translateY(-4px);
-    opacity: 0;
-  }
-}
-
-@keyframes animLet {
-  0%, 25% {
-    transform: translateY(-26px);
-    opacity: 0;
-  }
-  45%, 80% {
-    transform: translateY(0px);
-    opacity: 1;
-  }
-  92%, 100% {
-    transform: translateY(-4px);
-    opacity: 0;
-  }
-}
-
-@keyframes animGo {
-  0%, 35% {
-    transform: translateY(-26px);
-    opacity: 0;
-  }
-  55%, 80% {
-    transform: translateY(0px);
-    opacity: 1;
-  }
-  92%, 100% {
-    transform: translateY(-4px);
-    opacity: 0;
-  }
+  from { transform: translateY(0px); }
+  to { transform: translateY(-2000px); }
 }
 
 * {
   box-sizing: border-box;
 }
+
 @layer base {
   html,
   body {
-    background-color: #F4F6F8;
-    color: #4B5563; /* Tailwind slate-600 equivalent */
+    background-color: var(--color-surface-light);
+    color: #334155;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   html.dark,
   html.dark body {
-    background-color: #28313C;
-    color: #6B7280; /* Tailwind slate-500 equivalent */
+    background-color: var(--color-surface-dark);
+    color: #94A3B8;
   }
 
-  /* Set base font with normal CSS so Tailwind doesn't error on @apply */
-  body {
-    font-family: "Monda", sans-serif;
+  ::selection {
+    background-color: rgba(8, 145, 178, 0.25);
+    color: inherit;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-sans);
+    letter-spacing: -0.02em;
   }
 }
 
+@keyframes spin-slow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
 
-  
-/* Logo header Rotations */
-  @keyframes spin-slow {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-  
-  .animate-spin-slow {
-    animation: spin-slow 5s linear infinite; /* Adjust speed as needed */
-  }
+.animate-spin-slow {
+  animation: spin-slow 5s linear infinite;
+}
 
-
-/* Typing Animation */
 @keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
+  from { width: 0; }
+  to { width: 100%; }
 }
 
-/* Blinking Cursor Animation */
 @keyframes blink {
-  50% {
-    border-color: transparent;
-  }
+  50% { border-color: transparent; }
 }
 
-/* Cursor Hiding Animation */
 @keyframes hide-cursor {
-  to {
-    border-right: none;
-  }
+  to { border-right: none; }
 }
 
-/* WEB BUILD Typing Animation */
 .animate-webbuild {
   overflow: hidden;
   white-space: nowrap;
@@ -154,36 +97,56 @@
   animation-fill-mode: forwards;
 }
 
-/* Slide-In Animation */
 @keyframes slide-in {
-  0% {
-    opacity: 0;
-    transform: translateX(100%); /* Start off-screen to the right */
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0); /* Slide into position */
-  }
+  0% { opacity: 0; transform: translateX(100%); }
+  100% { opacity: 1; transform: translateX(0); }
 }
 
-/* Animation Class for INFOTECH */
 .animate-slide-in {
-  animation: slide-in 2s ease-out forwards; /* Adjust timing and easing as needed */
+  animation: slide-in 2s ease-out forwards;
 }
 
-
-.stroke-gradient {
-  stroke: url(#gradient);
+@keyframes fadeInUp {
+  0% { transform: translateY(16px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
 }
 
-@keyframes gradient {
-  0% {
-    stroke: #3B82F6; /* blue-500 */
-  }
-  50% {
-    stroke: #8B5CF6; /* purple-500 */
-  }
-  100% {
-    stroke: #3B82F6; /* blue-500 */
-  }
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.text-gradient-brand {
+  background: linear-gradient(135deg, #22D3EE 0%, #0891B2 50%, #818CF8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  background: linear-gradient(to right, #0891B2, #06b6d4, #4F46E5);
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(8, 145, 178, 0.35);
+  transition: filter 0.2s, box-shadow 0.2s;
+}
+
+.btn-primary:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 6px 28px rgba(8, 145, 178, 0.45);
+}
+
+.section-divider {
+  margin-left: auto;
+  margin-right: auto;
+  height: 0.25rem;
+  width: 3.5rem;
+  border-radius: 9999px;
+  background: linear-gradient(to right, #0891B2, #22D3EE, #4F46E5);
 }

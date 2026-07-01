@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import Services from './pages/services/Services';
 import ServiceDetail from './pages/services/ServiceDetail';
 import Industries from './pages/industries/Industries';
@@ -14,45 +16,59 @@ import BlogDetail from './pages/blog/BlogDetail';
 import TechnologyLayout from './sections/Technology/TechnologyLayout';
 import { TechnologyRoutes } from './routes/TechnologyRoutes';
 import { RoutePaths } from './routes/constant/path';
-import { useTheme } from './context/ThemeContext';
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    AOS.refresh();
+  }, [pathname]);
+  return null;
+}
+
+const AppRoutes = () => (
+  <Routes>
+    <Route path={RoutePaths.HOME} element={<Layout />}>
+      <Route path={RoutePaths.HOME} element={<Home />} />
+      <Route path={RoutePaths.SERVICES} element={<Services />} />
+      <Route path={`${RoutePaths.SERVICES}/:serviceSlug`} element={<ServiceDetail />} />
+      <Route path={RoutePaths.INDUSTRIES} element={<Industries />} />
+      <Route path={RoutePaths.PROJECTS} element={<Projects />} />
+      <Route path={RoutePaths.BLOG} element={<Blog />} />
+      <Route path={`${RoutePaths.BLOG}/:slug`} element={<BlogDetail />} />
+      <Route path={RoutePaths.COMPANY} element={<Company />} />
+      <Route path={RoutePaths.CONTACT} element={<Contact />} />
+
+      <Route path="technologies" element={<TechnologyLayout />}>
+        <Route index element={<Technology />} />
+        {TechnologyRoutes.flatMap((category) =>
+          category.routes.map(({ path, component: Component }) => (
+            <Route
+              key={path}
+              path={path.replace(`${RoutePaths.TECHNOLOGIES}/`, "")}
+              element={<Component />}
+            />
+          ))
+        )}
+      </Route>
+    </Route>
+  </Routes>
+);
 
 const App = () => {
-  
-  const { theme } = useTheme();
   useEffect(() => {
-    console.log('Theme:', theme === 'dark' ? 'dark' : 'light');
-  }, [theme]);
+    AOS.init({
+      duration: 800,
+      once: true,
+      easing: 'ease-out-cubic',
+      offset: 40,
+    });
+  }, []);
 
   return (
     <Router>
-      <Routes>
-        <Route path={RoutePaths.HOME} element={<Layout />}>
-          <Route path={RoutePaths.HOME} element={<Home />} />
-          <Route path={RoutePaths.SERVICES} element={<Services />} />
-          <Route path={`${RoutePaths.SERVICES}/:serviceSlug`} element={<ServiceDetail />} />
-          <Route path={RoutePaths.INDUSTRIES} element={<Industries />} />
-          <Route path={RoutePaths.PROJECTS} element={<Projects />} />
-          <Route path={RoutePaths.BLOG} element={<Blog />} />
-          <Route path={`${RoutePaths.BLOG}/:slug`} element={<BlogDetail />} />
-          <Route path={RoutePaths.COMPANY} element={<Company />} />
-          <Route path={RoutePaths.CONTACT} element={<Contact />} />
-
-          {/* Technologies index + detail routes (nested under main Layout Outlet) */}
-          <Route path="technologies" element={<TechnologyLayout />}>
-            <Route index element={<Technology />} />
-            {TechnologyRoutes.flatMap((category) =>
-              category.routes.map(({ path, component: Component }) => (
-                <Route
-                  key={path}
-                  path={path.replace(`${RoutePaths.TECHNOLOGIES}/`, "")}
-                  element={<Component />}
-                />
-              ))
-            )}
-          </Route>
-
-        </Route>
-      </Routes>
+      <ScrollToTop />
+      <AppRoutes />
     </Router>
   );
 };

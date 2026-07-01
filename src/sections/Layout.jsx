@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
-import SocialButtons from './SocialButtons/SocialButtons';
-import { CgChevronDoubleDownR, CgChevronDoubleUpR } from "react-icons/cg";
+import AnnouncementBar from './AnnouncementBar/AnnouncementBar';
 import ScrollButton from './SocialButtons/ScrollButton';
 import Chatbot from './Chat/Chat';
 
@@ -15,63 +14,44 @@ const Layout = () => {
   const [showScrollButton, setShowScrollButton] = useState(false);
 
   useEffect(() => {
+    if (location.hash) {
+      const el = document.querySelector(location.hash);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [location]);
+
+  useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
       const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const scrollPercent = (scrollY / totalHeight) * 100;
-
-      setScrollProgress(scrollPercent);
-
-      if (scrollY > 100) {
-        setShowScrollButton(true);
-      } else {
-        setShowScrollButton(false);
-      }
-
-      if (scrollY > lastScrollY) {
-        setScrollDirection('down');
-      } else {
-        setScrollDirection('up');
-      }
-
+      setScrollProgress((scrollY / totalHeight) * 100);
+      setShowScrollButton(scrollY > 100);
+      setScrollDirection(scrollY > lastScrollY ? 'down' : 'up');
       setLastScrollY(scrollY);
     };
 
-    // Debounce the scroll listener
-    let timeout = setTimeout(() => {
-      window.addEventListener('scroll', handleScroll);
-    }, 50);
-
-    return () => {
-      clearTimeout(timeout);
-      window.removeEventListener('scroll', handleScroll);
-    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY]);
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
-  const scrollToBottom = () => {
-    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
-  };
-
   return (
-    <div className="flex min-h-screen min-h-vh flex-col bg-background-light dark:bg-background-dark">
-      <Header />
-      {/* <SocialButtons /> */}
-      <main className="flex-1">
+    <div className="flex min-h-screen flex-col bg-background-light dark:bg-background-dark">
+      <div className="fixed top-0 left-0 z-50 w-full">
+        <AnnouncementBar />
+        <Header />
+      </div>
+      <main className="flex-1 pt-[7.25rem]">
         <Outlet />
       </main>
       <Chatbot />
       <Footer />
-
-      <ScrollButton 
+      <ScrollButton
         showScrollButton={showScrollButton}
         scrollProgress={scrollProgress}
         scrollDirection={scrollDirection}
-        scrollToTop={scrollToTop}
-        scrollToBottom={scrollToBottom}
+        scrollToTop={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        scrollToBottom={() => window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })}
       />
     </div>
   );
