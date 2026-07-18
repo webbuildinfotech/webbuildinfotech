@@ -6,15 +6,11 @@ import { Check, Circle } from "lucide-react";
 import {
   EnquiriesIcon,
   MicrosoftTeamsIcon,
-  PhoneIcon,
-  WhatsappIcon,
 } from "@/components/icons";
 import { cn } from "@/lib/utils";
 
-const HERO_CONTACT_EMAIL = "simalchaudhari20496@gmail.com";
-const HERO_EMAIL_HREF = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(
-  HERO_CONTACT_EMAIL
-)}`;
+const HERO_CONTACT_EMAIL = "webbuildinfotech@gmail.com";
+const HERO_EMAIL_HREF = `mailto:${HERO_CONTACT_EMAIL}`;
 const HERO_TEAMS_HREF =
   "https://teams.microsoft.com/l/team/19%3A_k3b5xB_3nI0tC8GnC7N3h_kLqYQkN92J05195GZw3Zw1%40thread.tacv2/conversations?groupId=787b23a2-435e-47b6-a024-c7d01b78072d&tenantId=72f988bf-86f1-41af-91ab-2d7cd011db47";
 
@@ -173,25 +169,7 @@ export function HeroGeometric({
                   </span>
                   <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-1 sm:divide-x sm:divide-white/15 lg:justify-start">
                     <a
-                      href="https://wa.me/919265128409"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex h-14 w-14 items-center justify-center text-white/90 transition hover:text-white sm:h-[3.75rem] sm:w-[3.75rem] sm:px-3"
-                      aria-label="WhatsApp"
-                    >
-                      <WhatsappIcon className="h-9 w-9 sm:h-10 sm:w-10" />
-                    </a>
-                    <a
-                      href="tel:+919265128409"
-                      className="flex h-14 w-14 items-center justify-center text-white/90 transition hover:text-white sm:h-[3.75rem] sm:w-[3.75rem] sm:px-3"
-                      aria-label="Phone"
-                    >
-                      <PhoneIcon className="h-9 w-9 sm:h-10 sm:w-10" />
-                    </a>
-                    <a
                       href={HERO_EMAIL_HREF}
-                      target="_blank"
-                      rel="noopener noreferrer"
                       aria-label={`Email ${HERO_CONTACT_EMAIL}`}
                       className="flex h-14 w-14 items-center justify-center text-white/90 transition hover:text-white sm:h-[3.75rem] sm:w-[3.75rem] sm:px-3"
                     >

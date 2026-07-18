@@ -1,10 +1,10 @@
 import { RoutePaths } from "@/routes/constant/path";
 
 export const announcement = {
-  text: "Trusted by 150+ Businesses Worldwide",
+  text: "Building Digital Solutions for Growing Businesses",
   links: [
     { label: "Free Project Consultation", href: RoutePaths.CONTACT },
-    { label: "Book a Call Today", href: "tel:+919265128409" },
+    { label: "Email Us", href: "mailto:webbuildinfotech@gmail.com" },
   ],
 };
 
@@ -18,17 +18,17 @@ export const heroStats = [
 
 export const heroFeatures = ["Fast", "Secure", "SEO Friendly", "Modern UI/UX", "Scalable"];
 
-export const trustedBrands = [
-  "Google",
-  "Microsoft",
-  "AWS",
-  "Shopify",
-  "Stripe",
-  "Meta",
-  "OpenAI",
-  "DigitalOcean",
-  "Vercel",
-  "Cloudflare",
+export const trustedByItems = [
+  "Healthcare",
+  "E-commerce",
+  "Education",
+  "Real Estate",
+  "Travel & Hospitality",
+  "Fintech Startups",
+  "Retail Brands",
+  "Manufacturing",
+  "Logistics",
+  "Local Businesses",
 ];
 
 export const whyChooseUs = [
@@ -45,39 +45,43 @@ export const whyChooseUs = [
 export const serviceCategories = [
   {
     title: "Website Development",
-    items: ["Corporate Websites", "Business Websites", "Portfolio Websites", "Landing Pages", "Custom CMS"],
+    desc: "Fast, SEO-ready websites that convert visitors into customers.",
+    items: ["Corporate Sites", "Landing Pages", "Portfolio", "Custom CMS"],
   },
   {
     title: "Web Applications",
-    items: ["CRM", "ERP", "HRMS", "Admin Panels", "Dashboards"],
+    desc: "Custom business software built for scale and daily operations.",
+    items: ["CRM", "ERP", "HRMS", "Dashboards"],
   },
   {
     title: "E-Commerce",
-    items: ["Shopify", "WooCommerce", "Magento", "Custom Store", "Marketplace"],
+    desc: "Online stores with smooth checkout and inventory workflows.",
+    items: ["Shopify", "WooCommerce", "Custom Store", "Marketplace"],
   },
   {
     title: "Mobile Apps",
+    desc: "Native-feel apps for Android and iOS from a single codebase.",
     items: ["Android", "iOS", "React Native", "Flutter"],
   },
   {
-    title: "SaaS Development",
-    items: ["Subscription Platforms", "Admin Panels", "Billing", "Analytics"],
+    title: "SaaS Platforms",
+    desc: "Multi-tenant products with billing, roles, and analytics.",
+    items: ["Subscriptions", "Admin Panels", "Billing", "Analytics"],
   },
   {
     title: "UI/UX Design",
-    items: ["Wireframes", "Prototype", "Design System", "Brand Identity"],
+    desc: "Clean interfaces that feel intuitive and look premium.",
+    items: ["Wireframes", "Prototypes", "Design Systems", "Branding"],
   },
   {
     title: "AI Solutions",
-    items: ["ChatGPT Integration", "AI Chatbots", "Automation", "Document AI", "Voice AI", "Image AI"],
-  },
-  {
-    title: "API Development",
-    items: ["REST API", "GraphQL", "Microservices"],
+    desc: "Practical AI features that automate work and improve UX.",
+    items: ["Chatbots", "Automation", "Document AI", "OpenAI"],
   },
   {
     title: "Cloud & DevOps",
-    items: ["AWS", "Azure", "Docker", "Kubernetes", "CI/CD"],
+    desc: "Secure cloud setup, CI/CD, and reliable deployments.",
+    items: ["AWS", "Docker", "CI/CD", "Monitoring"],
   },
 ];
 
@@ -183,24 +187,47 @@ export const companyNumbers = [
 export const pricingTiers = [
   {
     name: "Starter",
-    desc: "Perfect for small businesses and landing pages.",
-    features: ["Up to 5 pages", "Responsive design", "Basic SEO", "1 month support"],
+    price: "₹50,000",
+    priceNote: "starting from",
+    desc: "For small businesses that need a clean, fast online presence.",
+    features: [
+      "Up to 5 pages",
+      "Mobile responsive design",
+      "Basic on-page SEO",
+      "Contact form setup",
+      "1 month free support",
+    ],
+    cta: "Get Starter Quote",
   },
   {
     name: "Business",
-    desc: "Ideal for growing companies needing custom features.",
-    features: ["Custom web app", "CMS integration", "Advanced SEO", "3 months support"],
+    price: "₹1,50,000",
+    priceNote: "starting from",
+    desc: "For growing companies that need custom features and stronger SEO.",
+    features: [
+      "Custom website / web app",
+      "CMS & content management",
+      "Advanced SEO setup",
+      "Performance optimization",
+      "3 months free support",
+    ],
     featured: true,
+    badge: "Most Popular",
+    cta: "Start Business Plan",
   },
   {
     name: "Enterprise",
-    desc: "Full-scale solutions for large organizations.",
-    features: ["SaaS / ERP / CRM", "Cloud infrastructure", "Dedicated team", "SLA support"],
-  },
-  {
-    name: "Custom Quote",
-    desc: "Tailored scope for unique requirements.",
-    features: ["Flexible scope", "AI integrations", "Priority delivery", "Long-term partnership"],
+    price: "Custom",
+    priceNote: "scoped to your needs",
+    desc: "For SaaS, ERP, CRM, and large-scale digital platforms.",
+    features: [
+      "SaaS / ERP / CRM systems",
+      "Cloud & DevOps setup",
+      "Dedicated project team",
+      "Security & SLA support",
+      "Long-term partnership",
+    ],
+    cta: "Talk to Our Team",
   },
 ];
 

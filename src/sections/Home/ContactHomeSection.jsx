@@ -1,13 +1,11 @@
 import React from "react";
-import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaWhatsapp, FaClock } from "react-icons/fa";
+import { FaMapMarkerAlt, FaEnvelope, FaClock } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { HomeSection, StaggerReveal, StaggerItem } from "@/components/home";
 import { easeOut } from "@/lib/motionPresets";
 
 const contactItems = [
-  { icon: FaPhone, label: "Phone", value: "+91 92651 28409", href: "tel:+919265128409" },
-  { icon: FaEnvelope, label: "Email", value: "info@webbuildinfotech.com", href: "mailto:info@webbuildinfotech.com" },
-  { icon: FaWhatsapp, label: "WhatsApp", value: "+91 92651 28409", href: "https://wa.me/919265128409" },
+  { icon: FaEnvelope, label: "Email", value: "webbuildinfotech@gmail.com", href: "mailto:webbuildinfotech@gmail.com" },
   {
     icon: FaMapMarkerAlt,
     label: "Office",

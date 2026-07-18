@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaInstagram, FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
+import { FaInstagram, FaLinkedinIn, FaEnvelope } from "react-icons/fa";
 import { BsFacebook } from "react-icons/bs";
 
 const SocialButtons = () => {
@@ -31,12 +31,12 @@ const SocialButtons = () => {
       link: "https://www.linkedin.com/company/82601929/admin/dashboard/",
     },
     {
-      id: 5,
-      name: "WhatsApp",
-      icon: <FaWhatsapp className="h-[1.25rem] w-[1.25rem]" aria-hidden />,
+      id: 4,
+      name: "Email",
+      icon: <FaEnvelope className="h-[1.15rem] w-[1.15rem]" aria-hidden />,
       className:
-        "bg-gradient-to-br from-[#25D366] to-[#128C7E] shadow-[inset_0_1px_0_rgba(255,255,255,0.25)] hover:from-[#2bdc6f] hover:to-[#0f7a6e]",
-      link: "https://wa.me/919265128409",
+        "bg-gradient-to-br from-[#2563eb] to-[#1d4ed8] shadow-[inset_0_1px_0_rgba(255,255,255,0.25)] hover:from-[#3b82f6] hover:to-[#1e40af]",
+      link: "mailto:webbuildinfotech@gmail.com",
     },
   ];
 
@@ -52,9 +52,13 @@ const SocialButtons = () => {
             <div key={social.id} className="relative flex h-11 items-center justify-end sm:h-12 sm:w-[11.5rem]">
               <a
                 href={social.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`${social.name} — opens in a new tab`}
+                target={social.link.startsWith("mailto:") ? undefined : "_blank"}
+                rel={social.link.startsWith("mailto:") ? undefined : "noopener noreferrer"}
+                aria-label={
+                  social.link.startsWith("mailto:")
+                    ? `${social.name} — webbuildinfotech@gmail.com`
+                    : `${social.name} — opens in a new tab`
+                }
                 onMouseEnter={() => setHovered(social.id)}
                 onMouseLeave={() => setHovered(null)}
                 onFocus={() => setHovered(social.id)}

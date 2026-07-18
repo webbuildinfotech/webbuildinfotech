@@ -1,19 +1,16 @@
 import React from 'react';
 import {
   FaFacebook,
-  FaWhatsapp,
   FaLinkedinIn,
-  FaTwitter,
   FaGithub,
   FaInstagram,
   FaYoutube,
   FaMapMarkerAlt,
+  FaEnvelope,
 } from 'react-icons/fa';
-import { FaMobileButton } from 'react-icons/fa6';
 import LogoHeader from '../LogoHeader/LogoHeader';
 import { Link } from 'react-router-dom';
 import { RoutePaths } from '../../routes/constant/path';
-import { useTheme } from '../../context/ThemeContext';
 
 const FooterLink = ({ to, children, onClick }) => (
   <li>
@@ -28,7 +25,6 @@ const FooterLink = ({ to, children, onClick }) => (
 );
 
 const Footer = () => {
-  const { isDark } = useTheme();
   const scrollTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
   const columns = [
@@ -88,8 +84,10 @@ const Footer = () => {
                 2nd Floor, Mox Mall, Mandvi, Gujarat 394160
               </p>
               <p className="flex items-center gap-2">
-                <FaMobileButton className="shrink-0 text-indigo-400" />
-                <a href="tel:+919265128409" className="hover:text-white">+91 92651 28409</a>
+                <FaEnvelope className="shrink-0 text-indigo-400" />
+                <a href="mailto:webbuildinfotech@gmail.com" className="hover:text-white">
+                  webbuildinfotech@gmail.com
+                </a>
               </p>
             </div>
           </div>
@@ -118,8 +116,6 @@ const Footer = () => {
               { href: 'https://github.com/', Icon: FaGithub },
               { href: 'https://facebook.com/webbuildinfotech/', Icon: FaFacebook },
               { href: 'https://instagram.com/', Icon: FaInstagram },
-              { href: 'https://twitter.com/ChaudhariSimal', Icon: FaTwitter },
-              { href: 'https://wa.me/919265128409', Icon: FaWhatsapp },
               { href: 'https://youtube.com/', Icon: FaYoutube },
             ].map(({ href, Icon }) => (
               <a

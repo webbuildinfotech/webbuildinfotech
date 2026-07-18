@@ -4,14 +4,10 @@ import { GridScan } from "../../components/reactBits/GridScan";
 import {
   EnquiriesIcon,
   MicrosoftTeamsIcon,
-  PhoneIcon,
-  WhatsappIcon,
 } from "../../components/icons";
 
-const HERO_CONTACT_EMAIL = "simalchaudhari20496@gmail.com";
-const HERO_EMAIL_HREF = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(
-  HERO_CONTACT_EMAIL
-)}`;
+const HERO_CONTACT_EMAIL = "webbuildinfotech@gmail.com";
+const HERO_EMAIL_HREF = `mailto:${HERO_CONTACT_EMAIL}`;
 const HERO_TEAMS_HREF =
   "https://teams.microsoft.com/l/team/19%3A_k3b5xB_3nI0tC8GnC7N3h_kLqYQkN92J05195GZw3Zw1%40thread.tacv2/conversations?groupId=787b23a2-435e-47b6-a024-c7d01b78072d&tenantId=72f988bf-86f1-41af-91ab-2d7cd011db47";
 
@@ -75,23 +71,7 @@ const SecondHeroSection = ({ onToggleSection }) => {
 
                 <div className="flex items-center gap-1 md:gap-3">
                   <a
-                    href="https://wa.me/919265128409"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex h-11 w-11 items-center justify-center rounded-full transition-transform duration-150 hover:animate-[vibrate_0.4s_ease-in-out]"
-                  >
-                    <WhatsappIcon className="h-11 w-11 text-white" />
-                  </a>
-                  <a
-                    href="tel:+919265128409"
-                    className="flex h-11 w-11 items-center justify-center rounded-full transition-transform duration-150 hover:animate-[vibrate_0.4s_ease-in-out]"
-                  >
-                    <PhoneIcon className="h-10 w-10 text-white" />
-                  </a>
-                  <a
                     href={HERO_EMAIL_HREF}
-                    target="_blank"
-                    rel="noopener noreferrer"
                     aria-label={`Email ${HERO_CONTACT_EMAIL}`}
                     className="flex h-11 w-11 items-center justify-center rounded-full transition-transform duration-150 hover:animate-[vibrate_0.4s_ease-in-out]"
                   >

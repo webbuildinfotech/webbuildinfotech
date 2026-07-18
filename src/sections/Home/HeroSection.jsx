@@ -1,10 +1,10 @@
 import React from "react";
 import heroImage from "/images/hero.png";
 import heroImageRight from "/images/heroImage.svg";
-import { WhatsappIcon, PhoneIcon, EnquiriesIcon, MicrosoftTeamsIcon } from "../../components/icons";
+import { EnquiriesIcon, MicrosoftTeamsIcon } from "../../components/icons";
 
-const HERO_CONTACT_EMAIL = "simalchaudhari20496@gmail.com";
-const HERO_EMAIL_HREF = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(HERO_CONTACT_EMAIL)}`;
+const HERO_CONTACT_EMAIL = "webbuildinfotech@gmail.com";
+const HERO_EMAIL_HREF = `mailto:${HERO_CONTACT_EMAIL}`;
 
 /** Team channel / conversation link from Microsoft Teams → Copy link to team/channel. */
 const HERO_TEAMS_HREF =
@@ -59,23 +59,7 @@ function HeroSection({ onToggleSection }) {
 
                 <div className="flex items-center md:gap-3 gap-1">
                   <a
-                    href="https://wa.me/919265128409"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-11 h-11 flex items-center justify-center rounded-full transition-transform duration-150 hover:animate-[vibrate_0.4s_ease-in-out]"
-                  >
-                    <WhatsappIcon className="w-11 h-11 text-white" />
-                  </a>
-                  <a
-                    href="tel:+919265128409"
-                    className="w-11 h-11 flex items-center justify-center rounded-full transition-transform duration-150 hover:animate-[vibrate_0.4s_ease-in-out]"
-                  >
-                    <PhoneIcon className="w-10 h-10 text-white" />
-                  </a>
-                  <a
                     href={HERO_EMAIL_HREF}
-                    target="_blank"
-                    rel="noopener noreferrer"
                     aria-label={`Email ${HERO_CONTACT_EMAIL}`}
                     className="w-11 h-11 flex items-center justify-center rounded-full transition-transform duration-150 hover:animate-[vibrate_0.4s_ease-in-out]"
                   >

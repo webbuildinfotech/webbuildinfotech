@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaWhatsapp } from "react-icons/fa";
+import { FaMapMarkerAlt, FaEnvelope } from "react-icons/fa";
 import { GiSpiderWeb } from "react-icons/gi";
 import ContactBanner from "../../sections/Contact/ContactBanner";
 import { PageMeta, toCanonicalUrl } from "../../components/pageMeta";
@@ -60,7 +60,7 @@ function FormEndpointNotice() {
         <p className="font-mooli leading-relaxed">
           {isDev
             ? "Set VITE_CONTACT_FORM_SCRIPT_URL to your Apps Script Web app URL (…/macros/s/…/exec), then restart the dev server."
-            : "The online form is not available right now. Please reach us using phone, email, or WhatsApp in the panel on the left."}
+            : "The online form is not available right now. Please reach us at webbuildinfotech@gmail.com."}
         </p>
         {isDev && (
           <details className="mt-2 border-t border-amber-500/25 pt-2">
@@ -326,21 +326,6 @@ const ContactUs = () => {
                   </div>
                 </li>
               
-                {/* Phone */}
-                <li className="flex items-start group">
-                  <span className="text-green-500 text-xl lg:text-2xl mr-4 mt-1 group-hover:text-green-600 group-hover:rotate-45 transition-transform duration-500">
-                    <FaPhoneAlt />
-                  </span>
-                  <div>
-                    <h6 className="text-lg lg:text-xl font-semibold text-grey-800 group-hover:text-green-600 transition-colors duration-500 dark:text-grey-100">
-                      Phone
-                    </h6>
-                    <p className="font-mooli text-grey-600 group-hover:text-grey-800 transition-colors duration-500 dark:text-grey-300 dark:group-hover:text-grey-100">
-                      +91 75672 19894
-                    </p>
-                  </div>
-                </li>
-              
                 {/* Email */}
                 <li className="flex items-start group">
                   <span className="text-purple-500 text-xl lg:text-2xl mr-4 mt-1 group-hover:text-purple-600 group-hover:rotate-45 transition-transform duration-500">
@@ -352,26 +337,11 @@ const ContactUs = () => {
                     </h6>
                     <p className="font-mooli text-grey-600 group-hover:text-grey-800 transition-colors duration-500 dark:text-grey-300 dark:group-hover:text-grey-100">
                       <a
-                        href="mailto:simalchaudhari20496@gmail.com"
+                        href="mailto:webbuildinfotech@gmail.com"
                         className="text-primary-main hover:underline"
                       >
-                        info@webbuildinfotech.com
+                        webbuildinfotech@gmail.com
                       </a>
-                    </p>
-                  </div>
-                </li>
-              
-                {/* WhatsApp */}
-                <li className="flex items-start group">
-                  <span className="text-green-500 text-xl lg:text-2xl mr-4 mt-1 group-hover:text-green-600 group-hover:rotate-45 transition-transform duration-500">
-                    <FaWhatsapp />
-                  </span>
-                  <div>
-                    <h6 className="text-lg lg:text-xl font-semibold text-grey-800 group-hover:text-green-600 transition-colors duration-500 dark:text-grey-100">
-                      WhatsApp
-                    </h6>
-                    <p className="font-mooli text-grey-600 group-hover:text-grey-800 transition-colors duration-500 dark:text-grey-300 dark:group-hover:text-grey-100">
-                      +91 9265128409
                     </p>
                   </div>
                 </li>

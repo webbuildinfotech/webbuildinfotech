@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Phone } from "lucide-react";
+import { ArrowRight, Mail } from "lucide-react";
 import { motion } from "framer-motion";
 import { RoutePaths } from "@/routes/constant/path";
 import { easeOut } from "@/lib/motionPresets";
@@ -26,9 +26,9 @@ const CTASection = () => (
             Start Your Project
             <ArrowRight className="h-4 w-4" />
           </Link>
-          <a href="tel:+919265128409" className="btn-brand btn-brand-outline">
-            <Phone className="h-4 w-4" />
-            +91 92651 28409
+          <a href="mailto:webbuildinfotech@gmail.com" className="btn-brand btn-brand-outline">
+            <Mail className="h-4 w-4" />
+            webbuildinfotech@gmail.com
           </a>
         </div>
       </motion.div>

@@ -20,7 +20,7 @@ const AnnouncementBar = () => (
               |
             </span>
           )}
-          {link.href.startsWith("tel:") ? (
+          {link.href.startsWith("mailto:") || link.href.startsWith("tel:") ? (
             <a href={link.href} className="font-semibold underline-offset-2 transition hover:underline">
               {link.label}
             </a>
