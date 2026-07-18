@@ -3,9 +3,9 @@ import { RoutePaths } from "@/routes/constant/path";
 /** SEO for `/services` listing page */
 export const servicesListingSeo = {
   path: RoutePaths.SERVICES,
-  title: "Web Development Services | MERN, SaaS, E-commerce | WebBuild Infotech",
+  title: "Web Development Services | Website, MERN & Full Stack | WebBuild Infotech",
   description:
-    "Custom MERN stack, React and Next.js frontends, Node.js APIs, SaaS, e-commerce, AI integration, dashboards, and long-term maintenance—end-to-end delivery from WebBuild Infotech.",
+    "Professional web development services: custom website development, MERN stack & full stack apps, React.js, Node.js, e-commerce, SaaS, and SEO-friendly web applications.",
   keywords:
-    "web development services, MERN stack, React agency, Node.js APIs, SaaS development, e-commerce, WebBuild Infotech",
+    "web development services, website development services, MERN stack development, full stack web development, React.js development, Node.js development, e-commerce website, SaaS development, WebBuild Infotech",
 };

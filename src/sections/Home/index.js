@@ -18,6 +18,7 @@ import ContactCTAHome from './ContactCTAHome'
 import ContactHomeSection from './ContactHomeSection'
 import NewsletterSection from './NewsletterSection'
 import FloatingContact from './FloatingContact'
+import SeoContentHome from './SeoContentHome'
 import './home-sections.css'
 
 export {
@@ -41,4 +42,5 @@ export {
   ContactHomeSection,
   NewsletterSection,
   FloatingContact,
+  SeoContentHome,
 }

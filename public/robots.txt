@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://webbuildinfotech.com/sitemap.xml
+
+# Crawl hints
+Disallow: /api/
+Disallow: /*?*utm_
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /

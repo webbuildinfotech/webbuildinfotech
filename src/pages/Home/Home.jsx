@@ -19,25 +19,47 @@ import {
   ContactHomeSection,
   NewsletterSection,
   FloatingContact,
+  SeoContentHome,
 } from '../../sections/Home'
 import '@/sections/Home/home-sections.css'
-import { PageMeta, toCanonicalUrl } from '@/components/pageMeta'
+import { PageMeta, JsonLd, toCanonicalUrl } from '@/components/pageMeta'
 import { RoutePaths } from '@/routes/constant/path'
+import { faqs } from '@/data/homePageData'
+import {
+  HOME_SEO,
+  organizationSchema,
+  websiteSchema,
+  servicesSchema,
+  faqSchema,
+  breadcrumbSchema,
+  SITE_ORIGIN,
+} from '@/data/seoConfig'
 
 const Home = () => {
   return (
     <div className="bg-[var(--home-surface)]">
       <PageMeta
-        title="WebBuild Infotech | Web Development, Web Apps & AI Solutions"
-        description="Custom websites, SaaS platforms, AI applications, and mobile apps built by WebBuild Infotech. 250+ projects, 150+ clients, 7+ years experience."
-        keywords="web development, SaaS, AI solutions, mobile apps, React, Node.js, WebBuild Infotech"
+        title={HOME_SEO.title}
+        description={HOME_SEO.description}
+        keywords={HOME_SEO.keywords}
         canonical={toCanonicalUrl(RoutePaths.HOME)}
       />
+      <JsonLd
+        data={[
+          organizationSchema(),
+          websiteSchema(),
+          servicesSchema(),
+          faqSchema(faqs),
+          breadcrumbSchema([{ name: 'Home', url: `${SITE_ORIGIN}/` }]),
+        ]}
+      />
+
       <HomeHero />
       <HomeTrustedBy />
       <WhyChooseUsHome />
       <ServicesOverview />
       <TechStackHome />
+      <SeoContentHome />
       <ProcessTimeline />
       <FeaturedProjectsHome />
       <IndustriesHome />

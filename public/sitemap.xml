@@ -2,44 +2,80 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://webbuildinfotech.com/</loc>
-    <lastmod>2024-03-20</lastmod>
+    <lastmod>2026-07-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://webbuildinfotech.com/services</loc>
-    <lastmod>2024-03-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://webbuildinfotech.com/technologies</loc>
-    <lastmod>2024-03-20</lastmod>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://webbuildinfotech.com/technologies/react-info</loc>
+    <lastmod>2026-07-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://webbuildinfotech.com/technologies/node-info</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://webbuildinfotech.com/technologies/mongo-info</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://webbuildinfotech.com/technologies/express-info</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://webbuildinfotech.com/technologies/next-info</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
   </url>
   <url>
     <loc>https://webbuildinfotech.com/industries</loc>
-    <lastmod>2024-03-20</lastmod>
+    <lastmod>2026-07-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://webbuildinfotech.com/projects</loc>
-    <lastmod>2024-03-20</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://webbuildinfotech.com/project</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://webbuildinfotech.com/blog</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://webbuildinfotech.com/company</loc>
-    <lastmod>2024-03-20</lastmod>
+    <lastmod>2026-07-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://webbuildinfotech.com/contact</loc>
-    <lastmod>2024-03-20</lastmod>
+    <lastmod>2026-07-18</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
 </urlset>

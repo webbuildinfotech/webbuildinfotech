@@ -28,14 +28,14 @@ function HomeHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: easeOut }}
           >
-            <p className="home-eyebrow home-eyebrow--light">Web Development Agency</p>
+            <p className="home-eyebrow home-eyebrow--light">Web Development Company · MERN &amp; Full Stack</p>
             <h1 className="mt-5 text-3xl font-bold leading-[1.12] text-white sm:text-4xl lg:text-[3.25rem]">
-              We Build Powerful Websites, Web Apps &amp; AI Solutions That{" "}
-              <span className="text-gradient-brand">Grow Your Business</span>
+              Web Development &amp; Website Development That{" "}
+              <span className="text-gradient-brand">Grows Your Business</span>
             </h1>
             <p className="mt-5 max-w-xl text-base leading-relaxed text-slate-400 sm:text-lg">
-              Custom websites, SaaS platforms, AI applications, mobile apps, and enterprise
-              software built by experienced developers.
+              Custom websites, MERN stack &amp; full stack web apps, e-commerce, and SEO-friendly
+              platforms built with React.js, Node.js, and MongoDB by WebBuild Infotech.
             </p>
 
             <StaggerReveal className="mt-6 flex flex-wrap gap-2" stagger={0.06}>

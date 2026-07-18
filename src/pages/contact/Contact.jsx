@@ -281,9 +281,9 @@ const ContactUs = () => {
   return (
     <>
       <PageMeta
-        title="Contact WebBuild Infotech | Get in Touch With Our Team"
-        description="Contact WebBuild Infotech for professional web development and IT solutions. Reach out to our team in Gujarat for consultations and inquiries."
-        keywords="contact webbuild, IT company contact, web development gujarat, technology solutions contact"
+        title="Contact Web Development Company | WebBuild Infotech"
+        description="Contact WebBuild Infotech for website development, MERN stack & full stack projects. Email webbuildinfotech@gmail.com for a free consultation."
+        keywords="contact web development company, hire web developer, website development quote, MERN stack developer contact, WebBuild Infotech"
         canonical={toCanonicalUrl(RoutePaths.CONTACT)}
       />
 
